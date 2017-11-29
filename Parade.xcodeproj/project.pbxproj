@@ -14,6 +14,11 @@
 		A6699A711FCEC80800A4DF6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6699A6F1FCEC80800A4DF6A /* LaunchScreen.storyboard */; };
 		A6699A7C1FCEC80800A4DF6A /* ParadeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6699A7B1FCEC80800A4DF6A /* ParadeTests.swift */; };
 		A6699A871FCEC80800A4DF6A /* ParadeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6699A861FCEC80800A4DF6A /* ParadeUITests.swift */; };
+		A6699A951FCEC95700A4DF6A /* ShoeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6699A941FCEC95700A4DF6A /* ShoeTableViewCell.swift */; };
+		A6699A971FCECAFC00A4DF6A /* ShoeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6699A961FCECAFC00A4DF6A /* ShoeTableViewController.swift */; };
+		A6699A991FCECB8800A4DF6A /* Shoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6699A981FCECB8800A4DF6A /* Shoe.swift */; };
+		A6699A9B1FCF0D1F00A4DF6A /* ShoeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6699A9A1FCF0D1F00A4DF6A /* ShoeCollectionViewCell.swift */; };
+		A6699A9D1FCF0D3D00A4DF6A /* ShoeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6699A9C1FCF0D3D00A4DF6A /* ShoeCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +52,11 @@
 		A6699A821FCEC80800A4DF6A /* ParadeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ParadeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6699A861FCEC80800A4DF6A /* ParadeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParadeUITests.swift; sourceTree = "<group>"; };
 		A6699A881FCEC80800A4DF6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A6699A941FCEC95700A4DF6A /* ShoeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoeTableViewCell.swift; sourceTree = "<group>"; };
+		A6699A961FCECAFC00A4DF6A /* ShoeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoeTableViewController.swift; sourceTree = "<group>"; };
+		A6699A981FCECB8800A4DF6A /* Shoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shoe.swift; sourceTree = "<group>"; };
+		A6699A9A1FCF0D1F00A4DF6A /* ShoeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoeCollectionViewCell.swift; sourceTree = "<group>"; };
+		A6699A9C1FCF0D3D00A4DF6A /* ShoeCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoeCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +113,11 @@
 				A6699A6D1FCEC80800A4DF6A /* Assets.xcassets */,
 				A6699A6F1FCEC80800A4DF6A /* LaunchScreen.storyboard */,
 				A6699A721FCEC80800A4DF6A /* Info.plist */,
+				A6699A941FCEC95700A4DF6A /* ShoeTableViewCell.swift */,
+				A6699A961FCECAFC00A4DF6A /* ShoeTableViewController.swift */,
+				A6699A981FCECB8800A4DF6A /* Shoe.swift */,
+				A6699A9A1FCF0D1F00A4DF6A /* ShoeCollectionViewCell.swift */,
+				A6699A9C1FCF0D3D00A4DF6A /* ShoeCollectionViewController.swift */,
 			);
 			path = Parade;
 			sourceTree = "<group>";
@@ -259,8 +274,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6699A971FCECAFC00A4DF6A /* ShoeTableViewController.swift in Sources */,
+				A6699A951FCEC95700A4DF6A /* ShoeTableViewCell.swift in Sources */,
 				A6699A691FCEC80800A4DF6A /* ViewController.swift in Sources */,
+				A6699A991FCECB8800A4DF6A /* Shoe.swift in Sources */,
 				A6699A671FCEC80800A4DF6A /* AppDelegate.swift in Sources */,
+				A6699A9D1FCF0D3D00A4DF6A /* ShoeCollectionViewController.swift in Sources */,
+				A6699A9B1FCF0D1F00A4DF6A /* ShoeCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
