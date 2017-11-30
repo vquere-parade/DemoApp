@@ -8,20 +8,20 @@
 
 import Foundation
 import UIKit
+import AVKit
+import AVFoundation
 
 class CategoryCollectionViewController : UICollectionViewController {
     
     var categories = [ProductCategory]()
+    var selectedCategory: ProductCategory?
     fileprivate let sectionInsets = UIEdgeInsets(top: 0.0, left: 20.0, bottom: 0.0, right: 20.0)
     fileprivate let itemsPerRow: CGFloat = 2
         
     override func viewDidLoad() {
         categories.append(ProductCategory(segue: "shoeSegue", image: UIImage(named: "sample")!))
         categories.append(ProductCategory(segue: "demoSegue", image: UIImage(named: "parade")!))
-        categories.append(ProductCategory(segue: "shoeSegue", image: UIImage(named: "sample")!))
-        categories.append(ProductCategory(segue: "demoSegue", image: UIImage(named: "parade")!))
-        categories.append(ProductCategory(segue: "shoeSegue", image: UIImage(named: "sample")!))
-        categories.append(ProductCategory(segue: "demoSegue", image: UIImage(named: "parade")!))
+        categories.append(ProductVideo(segue: "playVideoSegue", image: UIImage(named: "sample")!, videoName: "example.mp4"))
     }
     
     func collectionView(in collectionView: UICollectionView) -> Int {
@@ -42,8 +42,13 @@ class CategoryCollectionViewController : UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let category = categories[indexPath.row]
-        performSegue(withIdentifier: category.segue, sender: self)
+        selectedCategory = categories[indexPath.row]
+        if(selectedCategory!.segue != "playVideoSegue") {
+            performSegue(withIdentifier: selectedCategory!.segue, sender: self)
+
+        } else {
+            playVideo(productVideo: (selectedCategory as? ProductVideo))
+        }
     }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -52,6 +57,22 @@ class CategoryCollectionViewController : UICollectionViewController {
         return headerView
     }
 
+    private func playVideo(productVideo: ProductVideo?) {
+        guard let pv = productVideo else {
+            fatalError("Product Video not set")
+        }
+        guard let path = URL(string: pv.videoName) else {
+            fatalError(pv.videoName+" not found")
+        }
+        
+        let player = AVPlayer(url: path)
+        let playerController = AVPlayerViewController()
+        playerController.player = player
+        present(playerController, animated: true) {
+            player.play()
+        }
+    }
+    
 }
 
 extension CategoryCollectionViewController : UICollectionViewDelegateFlowLayout {
