@@ -108,12 +108,18 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="parade" translatesAutoresizingMaskIntoConstraints="NO" id="24W-IV-adw">
-                                    <rect key="frame" x="0.0" y="-249" width="375" height="547"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="parade" translatesAutoresizingMaskIntoConstraints="NO" id="24W-IV-adw">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                     <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </imageView>
                             </subviews>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="24W-IV-adw" secondAttribute="trailing" id="6BZ-m4-e64"/>
+                                <constraint firstItem="24W-IV-adw" firstAttribute="top" secondItem="lg2-0D-iVv" secondAttribute="top" id="6ki-zN-iSj"/>
+                                <constraint firstItem="24W-IV-adw" firstAttribute="leading" secondItem="lg2-0D-iVv" secondAttribute="leading" id="HEf-Zt-jIb"/>
+                                <constraint firstAttribute="bottom" secondItem="24W-IV-adw" secondAttribute="bottom" id="VTs-fD-XEy"/>
+                                <constraint firstItem="24W-IV-adw" firstAttribute="centerX" secondItem="lg2-0D-iVv" secondAttribute="centerX" id="xel-HO-DI2"/>
+                            </constraints>
                         </collectionReusableView>
                     </collectionView>
                     <navigationItem key="navigationItem" id="FCh-oG-GZd"/>

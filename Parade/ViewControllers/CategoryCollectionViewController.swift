@@ -12,15 +12,15 @@ import UIKit
 class CategoryCollectionViewController : UICollectionViewController {
     
     var categories = [ProductCategory]()
-    fileprivate let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
+    fileprivate let sectionInsets = UIEdgeInsets(top: 0.0, left: 20.0, bottom: 0.0, right: 20.0)
     fileprivate let itemsPerRow: CGFloat = 2
         
     override func viewDidLoad() {
         categories.append(ProductCategory(segue: "shoeSegue", image: UIImage(named: "sample")!))
         categories.append(ProductCategory(segue: "demoSegue", image: UIImage(named: "parade")!))
-        categories.append(ProductCategory(segue: "demoSegue", image: UIImage(named: "sample")!))
+        categories.append(ProductCategory(segue: "shoeSegue", image: UIImage(named: "sample")!))
         categories.append(ProductCategory(segue: "demoSegue", image: UIImage(named: "parade")!))
-        categories.append(ProductCategory(segue: "demoSegue", image: UIImage(named: "sample")!))
+        categories.append(ProductCategory(segue: "shoeSegue", image: UIImage(named: "sample")!))
         categories.append(ProductCategory(segue: "demoSegue", image: UIImage(named: "parade")!))
 
     }
@@ -43,7 +43,7 @@ class CategoryCollectionViewController : UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let category = categories[indexPath.item]
+        let category = categories[indexPath.row]
         performSegue(withIdentifier: category.segue, sender: self)
     }
     
