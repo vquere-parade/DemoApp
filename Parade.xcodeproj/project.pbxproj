@@ -21,6 +21,7 @@
 		A6699A9D1FCF0D3D00A4DF6A /* CategoryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6699A9C1FCF0D3D00A4DF6A /* CategoryCollectionViewController.swift */; };
 		A6699AA11FCF424E00A4DF6A /* ProductCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6699AA01FCF424E00A4DF6A /* ProductCategory.swift */; };
 		A6E8BF051FCFE76600BC9C83 /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E8BF041FCFE76600BC9C83 /* DemoViewController.swift */; };
+		A6E8BF071FD017E600BC9C83 /* ShoeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E8BF061FD017E600BC9C83 /* ShoeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		A6699A9C1FCF0D3D00A4DF6A /* CategoryCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewController.swift; sourceTree = "<group>"; };
 		A6699AA01FCF424E00A4DF6A /* ProductCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCategory.swift; sourceTree = "<group>"; };
 		A6E8BF041FCFE76600BC9C83 /* DemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoViewController.swift; sourceTree = "<group>"; };
+		A6E8BF061FD017E600BC9C83 /* ShoeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 		A6E8BF021FCFE74300BC9C83 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				A6E8BF061FD017E600BC9C83 /* ShoeViewController.swift */,
 				A6699A961FCECAFC00A4DF6A /* ShoeTableViewController.swift */,
 				A6699A9C1FCF0D3D00A4DF6A /* CategoryCollectionViewController.swift */,
 				A6E8BF041FCFE76600BC9C83 /* DemoViewController.swift */,
@@ -297,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6699A971FCECAFC00A4DF6A /* ShoeTableViewController.swift in Sources */,
+				A6E8BF071FD017E600BC9C83 /* ShoeViewController.swift in Sources */,
 				A6699A951FCEC95700A4DF6A /* ShoeTableViewCell.swift in Sources */,
 				A6699A691FCEC80800A4DF6A /* ViewController.swift in Sources */,
 				A6E8BF051FCFE76600BC9C83 /* DemoViewController.swift in Sources */,

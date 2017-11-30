@@ -22,7 +22,6 @@ class CategoryCollectionViewController : UICollectionViewController {
         categories.append(ProductCategory(segue: "demoSegue", image: UIImage(named: "parade")!))
         categories.append(ProductCategory(segue: "shoeSegue", image: UIImage(named: "sample")!))
         categories.append(ProductCategory(segue: "demoSegue", image: UIImage(named: "parade")!))
-
     }
     
     func collectionView(in collectionView: UICollectionView) -> Int {

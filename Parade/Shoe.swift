@@ -7,10 +7,17 @@
 //
 
 import Foundation
+import UIKit
 
 class Shoe {
     
-    init() {
-        
+    var name: String
+    var image: String
+    var description: String
+    
+    init(name: String, image: String, description: String) {
+        self.name = name
+        self.image = image
+        self.description = description
     }
 }
