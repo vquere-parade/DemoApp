@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Shoe Table View Controller-->
+        <!--Products-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ShoeTableViewController" customModule="Parade" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Products" id="BYZ-38-t0r" customClass="ShoeTableViewController" customModule="Parade" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="a2T-bc-Nqa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -27,15 +27,15 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="392.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="55i-1C-N9o">
-                                            <rect key="frame" x="66" y="61" width="243" height="271"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="55i-1C-N9o">
+                                            <rect key="frame" x="16" y="11" width="343" height="371"/>
                                         </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottomMargin" secondItem="55i-1C-N9o" secondAttribute="bottom" constant="50" id="4ij-89-OxM"/>
-                                        <constraint firstItem="55i-1C-N9o" firstAttribute="leading" secondItem="5LD-QF-N0T" secondAttribute="leadingMargin" constant="50" id="VJi-5B-2sE"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="55i-1C-N9o" secondAttribute="trailing" constant="50" id="flo-AX-l9L"/>
-                                        <constraint firstItem="55i-1C-N9o" firstAttribute="top" secondItem="5LD-QF-N0T" secondAttribute="topMargin" constant="50" id="qwJ-1v-5Bc"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="55i-1C-N9o" secondAttribute="bottom" id="4ij-89-OxM"/>
+                                        <constraint firstItem="55i-1C-N9o" firstAttribute="leading" secondItem="5LD-QF-N0T" secondAttribute="leadingMargin" id="VJi-5B-2sE"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="55i-1C-N9o" secondAttribute="trailing" id="flo-AX-l9L"/>
+                                        <constraint firstItem="55i-1C-N9o" firstAttribute="top" secondItem="5LD-QF-N0T" secondAttribute="topMargin" id="qwJ-1v-5Bc"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -174,7 +174,7 @@
             </objects>
             <point key="canvasLocation" x="-1505" y="-612"/>
         </scene>
-        <!--Category Collection View Controller-->
+        <!--EVone-->
         <scene sceneID="nDy-NE-LfZ">
             <objects>
                 <viewController id="CjS-O0-ugX" customClass="CategoryCollectionViewController" customModule="Parade" customModuleProvider="target" sceneMemberID="viewController">
@@ -230,7 +230,7 @@
                             </constraints>
                         </collectionReusableView>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="FCh-oG-GZd"/>
+                    <navigationItem key="navigationItem" title="EVone" id="FCh-oG-GZd"/>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="shoeSegue" id="ihD-QJ-4tJ"/>
                         <segue destination="mCm-3S-nho" kind="show" identifier="demoSegue" id="luj-qG-axW"/>
@@ -240,10 +240,10 @@
             </objects>
             <point key="canvasLocation" x="-722.39999999999998" y="-141.67916041979012"/>
         </scene>
-        <!--Demo View Controller-->
+        <!--Demonstration-->
         <scene sceneID="bQ6-pC-mDT">
             <objects>
-                <viewController id="mCm-3S-nho" customClass="DemoViewController" customModule="Parade" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Demonstration" id="mCm-3S-nho" customClass="DemoViewController" customModule="Parade" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lMq-an-koL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

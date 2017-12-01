@@ -17,6 +17,7 @@ class ShoeViewController : ViewController {
     
     override func viewDidLoad() {
         if let thisShoe = shoe {
+            self.title = thisShoe.name
             shoeImageView.image = UIImage(named: thisShoe.image)
             //shoeNameTextView.text = thisShoe.name
             //shoeDescriptionTextView.text = thisShoe.description

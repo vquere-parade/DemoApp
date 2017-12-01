@@ -21,7 +21,9 @@ class CategoryCollectionViewController : UICollectionViewController {
     override func viewDidLoad() {
         categories.append(ProductCategory(segue: "shoeSegue", image: UIImage(named: "sample")!))
         categories.append(ProductCategory(segue: "demoSegue", image: UIImage(named: "parade")!))
-        categories.append(ProductVideo(segue: "playVideoSegue", image: UIImage(named: "sample")!, videoName: "example.mp4"))
+        categories.append(ProductVideo(segue: "playVideoSegue", image: UIImage(named: "sample")!, videoName: "small", videoType: "mp4"))
+        categories.append(ProductVideo(segue: "playVideoSegue", image: UIImage(named: "sample")!, videoName: "bunny", videoType: "mp4"))
+        categories.append(ProductVideo(segue: "playVideoSegue", image: UIImage(named: "sample")!, videoName: "ElephantSeals", videoType: "mov"))
     }
     
     func collectionView(in collectionView: UICollectionView) -> Int {
@@ -58,14 +60,16 @@ class CategoryCollectionViewController : UICollectionViewController {
     }
 
     private func playVideo(productVideo: ProductVideo?) {
+
+        
         guard let pv = productVideo else {
             fatalError("Product Video not set")
         }
-        guard let path = URL(string: pv.videoName) else {
-            fatalError(pv.videoName+" not found")
-        }
         
-        let player = AVPlayer(url: path)
+        let movieURL = Bundle.main.url(forResource: pv.videoName, withExtension: pv.videoType)!
+        //let asset = AVURLAsset(url: movieURL, options: nil)
+        let player = AVPlayer(url: movieURL)
+        //let player = AVPlayer(playerItem: asset)
         let playerController = AVPlayerViewController()
         playerController.player = player
         present(playerController, animated: true) {

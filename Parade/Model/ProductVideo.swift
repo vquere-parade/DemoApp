@@ -12,9 +12,11 @@ import UIKit
 class ProductVideo : ProductCategory {
     
     var videoName: String
+    var videoType: String
     
-    init(segue: String, image: UIImage, videoName: String) {
+    init(segue: String, image: UIImage, videoName: String, videoType: String) {
         self.videoName = videoName
+        self.videoType = videoType
         super.init(segue: segue, image: image)
     }
 }
