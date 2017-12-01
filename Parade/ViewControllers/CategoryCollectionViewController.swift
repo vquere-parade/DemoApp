@@ -20,7 +20,7 @@ class CategoryCollectionViewController : UICollectionViewController {
         
     override func viewDidLoad() {
         categories.append(ProductCategory(segue: "shoeSegue", image: UIImage(named: "sample")!))
-        categories.append(ProductCategory(segue: "demoSegue", image: UIImage(named: "parade")!))
+        categories.append(ProductCategory(segue: "demoSegue", image: UIImage(named: "ic_explore_48pt")!))
         categories.append(ProductVideo(segue: "playVideoSegue", image: UIImage(named: "sample")!, videoName: "small", videoType: "mp4"))
         categories.append(ProductVideo(segue: "playVideoSegue", image: UIImage(named: "sample")!, videoName: "bunny", videoType: "mp4"))
         categories.append(ProductVideo(segue: "playVideoSegue", image: UIImage(named: "sample")!, videoName: "ElephantSeals", videoType: "mov"))
