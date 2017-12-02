@@ -22,6 +22,7 @@ class CategoryCollectionViewController : UIViewController, UICollectionViewDeleg
 
     
     override func viewDidLoad() {
+        print("CategoryCollectionViewController")
         categories.append(ProductCategory(segue: "shoeSegue", image: UIImage(named: "sample")!))
         categories.append(ProductCategory(segue: "demoSegue", image: UIImage(named: "ic_explore_48pt")!))
         categories.append(ProductVideo(segue: "playVideoSegue", image: UIImage(named: "sample")!, videoName: "small", videoType: "mp4"))

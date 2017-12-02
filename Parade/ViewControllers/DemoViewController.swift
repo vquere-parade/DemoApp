@@ -8,13 +8,25 @@
 
 import Foundation
 import CoreMotion
+import UIKit
 
 class DemoViewController : ViewController {
     var motionManager: CMMotionManager!
     
-    func ViewDidLoad() {
-        motionManager = CMMotionManager()
-        motionManager.startAccelerometerUpdates(to: OperationQueue.main) { [weak self] (data: CMAccelerometerData?, error: Error?) in print("hello")
+    override func viewDidLoad() {
+        print("salut")
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(self.orientationChanged),
+            name: .UIDeviceOrientationDidChange,
+            object: nil)
+    }
+    
+    @objc func orientationChanged(notification: NSNotification) {
+        if UIDevice.current.orientation == UIDeviceOrientation.faceDown {
+            print("face down")
+        } else {
+            print("face up")
         }
     }
 }
