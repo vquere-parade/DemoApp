@@ -10,6 +10,7 @@ import Foundation
 import CoreMotion
 import UIKit
 import AudioToolbox
+import AVFoundation
 
 class DemoViewController : ViewController {
     var motionManager: CMMotionManager!
@@ -22,6 +23,9 @@ class DemoViewController : ViewController {
             while true {
                 if self.vibration {
                     AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+                    self.toggleTorch(on: true)
+                } else {
+                    self.toggleTorch(on: false)
                 }
                 sleep(1)
             }
@@ -41,6 +45,28 @@ class DemoViewController : ViewController {
         } else {
             print("face up")
             vibration = false
+        }
+    }
+    
+    func toggleTorch(on: Bool) {
+        guard let device = AVCaptureDevice.default(for: AVMediaType.video)
+            else {return}
+        if device.hasTorch {
+            do {
+                try device.lockForConfiguration()
+                
+                if on == true {
+                    device.torchMode = .on
+                } else {
+                    device.torchMode = .off
+                }
+                
+                device.unlockForConfiguration()
+            } catch {
+                print("Torch could not be used")
+            }
+        } else {
+            print("Torch is not available")
         }
     }
 }
