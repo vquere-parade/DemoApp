@@ -215,20 +215,21 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="headerCategories" id="N2w-qt-Vnq">
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="categoryHeader" id="1wh-N8-EE7">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="parade" translatesAutoresizingMaskIntoConstraints="NO" id="24W-IV-adw">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="parade" translatesAutoresizingMaskIntoConstraints="NO" id="7Zj-Wb-Pek">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                             <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </imageView>
                                     </subviews>
+                                    <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="24W-IV-adw" secondAttribute="trailing" id="OvY-eF-o1c"/>
-                                        <constraint firstAttribute="bottom" secondItem="24W-IV-adw" secondAttribute="bottom" id="hd9-po-YB3"/>
-                                        <constraint firstItem="24W-IV-adw" firstAttribute="leading" secondItem="N2w-qt-Vnq" secondAttribute="leading" id="oS5-am-I4D"/>
-                                        <constraint firstItem="24W-IV-adw" firstAttribute="top" secondItem="N2w-qt-Vnq" secondAttribute="top" id="xgz-fe-cBK"/>
+                                        <constraint firstAttribute="trailing" secondItem="7Zj-Wb-Pek" secondAttribute="trailing" id="46J-tF-fjY"/>
+                                        <constraint firstAttribute="bottom" secondItem="7Zj-Wb-Pek" secondAttribute="bottom" id="HeO-hb-v1C"/>
+                                        <constraint firstItem="7Zj-Wb-Pek" firstAttribute="top" secondItem="1wh-N8-EE7" secondAttribute="top" id="KCM-zk-7yF"/>
+                                        <constraint firstItem="7Zj-Wb-Pek" firstAttribute="leading" secondItem="1wh-N8-EE7" secondAttribute="leading" id="RGk-Xk-AsM"/>
                                     </constraints>
                                 </collectionReusableView>
                                 <connections>

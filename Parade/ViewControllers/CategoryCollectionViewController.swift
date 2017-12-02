@@ -78,6 +78,11 @@ class CategoryCollectionViewController : UIViewController, UICollectionViewDeleg
         collectionView.collectionViewLayout.invalidateLayout()
     }
     
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        return collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "categoryHeader", for: indexPath) as! UICollectionReusableView
+    }
+    
 
     /*
     override func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
