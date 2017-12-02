@@ -11,31 +11,36 @@ import UIKit
 import AVKit
 import AVFoundation
 
-class CategoryCollectionViewController : UICollectionViewController {
+class CategoryCollectionViewController : UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    @IBOutlet weak var collectionView: UICollectionView!
     
     var categories = [ProductCategory]()
     var selectedCategory: ProductCategory?
     fileprivate let sectionInsets = UIEdgeInsets(top: 0.0, left: 20.0, bottom: 0.0, right: 20.0)
-    fileprivate let itemsPerRow: CGFloat = 2
-        
+    //fileprivate let itemsPerRow: CGFloat = 2
+
+    
     override func viewDidLoad() {
         categories.append(ProductCategory(segue: "shoeSegue", image: UIImage(named: "sample")!))
         categories.append(ProductCategory(segue: "demoSegue", image: UIImage(named: "ic_explore_48pt")!))
         categories.append(ProductVideo(segue: "playVideoSegue", image: UIImage(named: "sample")!, videoName: "small", videoType: "mp4"))
         categories.append(ProductVideo(segue: "playVideoSegue", image: UIImage(named: "sample")!, videoName: "bunny", videoType: "mp4"))
         categories.append(ProductVideo(segue: "playVideoSegue", image: UIImage(named: "sample")!, videoName: "ElephantSeals", videoType: "mov"))
+        categories.append(ProductVideo(segue: "playVideoSegue", image: UIImage(named: "sample")!, videoName: "ElephantSeals", videoType: "mov"))
+        categories.append(ProductVideo(segue: "playVideoSegue", image: UIImage(named: "sample")!, videoName: "ElephantSeals", videoType: "mov"))
     }
     
     func collectionView(in collectionView: UICollectionView) -> Int {
-        return categories.count
+        return 1
     }
     
-    override func collectionView(_ collectionView: UICollectionView,
+    func collectionView( _ collectionView: UICollectionView,
                                  numberOfItemsInSection section: Int) -> Int {
         return categories.count
     }
     
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView( _ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "categoryCollectionCell", for: indexPath) as? CategoryCollectionViewCell else {
             fatalError("The dequeued cell is not an instance of CategoryCollectionViewCell.")
         }
@@ -43,7 +48,7 @@ class CategoryCollectionViewController : UICollectionViewController {
         return cell
     }
     
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedCategory = categories[indexPath.row]
         if(selectedCategory!.segue != "playVideoSegue") {
             performSegue(withIdentifier: selectedCategory!.segue, sender: self)
@@ -52,20 +57,11 @@ class CategoryCollectionViewController : UICollectionViewController {
             playVideo(productVideo: (selectedCategory as? ProductVideo))
         }
     }
-    
-    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "headerCategories", for: indexPath)
-        headerView.backgroundColor = UIColor.blue;
-        return headerView
-    }
 
     private func playVideo(productVideo: ProductVideo?) {
-
-        
         guard let pv = productVideo else {
             fatalError("Product Video not set")
         }
-        
         let movieURL = Bundle.main.url(forResource: pv.videoName, withExtension: pv.videoType)!
         //let asset = AVURLAsset(url: movieURL, options: nil)
         let player = AVPlayer(url: movieURL)
@@ -77,6 +73,17 @@ class CategoryCollectionViewController : UICollectionViewController {
         }
     }
     
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        collectionView.collectionViewLayout.invalidateLayout()
+    }
+    
+
+    /*
+    override func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
+        collectionViewLayout.invalidateLayout()
+    }
+ */
 }
 
 extension CategoryCollectionViewController : UICollectionViewDelegateFlowLayout {
@@ -84,12 +91,18 @@ extension CategoryCollectionViewController : UICollectionViewDelegateFlowLayout 
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        //2
-        let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
-        let availableWidth = view.frame.width - paddingSpace
-        let widthPerItem = availableWidth / itemsPerRow
         
-        return CGSize(width: widthPerItem, height: widthPerItem)
+        if UIDevice.current.orientation.isLandscape {
+            let itemsPerRow : CGFloat = 3
+            let availableWidth = view.bounds.width - (sectionInsets.left * (itemsPerRow + 1))
+            let widthPerItem = availableWidth / itemsPerRow
+            return CGSize(width: widthPerItem, height: widthPerItem)
+        } else {
+            let itemsPerRow : CGFloat = 2
+            let availableWidth = view.bounds.width - (sectionInsets.left * (itemsPerRow + 1))
+            let widthPerItem = availableWidth / itemsPerRow
+            return CGSize(width: widthPerItem, height: widthPerItem)
+        }
     }
     
     //3
@@ -106,3 +119,4 @@ extension CategoryCollectionViewController : UICollectionViewDelegateFlowLayout 
         return sectionInsets.left
     }
 }
+

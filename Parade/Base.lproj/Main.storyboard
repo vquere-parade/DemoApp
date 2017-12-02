@@ -177,61 +177,78 @@
         <!--EVone-->
         <scene sceneID="nDy-NE-LfZ">
             <objects>
-                <viewController id="CjS-O0-ugX" customClass="CategoryCollectionViewController" customModule="Parade" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" id="4u0-1g-dhl">
+                <viewController title="EVone" id="CjS-O0-ugX" customClass="CategoryCollectionViewController" customModule="Parade" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jvX-fh-jLC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VCU-gs-pKH">
-                            <size key="itemSize" width="50" height="50"/>
-                            <size key="headerReferenceSize" width="50" height="50"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="categoryCollectionCell" id="Q7a-R3-DM5" customClass="CategoryCollectionViewCell" customModule="Parade" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="50" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qnu-hK-4Wb">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tPM-0n-cjs">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="50" height="50"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="categoryCollectionCell" id="Q7a-R3-DM5" customClass="CategoryCollectionViewCell" customModule="Parade" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AIR-P6-Mxy">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="AIR-P6-Mxy" secondAttribute="trailing" id="KsC-ok-RIb"/>
+                                            <constraint firstItem="AIR-P6-Mxy" firstAttribute="leading" secondItem="Q7a-R3-DM5" secondAttribute="leading" id="Yft-oz-ejy"/>
+                                            <constraint firstAttribute="bottom" secondItem="AIR-P6-Mxy" secondAttribute="bottom" id="cNX-kp-NI7"/>
+                                            <constraint firstItem="AIR-P6-Mxy" firstAttribute="top" secondItem="Q7a-R3-DM5" secondAttribute="top" id="kgb-LR-b0R"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="categoryImageView" destination="AIR-P6-Mxy" id="KnZ-SI-6j3"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="headerCategories" id="N2w-qt-Vnq">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AIR-P6-Mxy">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="parade" translatesAutoresizingMaskIntoConstraints="NO" id="24W-IV-adw">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                            <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </imageView>
                                     </subviews>
-                                </view>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="AIR-P6-Mxy" secondAttribute="trailing" id="KsC-ok-RIb"/>
-                                    <constraint firstItem="AIR-P6-Mxy" firstAttribute="leading" secondItem="Q7a-R3-DM5" secondAttribute="leading" id="Yft-oz-ejy"/>
-                                    <constraint firstAttribute="bottom" secondItem="AIR-P6-Mxy" secondAttribute="bottom" id="cNX-kp-NI7"/>
-                                    <constraint firstItem="AIR-P6-Mxy" firstAttribute="top" secondItem="Q7a-R3-DM5" secondAttribute="top" id="kgb-LR-b0R"/>
-                                </constraints>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="24W-IV-adw" secondAttribute="trailing" id="OvY-eF-o1c"/>
+                                        <constraint firstAttribute="bottom" secondItem="24W-IV-adw" secondAttribute="bottom" id="hd9-po-YB3"/>
+                                        <constraint firstItem="24W-IV-adw" firstAttribute="leading" secondItem="N2w-qt-Vnq" secondAttribute="leading" id="oS5-am-I4D"/>
+                                        <constraint firstItem="24W-IV-adw" firstAttribute="top" secondItem="N2w-qt-Vnq" secondAttribute="top" id="xgz-fe-cBK"/>
+                                    </constraints>
+                                </collectionReusableView>
                                 <connections>
-                                    <outlet property="categoryImageView" destination="AIR-P6-Mxy" id="KnZ-SI-6j3"/>
+                                    <outlet property="dataSource" destination="CjS-O0-ugX" id="bwK-QH-mKe"/>
+                                    <outlet property="delegate" destination="CjS-O0-ugX" id="Jdj-T5-snR"/>
                                 </connections>
-                            </collectionViewCell>
-                        </cells>
-                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="headerCategories" id="lg2-0D-iVv">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
-                            <autoresizingMask key="autoresizingMask"/>
-                            <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="parade" translatesAutoresizingMaskIntoConstraints="NO" id="24W-IV-adw">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
-                                    <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </imageView>
-                            </subviews>
-                            <constraints>
-                                <constraint firstAttribute="trailing" secondItem="24W-IV-adw" secondAttribute="trailing" id="6BZ-m4-e64"/>
-                                <constraint firstItem="24W-IV-adw" firstAttribute="top" secondItem="lg2-0D-iVv" secondAttribute="top" id="6ki-zN-iSj"/>
-                                <constraint firstItem="24W-IV-adw" firstAttribute="leading" secondItem="lg2-0D-iVv" secondAttribute="leading" id="HEf-Zt-jIb"/>
-                                <constraint firstAttribute="bottom" secondItem="24W-IV-adw" secondAttribute="bottom" id="VTs-fD-XEy"/>
-                                <constraint firstItem="24W-IV-adw" firstAttribute="centerX" secondItem="lg2-0D-iVv" secondAttribute="centerX" id="xel-HO-DI2"/>
-                            </constraints>
-                        </collectionReusableView>
-                    </collectionView>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="qnu-hK-4Wb" firstAttribute="trailing" secondItem="jqK-q6-THO" secondAttribute="trailing" id="3Hc-xN-VeJ"/>
+                            <constraint firstItem="qnu-hK-4Wb" firstAttribute="top" secondItem="jvX-fh-jLC" secondAttribute="top" id="aHV-nE-eHG"/>
+                            <constraint firstItem="qnu-hK-4Wb" firstAttribute="leading" secondItem="jqK-q6-THO" secondAttribute="leading" id="jc9-5g-4Jf"/>
+                            <constraint firstItem="qnu-hK-4Wb" firstAttribute="bottom" secondItem="jqK-q6-THO" secondAttribute="bottom" id="uBk-sQ-3vG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jqK-q6-THO"/>
+                    </view>
                     <navigationItem key="navigationItem" title="EVone" id="FCh-oG-GZd"/>
                     <connections>
+                        <outlet property="collectionView" destination="qnu-hK-4Wb" id="7bg-eZ-m4D"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="shoeSegue" id="ihD-QJ-4tJ"/>
                         <segue destination="mCm-3S-nho" kind="show" identifier="demoSegue" id="luj-qG-axW"/>
                     </connections>
