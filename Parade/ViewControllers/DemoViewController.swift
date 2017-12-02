@@ -9,12 +9,24 @@
 import Foundation
 import CoreMotion
 import UIKit
+import AudioToolbox
 
 class DemoViewController : ViewController {
     var motionManager: CMMotionManager!
+    var vibration : Bool = false
     
     override func viewDidLoad() {
         print("salut")
+        
+        DispatchQueue.global(qos: .background).async {
+            while true {
+                if self.vibration {
+                    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+                }
+                sleep(1)
+            }
+        }
+
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(self.orientationChanged),
@@ -25,8 +37,10 @@ class DemoViewController : ViewController {
     @objc func orientationChanged(notification: NSNotification) {
         if UIDevice.current.orientation == UIDeviceOrientation.faceDown {
             print("face down")
+            vibration = true
         } else {
             print("face up")
+            vibration = false
         }
     }
 }

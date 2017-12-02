@@ -24,6 +24,7 @@
 		A6817E1B1FD169EC00922C20 /* ElephantSeals.mov in Resources */ = {isa = PBXBuildFile; fileRef = A6817E1A1FD169EC00922C20 /* ElephantSeals.mov */; };
 		A6817E1F1FD16AD600922C20 /* small.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A6817E1D1FD16AD500922C20 /* small.mp4 */; };
 		A6817E201FD16AD600922C20 /* bunny.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A6817E1E1FD16AD600922C20 /* bunny.mp4 */; };
+		A6817E291FD31BD000922C20 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6817E241FD31A7700922C20 /* AudioToolbox.framework */; };
 		A6E8BF051FCFE76600BC9C83 /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E8BF041FCFE76600BC9C83 /* DemoViewController.swift */; };
 		A6E8BF071FD017E600BC9C83 /* ShoeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E8BF061FD017E600BC9C83 /* ShoeViewController.swift */; };
 /* End PBXBuildFile section */
@@ -69,6 +70,7 @@
 		A6817E1A1FD169EC00922C20 /* ElephantSeals.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = ElephantSeals.mov; sourceTree = "<group>"; };
 		A6817E1D1FD16AD500922C20 /* small.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = small.mp4; sourceTree = "<group>"; };
 		A6817E1E1FD16AD600922C20 /* bunny.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = bunny.mp4; sourceTree = "<group>"; };
+		A6817E241FD31A7700922C20 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		A6E8BF041FCFE76600BC9C83 /* DemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoViewController.swift; sourceTree = "<group>"; };
 		A6E8BF061FD017E600BC9C83 /* ShoeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6817E291FD31BD000922C20 /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +108,7 @@
 				A6699A7A1FCEC80800A4DF6A /* ParadeTests */,
 				A6699A851FCEC80800A4DF6A /* ParadeUITests */,
 				A6699A641FCEC80800A4DF6A /* Products */,
+				A6817E231FD31A7700922C20 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -171,6 +175,14 @@
 				A6817E1A1FD169EC00922C20 /* ElephantSeals.mov */,
 			);
 			path = Videos;
+			sourceTree = "<group>";
+		};
+		A6817E231FD31A7700922C20 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A6817E241FD31A7700922C20 /* AudioToolbox.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		A6E8BF021FCFE74300BC9C83 /* ViewControllers */ = {
