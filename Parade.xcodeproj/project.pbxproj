@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A6496BE01FD70E7000D61091 /* evone.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A6496BDF1FD70E7000D61091 /* evone.mp4 */; };
 		A6699A671FCEC80800A4DF6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6699A661FCEC80800A4DF6A /* AppDelegate.swift */; };
 		A6699A691FCEC80800A4DF6A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6699A681FCEC80800A4DF6A /* ViewController.swift */; };
 		A6699A6C1FCEC80800A4DF6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6699A6A1FCEC80800A4DF6A /* Main.storyboard */; };
@@ -47,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A6496BDF1FD70E7000D61091 /* evone.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = evone.mp4; sourceTree = "<group>"; };
 		A6699A631FCEC80800A4DF6A /* Parade.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Parade.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6699A661FCEC80800A4DF6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6699A681FCEC80800A4DF6A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 		A6817E1C1FD16AAD00922C20 /* Videos */ = {
 			isa = PBXGroup;
 			children = (
+				A6496BDF1FD70E7000D61091 /* evone.mp4 */,
 				A6817E1E1FD16AD600922C20 /* bunny.mp4 */,
 				A6817E1D1FD16AD500922C20 /* small.mp4 */,
 				A6817E1A1FD169EC00922C20 /* ElephantSeals.mov */,
@@ -314,6 +317,7 @@
 			files = (
 				A6817E201FD16AD600922C20 /* bunny.mp4 in Resources */,
 				A6699A711FCEC80800A4DF6A /* LaunchScreen.storyboard in Resources */,
+				A6496BE01FD70E7000D61091 /* evone.mp4 in Resources */,
 				A6817E1F1FD16AD600922C20 /* small.mp4 in Resources */,
 				A6699A6E1FCEC80800A4DF6A /* Assets.xcassets in Resources */,
 				A6817E1B1FD169EC00922C20 /* ElephantSeals.mov in Resources */,

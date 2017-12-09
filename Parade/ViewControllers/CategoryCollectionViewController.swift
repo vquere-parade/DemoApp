@@ -15,7 +15,8 @@ class CategoryCollectionViewController : UIViewController, UICollectionViewDeleg
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var categories = [ProductCategory]()
+    var evoneCategories = [ProductCategory]()
+    var izomeCategories = [ProductCategory]()
     var selectedCategory: ProductCategory?
     fileprivate let sectionInsets = UIEdgeInsets(top: 0.0, left: 20.0, bottom: 0.0, right: 20.0)
     //fileprivate let itemsPerRow: CGFloat = 2
@@ -23,34 +24,61 @@ class CategoryCollectionViewController : UIViewController, UICollectionViewDeleg
     
     override func viewDidLoad() {
         print("CategoryCollectionViewController")
-        categories.append(ProductCategory(segue: "shoeSegue", image: UIImage(named: "sample")!))
-        categories.append(ProductCategory(segue: "demoSegue", image: UIImage(named: "ic_explore_48pt")!))
-        categories.append(ProductVideo(segue: "playVideoSegue", image: UIImage(named: "sample")!, videoName: "small", videoType: "mp4"))
-        categories.append(ProductVideo(segue: "playVideoSegue", image: UIImage(named: "sample")!, videoName: "bunny", videoType: "mp4"))
-        categories.append(ProductVideo(segue: "playVideoSegue", image: UIImage(named: "sample")!, videoName: "ElephantSeals", videoType: "mov"))
-        categories.append(ProductVideo(segue: "playVideoSegue", image: UIImage(named: "sample")!, videoName: "ElephantSeals", videoType: "mov"))
-        categories.append(ProductVideo(segue: "playVideoSegue", image: UIImage(named: "sample")!, videoName: "ElephantSeals", videoType: "mov"))
+        evoneCategories.append(ProductCategory(segue: "shoeSegue", image: "1"))
+        evoneCategories.append(ProductCategory(segue: "demoSegue", image: "2"))
+        evoneCategories.append(ProductVideo(segue: "playVideoSegue", image: "3", videoName: "small", videoType: "mp4"))
+        evoneCategories.append(ProductVideo(segue: "playVideoSegue", image: "4", videoName: "evone", videoType: "mp4"))
+        
+        izomeCategories.append(ProductCategory(segue: "shoeSegue", image: "5"))
+        izomeCategories.append(ProductCategory(segue: "demoSegue", image: "6"))
+        izomeCategories.append(ProductCategory(segue: "demoSegue", image: "7"))
     }
     
-    func collectionView(in collectionView: UICollectionView) -> Int {
-        return 1
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 2
     }
     
     func collectionView( _ collectionView: UICollectionView,
                                  numberOfItemsInSection section: Int) -> Int {
-        return categories.count
+        print("section: "+String(section))
+        if section == 0 {
+            return evoneCategories.count
+        } else if section == 1 {
+            return izomeCategories.count
+        } else {
+            return 0
+        }
     }
     
     func collectionView( _ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "categoryCollectionCell", for: indexPath) as? CategoryCollectionViewCell else {
             fatalError("The dequeued cell is not an instance of CategoryCollectionViewCell.")
         }
-        cell.categoryImageView.image = categories[indexPath.row].image
+        
+        DispatchQueue.global(qos: .background).async {
+            if indexPath.section == 0 {
+                let image = UIImage(named: self.evoneCategories[indexPath.row].image)
+                DispatchQueue.main.async {
+                    cell.categoryImageView.image = image
+                }
+            } else if indexPath.section == 1 {
+                let image = UIImage(named: self.izomeCategories[indexPath.row].image)
+                DispatchQueue.main.async {
+                    cell.categoryImageView.image = image
+                }
+            }
+            
+        }
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        selectedCategory = categories[indexPath.row]
+        if indexPath.section == 0 {
+            selectedCategory = evoneCategories[indexPath.row]
+        } else if indexPath.section == 1 {
+            selectedCategory = izomeCategories[indexPath.row]
+        }
+        
         if(selectedCategory!.segue != "playVideoSegue") {
             performSegue(withIdentifier: selectedCategory!.segue, sender: self)
 
@@ -80,8 +108,13 @@ class CategoryCollectionViewController : UIViewController, UICollectionViewDeleg
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        
-        return collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "categoryHeader", for: indexPath) as! UICollectionReusableView
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "categoryHeader", for: indexPath)
+        if indexPath.section == 0 {
+            
+        } else if indexPath.section == 1 {
+            
+        }
+        return header
     }
     
 

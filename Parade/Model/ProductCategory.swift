@@ -12,9 +12,9 @@ import UIKit
 class ProductCategory {
     
     var segue: String
-    var image: UIImage
+    var image: String
     
-    init(segue: String, image: UIImage) {
+    init(segue: String, image: String) {
         self.segue = segue
         self.image = image
     }

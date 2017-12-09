@@ -11,16 +11,19 @@ import UIKit
 
 class ShoeViewController : ViewController {
     
-    @IBOutlet weak var shoeImageView: UIImageView!
+    @IBOutlet weak var showImageView: UIImageView!
+    
+    @IBOutlet weak var titleTextView: UITextView!
+    @IBOutlet weak var descriptionTextView: UITextView!
     
     var shoe: Shoe?
-    
+
     override func viewDidLoad() {
         if let thisShoe = shoe {
             self.title = thisShoe.name
-            shoeImageView.image = UIImage(named: thisShoe.image)
-            //shoeNameTextView.text = thisShoe.name
-            //shoeDescriptionTextView.text = thisShoe.description
+            showImageView.image = UIImage(named: thisShoe.image)
+            titleTextView.text = thisShoe.name
+            descriptionTextView.text = thisShoe.description
         }
     }
 }
