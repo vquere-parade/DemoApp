@@ -18,14 +18,12 @@
 		A6699A951FCEC95700A4DF6A /* ShoeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6699A941FCEC95700A4DF6A /* ShoeTableViewCell.swift */; };
 		A6699A971FCECAFC00A4DF6A /* ShoeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6699A961FCECAFC00A4DF6A /* ShoeTableViewController.swift */; };
 		A6699A991FCECB8800A4DF6A /* Shoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6699A981FCECB8800A4DF6A /* Shoe.swift */; };
-		A6699A9B1FCF0D1F00A4DF6A /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6699A9A1FCF0D1F00A4DF6A /* CategoryCollectionViewCell.swift */; };
+		A6699A9B1FCF0D1F00A4DF6A /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6699A9A1FCF0D1F00A4DF6A /* ImageCollectionViewCell.swift */; };
 		A6699A9D1FCF0D3D00A4DF6A /* CategoryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6699A9C1FCF0D3D00A4DF6A /* CategoryCollectionViewController.swift */; };
 		A6699AA11FCF424E00A4DF6A /* ProductCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6699AA01FCF424E00A4DF6A /* ProductCategory.swift */; };
 		A6817E191FD080A200922C20 /* ProductVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6817E181FD080A200922C20 /* ProductVideo.swift */; };
-		A6817E1B1FD169EC00922C20 /* ElephantSeals.mov in Resources */ = {isa = PBXBuildFile; fileRef = A6817E1A1FD169EC00922C20 /* ElephantSeals.mov */; };
-		A6817E1F1FD16AD600922C20 /* small.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A6817E1D1FD16AD500922C20 /* small.mp4 */; };
-		A6817E201FD16AD600922C20 /* bunny.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A6817E1E1FD16AD600922C20 /* bunny.mp4 */; };
 		A6817E291FD31BD000922C20 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6817E241FD31A7700922C20 /* AudioToolbox.framework */; };
+		A6B77D8D1FDC77D000E7F322 /* TextCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B77D8C1FDC77D000E7F322 /* TextCollectionViewCell.swift */; };
 		A6E8BF051FCFE76600BC9C83 /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E8BF041FCFE76600BC9C83 /* DemoViewController.swift */; };
 		A6E8BF071FD017E600BC9C83 /* ShoeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E8BF061FD017E600BC9C83 /* ShoeViewController.swift */; };
 /* End PBXBuildFile section */
@@ -65,14 +63,12 @@
 		A6699A941FCEC95700A4DF6A /* ShoeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoeTableViewCell.swift; sourceTree = "<group>"; };
 		A6699A961FCECAFC00A4DF6A /* ShoeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoeTableViewController.swift; sourceTree = "<group>"; };
 		A6699A981FCECB8800A4DF6A /* Shoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shoe.swift; sourceTree = "<group>"; };
-		A6699A9A1FCF0D1F00A4DF6A /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		A6699A9A1FCF0D1F00A4DF6A /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		A6699A9C1FCF0D3D00A4DF6A /* CategoryCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewController.swift; sourceTree = "<group>"; };
 		A6699AA01FCF424E00A4DF6A /* ProductCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCategory.swift; sourceTree = "<group>"; };
 		A6817E181FD080A200922C20 /* ProductVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductVideo.swift; sourceTree = "<group>"; };
-		A6817E1A1FD169EC00922C20 /* ElephantSeals.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = ElephantSeals.mov; sourceTree = "<group>"; };
-		A6817E1D1FD16AD500922C20 /* small.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = small.mp4; sourceTree = "<group>"; };
-		A6817E1E1FD16AD600922C20 /* bunny.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = bunny.mp4; sourceTree = "<group>"; };
 		A6817E241FD31A7700922C20 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		A6B77D8C1FDC77D000E7F322 /* TextCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCollectionViewCell.swift; sourceTree = "<group>"; };
 		A6E8BF041FCFE76600BC9C83 /* DemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoViewController.swift; sourceTree = "<group>"; };
 		A6E8BF061FD017E600BC9C83 /* ShoeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -173,9 +169,6 @@
 			isa = PBXGroup;
 			children = (
 				A6496BDF1FD70E7000D61091 /* evone.mp4 */,
-				A6817E1E1FD16AD600922C20 /* bunny.mp4 */,
-				A6817E1D1FD16AD500922C20 /* small.mp4 */,
-				A6817E1A1FD169EC00922C20 /* ElephantSeals.mov */,
 			);
 			path = Videos;
 			sourceTree = "<group>";
@@ -203,7 +196,8 @@
 			isa = PBXGroup;
 			children = (
 				A6699A941FCEC95700A4DF6A /* ShoeTableViewCell.swift */,
-				A6699A9A1FCF0D1F00A4DF6A /* CategoryCollectionViewCell.swift */,
+				A6699A9A1FCF0D1F00A4DF6A /* ImageCollectionViewCell.swift */,
+				A6B77D8C1FDC77D000E7F322 /* TextCollectionViewCell.swift */,
 			);
 			path = ViewCells;
 			sourceTree = "<group>";
@@ -315,12 +309,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6817E201FD16AD600922C20 /* bunny.mp4 in Resources */,
 				A6699A711FCEC80800A4DF6A /* LaunchScreen.storyboard in Resources */,
 				A6496BE01FD70E7000D61091 /* evone.mp4 in Resources */,
-				A6817E1F1FD16AD600922C20 /* small.mp4 in Resources */,
 				A6699A6E1FCEC80800A4DF6A /* Assets.xcassets in Resources */,
-				A6817E1B1FD169EC00922C20 /* ElephantSeals.mov in Resources */,
 				A6699A6C1FCEC80800A4DF6A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -353,9 +344,10 @@
 				A6E8BF051FCFE76600BC9C83 /* DemoViewController.swift in Sources */,
 				A6699A991FCECB8800A4DF6A /* Shoe.swift in Sources */,
 				A6699A671FCEC80800A4DF6A /* AppDelegate.swift in Sources */,
+				A6B77D8D1FDC77D000E7F322 /* TextCollectionViewCell.swift in Sources */,
 				A6699A9D1FCF0D3D00A4DF6A /* CategoryCollectionViewController.swift in Sources */,
 				A6817E191FD080A200922C20 /* ProductVideo.swift in Sources */,
-				A6699A9B1FCF0D1F00A4DF6A /* CategoryCollectionViewCell.swift in Sources */,
+				A6699A9B1FCF0D1F00A4DF6A /* ImageCollectionViewCell.swift in Sources */,
 				A6699AA11FCF424E00A4DF6A /* ProductCategory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

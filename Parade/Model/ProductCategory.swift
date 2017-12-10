@@ -11,12 +11,18 @@ import UIKit
 
 class ProductCategory {
     
+    var title: String
+    var subTitle: String
     var segue: String
+    var cellIdentifier: String
     var image: String
     
-    init(segue: String, image: String) {
+    init(title: String, subTitle: String, segue: String, cellIdentifier: String, image: String) {
+        self.title = title
+        self.subTitle = subTitle
         self.segue = segue
         self.image = image
+        self.cellIdentifier = cellIdentifier
     }
 
 }

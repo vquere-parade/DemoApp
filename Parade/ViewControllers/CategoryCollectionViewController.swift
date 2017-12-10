@@ -24,14 +24,13 @@ class CategoryCollectionViewController : UIViewController, UICollectionViewDeleg
     
     override func viewDidLoad() {
         print("CategoryCollectionViewController")
-        evoneCategories.append(ProductCategory(segue: "shoeSegue", image: "1"))
-        evoneCategories.append(ProductCategory(segue: "demoSegue", image: "2"))
-        evoneCategories.append(ProductVideo(segue: "playVideoSegue", image: "3", videoName: "small", videoType: "mp4"))
-        evoneCategories.append(ProductVideo(segue: "playVideoSegue", image: "4", videoName: "evone", videoType: "mp4"))
+        evoneCategories.append(ProductCategory(title: "", subTitle: "", segue: "shoeSegue", cellIdentifier: "imageCategoryCell", image: "1"))
+        evoneCategories.append(ProductCategory(title: "Demo", subTitle: "Fall detection system blablablablablabla",  segue: "demoSegue", cellIdentifier: "textCategoryCell", image: "2"))
+        evoneCategories.append(ProductVideo(title: "", subTitle: "", segue: "playVideoSegue", cellIdentifier: "imageCategoryCell", image: "3", videoName: "evone", videoType: "mp4"))
         
-        izomeCategories.append(ProductCategory(segue: "shoeSegue", image: "5"))
-        izomeCategories.append(ProductCategory(segue: "demoSegue", image: "6"))
-        izomeCategories.append(ProductCategory(segue: "demoSegue", image: "7"))
+        izomeCategories.append(ProductCategory(title: "", subTitle: "", segue: "shoeSegue", cellIdentifier: "imageCategoryCell", image: "4"))
+        izomeCategories.append(ProductCategory(title: "", subTitle: "", segue: "demoSegue", cellIdentifier: "imageCategoryCell", image: "5"))
+        izomeCategories.append(ProductCategory(title: "", subTitle: "", segue: "demoSegue", cellIdentifier: "imageCategoryCell", image: "6"))
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -51,25 +50,50 @@ class CategoryCollectionViewController : UIViewController, UICollectionViewDeleg
     }
     
     func collectionView( _ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "categoryCollectionCell", for: indexPath) as? CategoryCollectionViewCell else {
-            fatalError("The dequeued cell is not an instance of CategoryCollectionViewCell.")
+        var productCategory : ProductCategory? =  nil
+        if indexPath.section == 0 {
+            productCategory = self.evoneCategories[indexPath.row]
+        } else if indexPath.section == 1 {
+            productCategory = self.izomeCategories[indexPath.row]
+        } else {
+            fatalError("Cell identifier not found")
+        }
+        guard let cellIdentifier = productCategory?.cellIdentifier else {
+            fatalError("the cell identifier could not be set")
         }
         
-        DispatchQueue.global(qos: .background).async {
-            if indexPath.section == 0 {
-                let image = UIImage(named: self.evoneCategories[indexPath.row].image)
-                DispatchQueue.main.async {
-                    cell.categoryImageView.image = image
-                }
-            } else if indexPath.section == 1 {
-                let image = UIImage(named: self.izomeCategories[indexPath.row].image)
-                DispatchQueue.main.async {
-                    cell.categoryImageView.image = image
+        if cellIdentifier == "imageCategoryCell" {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as? ImageCollectionViewCell else {
+                fatalError("The dequeued cell is not an instance of CategoryCollectionViewCell.")
+            }
+            cell.viewBG.layer.borderWidth = 1
+            cell.viewBG.layer.borderColor = UIColor.gray.cgColor
+            
+            DispatchQueue.global(qos: .background).async {
+                if indexPath.section == 0 {
+                    let image = UIImage(named: self.evoneCategories[indexPath.row].image)
+                    DispatchQueue.main.async {
+                            cell.categoryImageView.image = image
+                    }
+                } else if indexPath.section == 1 {
+                    let image = UIImage(named: self.izomeCategories[indexPath.row].image)
+                    DispatchQueue.main.async {cell.categoryImageView.image = image}
                 }
             }
+            return cell
+        } else if cellIdentifier == "textCategoryCell" {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as? TextCollectionViewCell else {
+                fatalError("The dequeued cell is not an instance of CategoryCollectionViewCell.")
+            }
+            cell.viewBG.layer.borderWidth = 1
+            cell.viewBG.layer.borderColor = UIColor.gray.cgColor
             
+            cell.titleLabel.text = productCategory?.title
+            cell.subtitleLabel.text = productCategory?.subTitle
+            return cell
+        } else {
+            fatalError("The cell identifier refers to no known identifiers")
         }
-        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
