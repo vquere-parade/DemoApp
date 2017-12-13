@@ -120,6 +120,7 @@ class CategoryCollectionViewController : UIViewController, UICollectionViewDeleg
     }
 
     private func playVideo(productVideo: ProductVideo?) {
+        try! AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, with: [])
         guard let pv = productVideo else {
             fatalError("Product Video not set")
         }
@@ -140,13 +141,13 @@ class CategoryCollectionViewController : UIViewController, UICollectionViewDeleg
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "categoryHeader", for: indexPath)
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "categoryHeader", for: indexPath) as? HeaderReusableView
         if indexPath.section == 0 {
-            
+            header?.headerImage.image = UIImage(named: "e-vone_logo")
         } else if indexPath.section == 1 {
-            
+            header?.headerImage.image = UIImage(named: "izome_logo")
         }
-        return header
+        return header!
     }
 }
 
