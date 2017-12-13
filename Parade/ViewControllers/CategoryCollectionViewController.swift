@@ -20,6 +20,8 @@ class CategoryCollectionViewController : UIViewController, UICollectionViewDeleg
     var selectedCategory: ProductCategory?
     fileprivate let sectionInsets = UIEdgeInsets(top: 0.0, left: 20.0, bottom: 0.0, right: 20.0)
     //fileprivate let itemsPerRow: CGFloat = 2
+    
+    var selectedProduct: ProductCategory?
 
     
     override func viewDidLoad() {
@@ -28,9 +30,7 @@ class CategoryCollectionViewController : UIViewController, UICollectionViewDeleg
         evoneCategories.append(ProductCategory(title: "Demo", subTitle: "Fall detection system blablablablablabla",  segue: "demoSegue", cellIdentifier: "textCategoryCell", image: "2"))
         evoneCategories.append(ProductVideo(title: "", subTitle: "", segue: "playVideoSegue", cellIdentifier: "imageCategoryCell", image: "3", videoName: "evone", videoType: "mp4"))
         
-        izomeCategories.append(ProductCategory(title: "", subTitle: "", segue: "shoeSegue", cellIdentifier: "imageCategoryCell", image: "4"))
-        izomeCategories.append(ProductCategory(title: "", subTitle: "", segue: "demoSegue", cellIdentifier: "imageCategoryCell", image: "5"))
-        izomeCategories.append(ProductCategory(title: "", subTitle: "", segue: "demoSegue", cellIdentifier: "imageCategoryCell", image: "6"))
+        izomeCategories.append(ProductPdf(title: "View PDF", subTitle: "This is a PDF", segue: "pdfSegue", cellIdentifier: "textCategoryCell", image: "4", pdfName: "ANALYSE-DATAVIZ-AZZOUG-SAURAY"))
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -50,15 +50,15 @@ class CategoryCollectionViewController : UIViewController, UICollectionViewDeleg
     }
     
     func collectionView( _ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        var productCategory : ProductCategory? =  nil
+        
         if indexPath.section == 0 {
-            productCategory = self.evoneCategories[indexPath.row]
+            selectedProduct = self.evoneCategories[indexPath.row]
         } else if indexPath.section == 1 {
-            productCategory = self.izomeCategories[indexPath.row]
+            selectedProduct = self.izomeCategories[indexPath.row]
         } else {
             fatalError("Cell identifier not found")
         }
-        guard let cellIdentifier = productCategory?.cellIdentifier else {
+        guard let cellIdentifier = selectedProduct?.cellIdentifier else {
             fatalError("the cell identifier could not be set")
         }
         
@@ -88,8 +88,8 @@ class CategoryCollectionViewController : UIViewController, UICollectionViewDeleg
             cell.viewBG.layer.borderWidth = 1
             cell.viewBG.layer.borderColor = UIColor.gray.cgColor
             
-            cell.titleLabel.text = productCategory?.title
-            cell.subtitleLabel.text = productCategory?.subTitle
+            cell.titleLabel.text = selectedProduct?.title
+            cell.subtitleLabel.text = selectedProduct?.subTitle
             return cell
         } else {
             fatalError("The cell identifier refers to no known identifiers")
@@ -108,6 +108,14 @@ class CategoryCollectionViewController : UIViewController, UICollectionViewDeleg
 
         } else {
             playVideo(productVideo: (selectedCategory as? ProductVideo))
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "pdfSegue" {
+            if let toViewController = segue.destination as? PdfViewController {
+                toViewController.productPdf = selectedProduct as? ProductPdf
+            }
         }
     }
 
@@ -140,13 +148,6 @@ class CategoryCollectionViewController : UIViewController, UICollectionViewDeleg
         }
         return header
     }
-    
-
-    /*
-    override func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
-        collectionViewLayout.invalidateLayout()
-    }
- */
 }
 
 extension CategoryCollectionViewController : UICollectionViewDelegateFlowLayout {

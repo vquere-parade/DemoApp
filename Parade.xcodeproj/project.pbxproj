@@ -23,6 +23,9 @@
 		A6699AA11FCF424E00A4DF6A /* ProductCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6699AA01FCF424E00A4DF6A /* ProductCategory.swift */; };
 		A6817E191FD080A200922C20 /* ProductVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6817E181FD080A200922C20 /* ProductVideo.swift */; };
 		A6817E291FD31BD000922C20 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6817E241FD31A7700922C20 /* AudioToolbox.framework */; };
+		A681A84F1FE11F320003DF0B /* PdfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A681A84E1FE11F320003DF0B /* PdfViewController.swift */; };
+		A681A8511FE120A50003DF0B /* ANALYSE-DATAVIZ-AZZOUG-SAURAY.pdf in Resources */ = {isa = PBXBuildFile; fileRef = A681A8501FE120A50003DF0B /* ANALYSE-DATAVIZ-AZZOUG-SAURAY.pdf */; };
+		A6A956E81FE121F2004C3493 /* ProductPdf.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A956E71FE121F2004C3493 /* ProductPdf.swift */; };
 		A6B77D8D1FDC77D000E7F322 /* TextCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B77D8C1FDC77D000E7F322 /* TextCollectionViewCell.swift */; };
 		A6E8BF051FCFE76600BC9C83 /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E8BF041FCFE76600BC9C83 /* DemoViewController.swift */; };
 		A6E8BF071FD017E600BC9C83 /* ShoeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E8BF061FD017E600BC9C83 /* ShoeViewController.swift */; };
@@ -68,6 +71,9 @@
 		A6699AA01FCF424E00A4DF6A /* ProductCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCategory.swift; sourceTree = "<group>"; };
 		A6817E181FD080A200922C20 /* ProductVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductVideo.swift; sourceTree = "<group>"; };
 		A6817E241FD31A7700922C20 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		A681A84E1FE11F320003DF0B /* PdfViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfViewController.swift; sourceTree = "<group>"; };
+		A681A8501FE120A50003DF0B /* ANALYSE-DATAVIZ-AZZOUG-SAURAY.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "ANALYSE-DATAVIZ-AZZOUG-SAURAY.pdf"; sourceTree = "<group>"; };
+		A6A956E71FE121F2004C3493 /* ProductPdf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductPdf.swift; sourceTree = "<group>"; };
 		A6B77D8C1FDC77D000E7F322 /* TextCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCollectionViewCell.swift; sourceTree = "<group>"; };
 		A6E8BF041FCFE76600BC9C83 /* DemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoViewController.swift; sourceTree = "<group>"; };
 		A6E8BF061FD017E600BC9C83 /* ShoeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoeViewController.swift; sourceTree = "<group>"; };
@@ -161,6 +167,7 @@
 				A6699A981FCECB8800A4DF6A /* Shoe.swift */,
 				A6699AA01FCF424E00A4DF6A /* ProductCategory.swift */,
 				A6817E181FD080A200922C20 /* ProductVideo.swift */,
+				A6A956E71FE121F2004C3493 /* ProductPdf.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -168,6 +175,7 @@
 		A6817E1C1FD16AAD00922C20 /* Videos */ = {
 			isa = PBXGroup;
 			children = (
+				A681A8501FE120A50003DF0B /* ANALYSE-DATAVIZ-AZZOUG-SAURAY.pdf */,
 				A6496BDF1FD70E7000D61091 /* evone.mp4 */,
 			);
 			path = Videos;
@@ -188,6 +196,7 @@
 				A6699A961FCECAFC00A4DF6A /* ShoeTableViewController.swift */,
 				A6699A9C1FCF0D3D00A4DF6A /* CategoryCollectionViewController.swift */,
 				A6E8BF041FCFE76600BC9C83 /* DemoViewController.swift */,
+				A681A84E1FE11F320003DF0B /* PdfViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -309,6 +318,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A681A8511FE120A50003DF0B /* ANALYSE-DATAVIZ-AZZOUG-SAURAY.pdf in Resources */,
 				A6699A711FCEC80800A4DF6A /* LaunchScreen.storyboard in Resources */,
 				A6496BE01FD70E7000D61091 /* evone.mp4 in Resources */,
 				A6699A6E1FCEC80800A4DF6A /* Assets.xcassets in Resources */,
@@ -337,6 +347,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6A956E81FE121F2004C3493 /* ProductPdf.swift in Sources */,
+				A681A84F1FE11F320003DF0B /* PdfViewController.swift in Sources */,
 				A6699A971FCECAFC00A4DF6A /* ShoeTableViewController.swift in Sources */,
 				A6E8BF071FD017E600BC9C83 /* ShoeViewController.swift in Sources */,
 				A6699A951FCEC95700A4DF6A /* ShoeTableViewCell.swift in Sources */,
