@@ -41,13 +41,13 @@ class DemoViewController : ViewController {
             name: .UIDeviceOrientationDidChange,
             object: nil)
 
-        let circle = CircleView(frame: CGRect(x: container.center.x, y: 0, width: 40, height: 60))
+        let circle = CircleView(frame: CGRect(x: view.center.x, y: view.center.y, width: 40, height: 40))
         //circle.backgroundColor = UIColor.clear
         //circle.center = view.center
         //circle.layer.borderColor = UIColor.white.cgColor
         //circle.layer.cornerRadius = 32.0
         //circle.layer.borderWidth = 2.0
-        container.addSubview(circle)
+        view.addSubview(circle)
         
         DispatchQueue.global(qos: .background).async {
             while true {
