@@ -14,9 +14,9 @@ class ProductVideo : ProductCategory {
     var videoName: String
     var videoType: String
     
-    init(title: String, subTitle: String, segue: String, cellIdentifier: String, image: String, videoName: String, videoType: String) {
+    init(title: String, info: String, segue: String, cellIdentifier: String, image: String, videoName: String, videoType: String) {
         self.videoName = videoName
         self.videoType = videoType
-        super.init(title: title, subTitle: subTitle, segue: segue, cellIdentifier: cellIdentifier, image: image)
+        super.init(title: title, info: info, segue: segue, cellIdentifier: cellIdentifier, image: image)
     }
 }

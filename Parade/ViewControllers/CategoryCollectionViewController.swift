@@ -26,11 +26,13 @@ class CategoryCollectionViewController : UIViewController, UICollectionViewDeleg
     
     override func viewDidLoad() {
         print("CategoryCollectionViewController")
-        evoneCategories.append(ProductCategory(title: "Products", subTitle: "", segue: "shoeSegue", cellIdentifier: "imageCategoryCell", image: "1"))
-        evoneCategories.append(ProductCategory(title: "Fall demo", subTitle: "Fall detection system blablablablablabla",  segue: "demoSegue", cellIdentifier: "imageCategoryCell", image: "fall"))
-        evoneCategories.append(ProductVideo(title: "Video", subTitle: "", segue: "playVideoSegue", cellIdentifier: "imageCategoryCell", image: "cloud", videoName: "evone_new", videoType: "mp4"))
+        evoneCategories.append(ProductCategory(title: "EVone Products", info: "Evone", segue: "shoeSegue", cellIdentifier: "imageCategoryCell", image: "1"))
+        evoneCategories.append(ProductCategory(title: "Fall demo", info: "",  segue: "demoSegue", cellIdentifier: "imageCategoryCell", image: "fall"))
+        evoneCategories.append(ProductVideo(title: "Video", info: "", segue: "playVideoSegue", cellIdentifier: "imageCategoryCell", image: "cloud", videoName: "evone_new", videoType: "mp4"))
+        evoneCategories.append(ProductCategory(title: "EVan Products", info: "Evan", segue: "shoeSegue", cellIdentifier: "imageCategoryCell", image: "9"))
         
-        izomeCategories.append(ProductPdf(title: "Communiqué de presse", subTitle: "This is a PDF", segue: "pdfSegue", cellIdentifier: "imageCategoryCell", image: "4", pdfName: "ANALYSE-DATAVIZ-AZZOUG-SAURAY"))
+        izomeCategories.append(ProductPdf(title: "Communiqué de presse", info: "This is a PDF", segue: "pdfSegue", cellIdentifier: "imageCategoryCell", image: "4", pdfName: "ANALYSE-DATAVIZ-AZZOUG-SAURAY"))
+        izomeCategories.append(ProductCategory(title: "Izome Products", info: "Izome", segue: "shoeSegue", cellIdentifier: "imageCategoryCell", image: "DSC_9396"))
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -111,7 +113,6 @@ class CategoryCollectionViewController : UIViewController, UICollectionViewDeleg
             cell.viewBG.layer.borderColor = UIColor.gray.cgColor
             
             cell.titleLabel.text = selectedProduct?.title
-            cell.subtitleLabel.text = selectedProduct?.subTitle
             return cell
         } else {
             fatalError("The cell identifier refers to no known identifiers")
@@ -137,6 +138,10 @@ class CategoryCollectionViewController : UIViewController, UICollectionViewDeleg
         if segue.identifier == "pdfSegue" {
             if let toViewController = segue.destination as? PdfViewController {
                 toViewController.productPdf = selectedProduct as? ProductPdf
+            }
+        } else if segue.identifier == "shoeSegue" {
+            if let toViewController = segue.destination as? ShoeTableViewController {
+                toViewController.shoeCategory = selectedCategory?.info
             }
         }
     }

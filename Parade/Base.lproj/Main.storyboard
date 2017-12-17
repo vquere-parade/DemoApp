@@ -205,7 +205,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="veg-QS-qQP">
-                                                    <rect key="frame" x="-10" y="0.0" width="50" height="50"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3Pk-OS-xae">
                                                             <rect key="frame" x="10" y="10" width="50" height="30"/>
@@ -286,7 +286,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jqK-q6-THO"/>
                     </view>
-                    <navigationItem key="navigationItem" title="EVone" id="FCh-oG-GZd"/>
+                    <navigationItem key="navigationItem" title="Parade" id="FCh-oG-GZd"/>
                     <connections>
                         <outlet property="collectionView" destination="qnu-hK-4Wb" id="7bg-eZ-m4D"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="shoeSegue" id="ihD-QJ-4tJ"/>
@@ -361,20 +361,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7ue-Yq-Ky9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="903" y="769"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="yMh-fj-pGD">
-            <objects>
-                <viewController id="yGK-o2-d0T" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="NPp-O8-0KD">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="fR2-o7-hMv"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PiR-Ch-hw7" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
         </scene>
     </scenes>
     <resources>

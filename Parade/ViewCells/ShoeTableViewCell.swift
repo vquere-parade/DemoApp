@@ -16,5 +16,4 @@ class ShoeTableViewCell : UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
 }

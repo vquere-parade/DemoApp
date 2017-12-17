@@ -15,7 +15,8 @@ class CircleView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        resetCircle()
+        //resetCircle(frame: frame, color: UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.9).cgColor)
+        resetCircle(frame: frame, color: UIColor.white.cgColor)
         addSubview(circle)
     }
     
@@ -23,21 +24,23 @@ class CircleView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func resetCircle() {
+    func resetCircle(frame: CGRect, color: CGColor) {
         
         var rectSide: CGFloat = 0
+        /*
         if (frame.size.width > frame.size.height) {
             rectSide = frame.size.height
         } else {
             rectSide = frame.size.width
         }
+        */
         
-        let circleRect = CGRect(x: (frame.size.width-rectSide)/2, y: (frame.size.height-rectSide)/2, width: rectSide, height: rectSide)
+        let circleRect = frame
         circle = UIView(frame: circleRect)
         circle.backgroundColor = UIColor.clear
         circle.layer.cornerRadius = rectSide/2
         circle.layer.borderWidth = 2.0
-        circle.layer.borderColor = UIColor.white.cgColor
+        circle.layer.borderColor = color
     }
     
     func resizeCircle (summand: CGFloat) {

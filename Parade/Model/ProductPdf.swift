@@ -13,8 +13,8 @@ class ProductPdf : ProductCategory {
     
     var pdfName: String
     
-    init(title: String, subTitle: String, segue: String, cellIdentifier: String, image: String, pdfName: String) {
+    init(title: String, info: String, segue: String, cellIdentifier: String, image: String, pdfName: String) {
         self.pdfName = pdfName
-        super.init(title: title, subTitle: subTitle, segue: segue, cellIdentifier: cellIdentifier, image: image)
+        super.init(title: title, info: info, segue: segue, cellIdentifier: cellIdentifier, image: image)
     }
 }
