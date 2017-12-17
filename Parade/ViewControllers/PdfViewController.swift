@@ -16,7 +16,6 @@ class PdfViewController: UIViewController {
         super.viewDidLoad()
         print("viewDidLoad")
         //Bundle.main.url(forResource: pv.videoName, withExtension: pv.videoType)!
-        print(productPdf?.pdfName)
         if let pdfURL = Bundle.main.url(forResource: productPdf?.pdfName, withExtension: "pdf")  {
             do {
                 print("do")

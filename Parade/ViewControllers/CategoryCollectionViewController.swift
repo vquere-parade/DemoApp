@@ -18,7 +18,7 @@ class CategoryCollectionViewController : UIViewController, UICollectionViewDeleg
     var evoneCategories = [ProductCategory]()
     var izomeCategories = [ProductCategory]()
     var selectedCategory: ProductCategory?
-    fileprivate let sectionInsets = UIEdgeInsets(top: 0.0, left: 20.0, bottom: 0.0, right: 20.0)
+    fileprivate let sectionInsets = UIEdgeInsets(top: 0.0, left: 10.0, bottom: 0.0, right: 10.0)
     //fileprivate let itemsPerRow: CGFloat = 2
     
     var selectedProduct: ProductCategory?
@@ -26,11 +26,11 @@ class CategoryCollectionViewController : UIViewController, UICollectionViewDeleg
     
     override func viewDidLoad() {
         print("CategoryCollectionViewController")
-        evoneCategories.append(ProductCategory(title: "", subTitle: "", segue: "shoeSegue", cellIdentifier: "imageCategoryCell", image: "1"))
-        evoneCategories.append(ProductCategory(title: "Demo", subTitle: "Fall detection system blablablablablabla",  segue: "demoSegue", cellIdentifier: "textCategoryCell", image: "2"))
-        evoneCategories.append(ProductVideo(title: "", subTitle: "", segue: "playVideoSegue", cellIdentifier: "imageCategoryCell", image: "3", videoName: "evone", videoType: "mp4"))
+        evoneCategories.append(ProductCategory(title: "Products", subTitle: "", segue: "shoeSegue", cellIdentifier: "imageCategoryCell", image: "1"))
+        evoneCategories.append(ProductCategory(title: "Fall demo", subTitle: "Fall detection system blablablablablabla",  segue: "demoSegue", cellIdentifier: "imageCategoryCell", image: "fall"))
+        evoneCategories.append(ProductVideo(title: "Video", subTitle: "", segue: "playVideoSegue", cellIdentifier: "imageCategoryCell", image: "cloud", videoName: "evone_new", videoType: "mp4"))
         
-        izomeCategories.append(ProductPdf(title: "View PDF", subTitle: "This is a PDF", segue: "pdfSegue", cellIdentifier: "textCategoryCell", image: "4", pdfName: "ANALYSE-DATAVIZ-AZZOUG-SAURAY"))
+        izomeCategories.append(ProductPdf(title: "Communiqué de presse", subTitle: "This is a PDF", segue: "pdfSegue", cellIdentifier: "imageCategoryCell", image: "4", pdfName: "ANALYSE-DATAVIZ-AZZOUG-SAURAY"))
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -66,18 +66,38 @@ class CategoryCollectionViewController : UIViewController, UICollectionViewDeleg
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as? ImageCollectionViewCell else {
                 fatalError("The dequeued cell is not an instance of CategoryCollectionViewCell.")
             }
-            cell.viewBG.layer.borderWidth = 1
-            cell.viewBG.layer.borderColor = UIColor.gray.cgColor
+            cell.layer.cornerRadius = 7;
+            cell.layer.masksToBounds = true;
+            //cell.viewBG.layer.borderWidth = 1
+            //cell.viewBG.layer.borderColor = UIColor.gray.cgColor
             
             DispatchQueue.global(qos: .background).async {
+                var image: UIImage?
+                var text: String?
                 if indexPath.section == 0 {
-                    let image = UIImage(named: self.evoneCategories[indexPath.row].image)
-                    DispatchQueue.main.async {
-                            cell.categoryImageView.image = image
-                    }
+                    image = UIImage(named: self.evoneCategories[indexPath.row].image)
+                    text = self.evoneCategories[indexPath.row].title
+                    
                 } else if indexPath.section == 1 {
-                    let image = UIImage(named: self.izomeCategories[indexPath.row].image)
-                    DispatchQueue.main.async {cell.categoryImageView.image = image}
+                    image = UIImage(named: self.izomeCategories[indexPath.row].image)
+                    text = self.izomeCategories[indexPath.row].title
+                }
+                
+                DispatchQueue.main.async {
+                    cell.categoryImageView.image = image
+                    //cell.categoryImageView.image = cell.categoryImageView.image?.withRenderingMode(.alwaysTemplate)
+                    //cell.categoryImageView.tintColor = UIColor(red: 1.0, green: 0.5, blue: 0.5, alpha: 0.8)
+                    let darkBlur = UIBlurEffect(style: UIBlurEffectStyle.dark)
+                    // 2
+                    let blurView = CustomIntensityVisualEffectView(effect: darkBlur, intensity: CGFloat(0.3))
+                    blurView.frame = cell.categoryImageView.bounds
+                    blurView.tag = 100
+                    // 3
+                    if let oldView = cell.categoryImageView.viewWithTag(100) {
+                        oldView.removeFromSuperview()
+                    }
+                    cell.categoryImageView.addSubview(blurView)
+                    cell.categoryLabel.text = text
                 }
             }
             return cell
@@ -85,6 +105,8 @@ class CategoryCollectionViewController : UIViewController, UICollectionViewDeleg
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as? TextCollectionViewCell else {
                 fatalError("The dequeued cell is not an instance of CategoryCollectionViewCell.")
             }
+            cell.layer.cornerRadius = 7;
+            cell.layer.masksToBounds = true;
             cell.viewBG.layer.borderWidth = 1
             cell.viewBG.layer.borderColor = UIColor.gray.cgColor
             
@@ -124,6 +146,8 @@ class CategoryCollectionViewController : UIViewController, UICollectionViewDeleg
         guard let pv = productVideo else {
             fatalError("Product Video not set")
         }
+        print(pv.videoName)
+        print(pv.videoType)
         let movieURL = Bundle.main.url(forResource: pv.videoName, withExtension: pv.videoType)!
         //let asset = AVURLAsset(url: movieURL, options: nil)
         let player = AVPlayer(url: movieURL)
@@ -137,15 +161,28 @@ class CategoryCollectionViewController : UIViewController, UICollectionViewDeleg
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
-        collectionView.collectionViewLayout.invalidateLayout()
+        //collectionView.collectionViewLayout.invalidateLayout()
+        collectionView.reloadData()
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "categoryHeader", for: indexPath) as? HeaderReusableView
         if indexPath.section == 0 {
             header?.headerImage.image = UIImage(named: "e-vone_logo")
+            
         } else if indexPath.section == 1 {
             header?.headerImage.image = UIImage(named: "izome_logo")
+        }
+        if UIDevice.current.orientation == UIDeviceOrientation.portrait {
+            header?.layoutMargins.left = 10
+            header?.layoutMargins.right = 100
+            header?.layoutMargins.top = 10
+            header?.layoutMargins.bottom = 100
+        } else {
+            header?.layoutMargins.left = 30
+            header?.layoutMargins.right = 100
+            header?.layoutMargins.top = 30
+            header?.layoutMargins.bottom = 100
         }
         return header!
     }

@@ -13,12 +13,16 @@ import AudioToolbox
 import AVFoundation
 
 class DemoViewController : ViewController {
+    
+    
+    @IBOutlet weak var container: UIView!
     var motionManager: CMMotionManager!
     var vibration : Bool = false
     
+    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var fallImage: UIImageView!
     override func viewDidLoad() {
-        print("salut")
-        
+        blur()
         DispatchQueue.global(qos: .background).async {
             while true {
                 if self.vibration {
@@ -36,8 +40,39 @@ class DemoViewController : ViewController {
             selector: #selector(self.orientationChanged),
             name: .UIDeviceOrientationDidChange,
             object: nil)
+
+        let circle = CircleView(frame: CGRect(x: container.center.x, y: 0, width: 40, height: 60))
+        //circle.backgroundColor = UIColor.clear
+        //circle.center = view.center
+        //circle.layer.borderColor = UIColor.white.cgColor
+        //circle.layer.cornerRadius = 32.0
+        //circle.layer.borderWidth = 2.0
+        container.addSubview(circle)
+        
+        DispatchQueue.global(qos: .background).async {
+            while true {
+                DispatchQueue.main.async {
+                    circle.resizeCircleWithPulseAinmation(30, duration: 1.0)
+                }
+                sleep(1)
+            }
+        }
     }
     
+    
+    func blur() {
+        let darkBlur = UIBlurEffect(style: UIBlurEffectStyle.dark)
+        // 2
+        let blurView = CustomIntensityVisualEffectView(effect: darkBlur, intensity: CGFloat(0.5))
+        blurView.frame = fallImage.bounds
+        blurView.tag = 101
+        if let oldView = fallImage.viewWithTag(101) {
+            oldView.removeFromSuperview()
+        }
+        // 3
+        fallImage.addSubview(blurView)
+        
+    }
     @objc func orientationChanged(notification: NSNotification) {
         if UIDevice.current.orientation == UIDeviceOrientation.faceDown {
             print("face down")
@@ -46,6 +81,7 @@ class DemoViewController : ViewController {
             print("face up")
             vibration = false
         }
+        blur()
     }
     
     func toggleTorch(on: Bool) {

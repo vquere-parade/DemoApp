@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A63C15341FE671F3000907E0 /* CustomeIntensityVisualEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63C15331FE671F3000907E0 /* CustomeIntensityVisualEffect.swift */; };
+		A63C15371FE67D49000907E0 /* evone_new.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A63C15361FE67D49000907E0 /* evone_new.mp4 */; };
+		A63C15391FE68011000907E0 /* LineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63C15381FE68011000907E0 /* LineModel.swift */; };
+		A63C153B1FE68765000907E0 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63C153A1FE68765000907E0 /* CircleView.swift */; };
 		A6496BE01FD70E7000D61091 /* evone.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A6496BDF1FD70E7000D61091 /* evone.mp4 */; };
 		A6699A671FCEC80800A4DF6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6699A661FCEC80800A4DF6A /* AppDelegate.swift */; };
 		A6699A691FCEC80800A4DF6A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6699A681FCEC80800A4DF6A /* ViewController.swift */; };
@@ -50,6 +54,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A63C15331FE671F3000907E0 /* CustomeIntensityVisualEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomeIntensityVisualEffect.swift; sourceTree = "<group>"; };
+		A63C15361FE67D49000907E0 /* evone_new.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = evone_new.mp4; path = ../../../../../Downloads/evone_new.mp4; sourceTree = "<group>"; };
+		A63C15381FE68011000907E0 /* LineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineModel.swift; sourceTree = "<group>"; };
+		A63C153A1FE68765000907E0 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		A6496BDF1FD70E7000D61091 /* evone.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = evone.mp4; sourceTree = "<group>"; };
 		A6699A631FCEC80800A4DF6A /* Parade.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Parade.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6699A661FCEC80800A4DF6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +115,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A63C15321FE671DD000907E0 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A63C15331FE671F3000907E0 /* CustomeIntensityVisualEffect.swift */,
+				A63C15381FE68011000907E0 /* LineModel.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		A6699A5A1FCEC80800A4DF6A = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +148,7 @@
 		A6699A651FCEC80800A4DF6A /* Parade */ = {
 			isa = PBXGroup;
 			children = (
+				A63C15321FE671DD000907E0 /* Utils */,
 				A6A956E91FE129BD004C3493 /* Views */,
 				A6817E171FD0809300922C20 /* Model */,
 				A6E8BF031FCFE75000BC9C83 /* ViewCells */,
@@ -178,6 +196,7 @@
 		A6817E1C1FD16AAD00922C20 /* Videos */ = {
 			isa = PBXGroup;
 			children = (
+				A63C15361FE67D49000907E0 /* evone_new.mp4 */,
 				A681A8501FE120A50003DF0B /* ANALYSE-DATAVIZ-AZZOUG-SAURAY.pdf */,
 				A6496BDF1FD70E7000D61091 /* evone.mp4 */,
 			);
@@ -196,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				A6A956EA1FE129CE004C3493 /* HeaderReusableView.swift */,
+				A63C153A1FE68765000907E0 /* CircleView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -333,6 +353,7 @@
 				A6699A711FCEC80800A4DF6A /* LaunchScreen.storyboard in Resources */,
 				A6496BE01FD70E7000D61091 /* evone.mp4 in Resources */,
 				A6699A6E1FCEC80800A4DF6A /* Assets.xcassets in Resources */,
+				A63C15371FE67D49000907E0 /* evone_new.mp4 in Resources */,
 				A6699A6C1FCEC80800A4DF6A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -364,8 +385,11 @@
 				A6699A971FCECAFC00A4DF6A /* ShoeTableViewController.swift in Sources */,
 				A6E8BF071FD017E600BC9C83 /* ShoeViewController.swift in Sources */,
 				A6699A951FCEC95700A4DF6A /* ShoeTableViewCell.swift in Sources */,
+				A63C15391FE68011000907E0 /* LineModel.swift in Sources */,
+				A63C153B1FE68765000907E0 /* CircleView.swift in Sources */,
 				A6699A691FCEC80800A4DF6A /* ViewController.swift in Sources */,
 				A6E8BF051FCFE76600BC9C83 /* DemoViewController.swift in Sources */,
+				A63C15341FE671F3000907E0 /* CustomeIntensityVisualEffect.swift in Sources */,
 				A6699A991FCECB8800A4DF6A /* Shoe.swift in Sources */,
 				A6699A671FCEC80800A4DF6A /* AppDelegate.swift in Sources */,
 				A6B77D8D1FDC77D000E7F322 /* TextCollectionViewCell.swift in Sources */,
