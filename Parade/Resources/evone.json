@@ -3,26 +3,86 @@
     "title": "EVone",
     "image": "DSC_9396",
     "models": [
-               {
-               "image": "DSC_9396",
-               "view_sequence": [
-                                 {
-                                 "mime_type": "image/jpeg",
-                                 "html_type": "img",
-                                 "content": "DSC_9396"
-                                 },
-                                 {
-                                 "mime_type": "text/plain",
-                                 "html_type": "h1",
-                                 "content": "Designed for Workers"
-                                 },
-                                 {
-                                 "mime_type": "text/plain",
-                                 "html_type": "p",
-                                 "content": "Izome is a fall detection shoe designed for workers"
-                                 }
-                                 ]
-               }
-               ]
+        {
+            "image": "1",
+            "view_sequence": [
+                {
+                    "mime_type": "image/jpeg",
+                    "html_type": "img",
+                    "content": "1"
+                }
+            ]
+        },
+        {
+            "image": "2",
+            "view_sequence": [
+                {
+                    "mime_type": "image/jpeg",
+                    "html_type": "img",
+                    "content": "2"
+                }
+            ]
+        },
+        {
+            "image": "3",
+            "view_sequence": [
+                {
+                    "mime_type": "image/jpeg",
+                    "html_type": "img",
+                    "content": "3"
+                }
+            ]
+        },
+        {
+            "image": "4",
+            "view_sequence": [
+                {
+                    "mime_type": "image/jpeg",
+                    "html_type": "img",
+                    "content": "4"
+                }
+            ]
+        },
+        {
+            "image": "5",
+            "view_sequence": [
+                {
+                    "mime_type": "image/jpeg",
+                    "html_type": "img",
+                    "content": "5"
+                }
+            ]
+        },
+        {
+            "image": "6",
+            "view_sequence": [
+                {
+                    "mime_type": "image/jpeg",
+                    "html_type": "img",
+                    "content": "6"
+                }
+            ]
+        },
+        {
+            "image": "7",
+            "view_sequence": [
+                {
+                    "mime_type": "image/jpeg",
+                    "html_type": "img",
+                    "content": "7"
+                }
+            ]
+        },
+        {
+            "image": "8",
+            "view_sequence": [
+                {
+                    "mime_type": "image/jpeg",
+                    "html_type": "img",
+                    "content": "8"
+                }
+            ]
+        }
+    ]
 }
 

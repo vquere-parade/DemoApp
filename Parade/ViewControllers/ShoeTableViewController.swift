@@ -11,8 +11,8 @@ import UIKit
 
 class ShoeTableViewController : UITableViewController {
     
-    var shoes = [Shoe]()
-    var selectedShoe: Shoe?
+    var shoes = [Shoe.Model]()
+    var selectedShoe: Shoe.Model?
     var jsonFile: String?
     
     override func viewDidLoad() {
@@ -32,62 +32,12 @@ class ShoeTableViewController : UITableViewController {
                     fatalError("JSON error")
                 }
                 print("jsonContent ok")
-                self.title = jsonContent["title"] as! String
-                
+                let shoe = Shoe(json: jsonContent)
+                self.title = shoe?.title
+                for model in (shoe?.models)! {
+                    self.shoes.append(model)
+                }
             }
-
-            //
-            /*
-            if sc == "Evone" {
-                self.shoes.append(Shoe(name: "test", image: "1", description: loremIpsum))
-                self.shoes.append(Shoe(name: "test", image: "2", description: loremIpsum))
-                self.shoes.append(Shoe(name: "test", image: "3", description: loremIpsum))
-                self.shoes.append(Shoe(name: "test", image: "4", description: loremIpsum))
-                self.shoes.append(Shoe(name: "test", image: "5", description: loremIpsum))
-                self.shoes.append(Shoe(name: "test", image: "6", description: loremIpsum))
-                self.shoes.append(Shoe(name: "test", image: "7", description: loremIpsum))
-                self.shoes.append(Shoe(name: "test", image: "8", description: loremIpsum))
-            } else if sc == "Evan" {
-                self.shoes.append(Shoe(name: "test", image: "9", description: loremIpsum))
-                self.shoes.append(Shoe(name: "test", image: "10", description: loremIpsum))
-                self.shoes.append(Shoe(name: "test", image: "11", description: loremIpsum))
-                self.shoes.append(Shoe(name: "test", image: "12", description: loremIpsum))
-                self.shoes.append(Shoe(name: "test", image: "13", description: loremIpsum))
-                self.shoes.append(Shoe(name: "test", image: "14", description: loremIpsum))
-                self.shoes.append(Shoe(name: "test", image: "15", description: loremIpsum))
-                self.shoes.append(Shoe(name: "test", image: "16", description: loremIpsum))
-                self.shoes.append(Shoe(name: "test", image: "17", description: loremIpsum))
-                self.shoes.append(Shoe(name: "test", image: "18", description: loremIpsum))
-                self.shoes.append(Shoe(name: "test", image: "19", description: loremIpsum))
-                self.shoes.append(Shoe(name: "test", image: "20", description: loremIpsum))
-                self.shoes.append(Shoe(name: "test", image: "21", description: loremIpsum))
-            } else if sc == "Izome" {
-                self.shoes.append(Shoe(name: "test", image: "DSC_9396", description: loremIpsum))
-                self.shoes.append(Shoe(name: "test", image: "DSC_9397", description: loremIpsum))
-                self.shoes.append(Shoe(name: "test", image: "DSC_9398", description: loremIpsum))
-                self.shoes.append(Shoe(name: "test", image: "DSC_9399", description: loremIpsum))
-                self.shoes.append(Shoe(name: "test", image: "DSC_9400", description: loremIpsum))
-                self.shoes.append(Shoe(name: "test", image: "DSC_9401", description: loremIpsum))
-                self.shoes.append(Shoe(name: "test", image: "DSC_9402", description: loremIpsum))
-                self.shoes.append(Shoe(name: "test", image: "DSC_9403", description: loremIpsum))
-                self.shoes.append(Shoe(name: "test", image: "DSC_9405", description: loremIpsum))
-                self.shoes.append(Shoe(name: "test", image: "DSC_9406", description: loremIpsum))
-                
-                self.shoes.append(Shoe(name: "test", image: "DSC_9409", description: loremIpsum))
-                self.shoes.append(Shoe(name: "test", image: "DSC_9410", description: loremIpsum))
-                self.shoes.append(Shoe(name: "test", image: "DSC_9411", description: loremIpsum))
-                self.shoes.append(Shoe(name: "test", image: "DSC_9412", description: loremIpsum))
-                self.shoes.append(Shoe(name: "test", image: "DSC_9413", description: loremIpsum))
-                self.shoes.append(Shoe(name: "test", image: "DSC_9414", description: loremIpsum))
-                self.shoes.append(Shoe(name: "test", image: "DSC_9415", description: loremIpsum))
-                self.shoes.append(Shoe(name: "test", image: "DSC_9416", description: loremIpsum))
-                self.shoes.append(Shoe(name: "test", image: "DSC_9417", description: loremIpsum))
-                self.shoes.append(Shoe(name: "test", image: "DSC_9418", description: loremIpsum))
-                
-            } else {
-                
-            }
-            */
         }
         
         
@@ -130,5 +80,4 @@ class ShoeTableViewController : UITableViewController {
             }
         }
     }
- 
 }

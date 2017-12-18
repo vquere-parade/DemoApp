@@ -23,7 +23,7 @@ class DemoViewController : ViewController {
     @IBOutlet weak var fallImage: UIImageView!
     
     let queue = DispatchQueue(label: "animationQueue", qos: .background)
-    var circles = [CircleView?]()
+    var circle : CircleView?
     
     override func viewDidLoad() {
         
@@ -53,11 +53,9 @@ class DemoViewController : ViewController {
     func animate() {
         //circles.append(CircleView(frame: CGRect(x: 0, y: 0, width: 40, height: 40)))
         //circles.append(CircleView(frame: CGRect(x: 0, y: 0, width: 30, height: 30)))
-        circles.append(CircleView(frame: CGRect(x: 0, y: 0, width: 20, height: 20)))
-        for c in circles {
-            c?.center = view.center
-            view.addSubview(c!)
-        }
+        circle = CircleView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+        self.circle?.center = view.center
+        self.view?.addSubview(circle!)
         var size = self.view.frame.width * 0.9
         if self.view.frame.height < size {
             size = self.view.frame.height * 0.9
@@ -65,9 +63,7 @@ class DemoViewController : ViewController {
         queue.async {
             while true {
                 DispatchQueue.main.async {
-                    for c in self.circles {
-                        c?.resizeCircleWithPulseAinmation(size, duration: 1.0)
-                    }
+                    self.circle?.resizeCircleWithPulseAinmation(size, duration: 1.0)
                 }
                 sleep(1)
             }
@@ -96,9 +92,7 @@ class DemoViewController : ViewController {
             print("face up")
             vibration = false
         }
-        for c in self.circles {
-            c?.removeFromSuperview()
-        }
+        self.circle?.removeFromSuperview()
 
         blur()
         animate()

@@ -11,29 +11,57 @@ import UIKit
 
 class Shoe {
     
-    class ShoeView {
+    class Model {
+        class ViewSequence {
+            var mimeType: String
+            var htmlType: String
+            var content: String
+            init?(json: [String: Any]) {
+                self.mimeType = json["mime_type"] as! String
+                self.htmlType = json["html_type"] as! String
+                self.content = json["content"] as! String
+            }
+        }
         var image: String
-        var mimeType: String
-        var htmlType: String
-        var content: String
-        
-        init(image: String, mimeType: String, htmlType: String, content: String) {
-            self.image = image
-            self.mimeType = mimeType
-            self.htmlType = htmlType
-            self.content = content
+        var viewSequence: [ViewSequence]
+    
+        init?(json: [String: Any]) {
+            self.image = json["image"] as! String
+            self.viewSequence = [ViewSequence]()
+            let viewSequence = json["view_sequence"] as! [[String: Any]]
+            for vs in viewSequence {
+                if let v = ViewSequence(json: vs) {
+                    self.viewSequence.append(v)
+                }
+            }
         }
     }
     
     var title: String
     var productId: String
-    var shoeViewSequence : [ShoeView]
+    var models : [Model]
     var image: String
     
-    init(title: String, productId: String, image: String, shoeViewSequence: [ShoeView]) {
+    init(title: String, productId: String, image: String, models: [Model]) {
         self.title = title
         self.image = image
         self.productId = productId
-        self.shoeViewSequence = [ShoeView]()
+        self.models = [Model]()
+    }
+    
+    init?(json: [String: Any]) {
+        self.title = json["title"] as! String
+        self.image = json["image"] as! String
+        self.productId = json["product_id"] as! String
+        let models = json["models"] as! [[String: Any]]
+        self.models = [Model]()
+        for m in models {
+            if let sv = Model(json: m) {
+                self.models.append(sv)
+            } else {
+                print("fail with json")
+            }
+        }
+        print(models)
     }
 }

@@ -9,16 +9,21 @@
 import Foundation
 import UIKit
 
-class ShoeViewController : ViewController {
+class ShoeViewController : UITableViewController {
     
     @IBOutlet weak var showImageView: UIImageView!
     
     @IBOutlet weak var titleTextView: UITextView!
     @IBOutlet weak var descriptionTextView: UITextView!
     
-    var shoe: Shoe?
+    var shoe: Shoe.Model?
 
     override func viewDidLoad() {
+        print("content:")
+        for vs in (shoe?.viewSequence)! {
+            print(vs.content)
+        }
+        
         /*
         if let thisShoe = shoe {
             

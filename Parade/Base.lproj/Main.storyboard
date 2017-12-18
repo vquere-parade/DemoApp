@@ -59,62 +59,41 @@
                     <view key="view" contentMode="scaleToFill" id="Fzm-g9-uRn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ajP-N0-hhG">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zNH-aU-4Nv">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="531.5"/>
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sample" translatesAutoresizingMaskIntoConstraints="NO" id="7Uh-tO-3RY">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="300" id="qZi-cg-wpX"/>
-                                                </constraints>
-                                            </imageView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="Titre" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="OWM-JB-3u8">
-                                                <rect key="frame" x="0.0" y="300" width="375" height="48"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sOu-fu-6ED">
-                                                <rect key="frame" x="0.0" y="348" width="375" height="183.5"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="zNH-aU-4Nv" firstAttribute="leading" secondItem="ajP-N0-hhG" secondAttribute="leading" id="5aI-VG-OOr"/>
-                                    <constraint firstAttribute="bottom" secondItem="zNH-aU-4Nv" secondAttribute="bottom" constant="71.5" id="ONg-fu-uMz"/>
-                                    <constraint firstItem="zNH-aU-4Nv" firstAttribute="top" secondItem="ajP-N0-hhG" secondAttribute="top" id="dW6-fh-fUH"/>
-                                    <constraint firstAttribute="trailing" secondItem="zNH-aU-4Nv" secondAttribute="trailing" id="hn1-JH-Rg5"/>
-                                </constraints>
-                            </scrollView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="ajP-N0-hhG" firstAttribute="trailing" secondItem="OJQ-eR-0og" secondAttribute="trailing" id="BJL-Hx-yCg"/>
-                            <constraint firstItem="ajP-N0-hhG" firstAttribute="bottom" secondItem="OJQ-eR-0og" secondAttribute="bottom" id="IRx-xO-Fbk"/>
-                            <constraint firstItem="zNH-aU-4Nv" firstAttribute="width" secondItem="Fzm-g9-uRn" secondAttribute="width" id="SHd-Vf-9tA"/>
-                            <constraint firstItem="ajP-N0-hhG" firstAttribute="top" secondItem="OJQ-eR-0og" secondAttribute="top" id="fRg-yi-tz3"/>
-                            <constraint firstItem="ajP-N0-hhG" firstAttribute="leading" secondItem="OJQ-eR-0og" secondAttribute="leading" id="gI6-V7-bZW"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="OJQ-eR-0og"/>
                     </view>
-                    <connections>
-                        <outlet property="descriptionTextView" destination="sOu-fu-6ED" id="PZX-13-gvn"/>
-                        <outlet property="showImageView" destination="7Uh-tO-3RY" id="Box-rC-yj9"/>
-                        <outlet property="titleTextView" destination="OWM-JB-3u8" id="L0a-p3-osd"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cCE-W4-sEj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1871.2" y="-333.28335832083962"/>
+        </scene>
+        <!--Shoe Table View Controller-->
+        <scene sceneID="6ie-W5-1um">
+            <objects>
+                <tableViewController id="U5L-U6-NuG" customClass="ShoeTableViewController" customModule="Parade" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="isP-hM-dUv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="WDx-eT-IdU">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WDx-eT-IdU" id="7nh-9A-zki">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="U5L-U6-NuG" id="2Ue-Q4-DqI"/>
+                            <outlet property="delegate" destination="U5L-U6-NuG" id="7iw-ag-9OS"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Ig-sj-Q9R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2790" y="-333"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="q6q-nc-b0N">
@@ -205,7 +184,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="veg-QS-qQP">
-                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <rect key="frame" x="-10" y="0.0" width="50" height="50"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3Pk-OS-xae">
                                                             <rect key="frame" x="10" y="10" width="50" height="30"/>
@@ -364,8 +343,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="e-vone_logo" width="2100" height="380"/>
+        <image name="e-vone_logo" width="405" height="73"/>
         <image name="fall" width="2810" height="1600"/>
-        <image name="sample" width="1500" height="1500"/>
     </resources>
 </document>

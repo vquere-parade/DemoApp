@@ -31,8 +31,8 @@ class CategoryCollectionViewController : UIViewController, UICollectionViewDeleg
         evoneCategories.append(ProductCategory(title: "", jsonFile: "evone", segue: "shoeSegue", cellIdentifier: "imageCategoryCell", image: "3-evone"))
         evoneCategories.append(ProductCategory(title: "", jsonFile: "evan", segue: "shoeSegue", cellIdentifier: "imageCategoryCell", image: "4-evan"))
         
-        izomeCategories.append(ProductVideo(title: "Izome Video", segue: "playVideoSegue", cellIdentifier: "imageCategoryCell", image: "5-videoizome", videoName: "izome", videoType: "mp4"))
-        izomeCategories.append(ProductCategory(title: "Izome Products", jsonFile: "izome", segue: "shoeSegue", cellIdentifier: "imageCategoryCell", image: "6-packshotizome"))
+        izomeCategories.append(ProductVideo(title: "", segue: "playVideoSegue", cellIdentifier: "imageCategoryCell", image: "5-videoizome", videoName: "izome", videoType: "mp4"))
+        izomeCategories.append(ProductCategory(title: "", jsonFile: "izome", segue: "shoeSegue", cellIdentifier: "imageCategoryCell", image: "6-packshotizome"))
         izomeCategories.append(ProductCategory(title: "", jsonFile: nil, segue: "demoSegue", cellIdentifier: "imageCategoryCell", image: "7-Falldemo"))
         izomeCategories.append(ProductPdf(title: "Press Release", segue: "pdfSegue", cellIdentifier: "imageCategoryCell", image: "2-video", pdfName: "PRESS_RELEASE-E-vone"))
     }
@@ -139,7 +139,7 @@ class CategoryCollectionViewController : UIViewController, UICollectionViewDeleg
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "pdfSegue" {
             if let toViewController = segue.destination as? PdfViewController {
-                toViewController.productPdf = selectedProduct as? ProductPdf
+                toViewController.productPdf = selectedCategory as? ProductPdf
             }
         } else if segue.identifier == "shoeSegue" {
             if let toViewController = segue.destination as? ShoeTableViewController {
