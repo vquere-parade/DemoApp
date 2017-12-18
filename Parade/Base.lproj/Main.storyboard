@@ -73,10 +73,10 @@
                                         </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="DSl-KY-Xhl" firstAttribute="top" secondItem="7nh-9A-zki" secondAttribute="top" id="6XQ-Cj-fEz"/>
-                                        <constraint firstItem="DSl-KY-Xhl" firstAttribute="leading" secondItem="7nh-9A-zki" secondAttribute="leading" id="9FI-SM-aKz"/>
-                                        <constraint firstAttribute="bottom" secondItem="DSl-KY-Xhl" secondAttribute="bottom" id="Mc7-dJ-M7a"/>
-                                        <constraint firstAttribute="trailing" secondItem="DSl-KY-Xhl" secondAttribute="trailing" id="zvw-vn-c6m"/>
+                                        <constraint firstItem="DSl-KY-Xhl" firstAttribute="top" secondItem="7nh-9A-zki" secondAttribute="top" id="b3P-SO-2c1"/>
+                                        <constraint firstAttribute="bottom" secondItem="DSl-KY-Xhl" secondAttribute="bottom" id="lJS-5l-Fcc"/>
+                                        <constraint firstAttribute="trailing" secondItem="DSl-KY-Xhl" secondAttribute="trailing" id="pA1-Xn-6IG"/>
+                                        <constraint firstItem="DSl-KY-Xhl" firstAttribute="leading" secondItem="7nh-9A-zki" secondAttribute="leading" id="s5J-mG-44z"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -142,7 +142,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Ig-sj-Q9R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1572" y="-448"/>
+            <point key="canvasLocation" x="1572" y="-448.42578710644682"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="q6q-nc-b0N">
@@ -233,7 +233,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="veg-QS-qQP">
-                                                    <rect key="frame" x="-10" y="0.0" width="50" height="50"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3Pk-OS-xae">
                                                             <rect key="frame" x="10" y="10" width="50" height="30"/>

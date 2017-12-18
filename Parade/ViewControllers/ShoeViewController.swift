@@ -15,6 +15,8 @@ class ShoeViewController : UITableViewController {
 
     override func viewDidLoad() {
         print("shoe")
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 117
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
     }
     
@@ -40,8 +42,6 @@ class ShoeViewController : UITableViewController {
                     cell.bgImage.image = image
                 }
             }
-            
-
             return cell
         } else if mv?.htmlType == "h1" {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "shoeTitle", for: indexPath) as? TitleViewCell else {
@@ -62,11 +62,10 @@ class ShoeViewController : UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let mv = shoe?.viewSequence[indexPath.row]
-        if mv?.htmlType == "img" {
-            return 200
+        if shoe?.viewSequence[indexPath.row].htmlType == "img" {
+            return 300
         } else {
-            return 50
+            return UITableViewAutomaticDimension
         }
     }
 }
