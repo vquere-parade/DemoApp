@@ -10,6 +10,9 @@
 		A61F8CEC1FE7BB53004C924D /* izome.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A61F8CEB1FE7BB53004C924D /* izome.mp4 */; };
 		A61F8CEE1FE7D737004C924D /* PRESS_RELEASE-E-vone.pdf in Resources */ = {isa = PBXBuildFile; fileRef = A61F8CED1FE7D737004C924D /* PRESS_RELEASE-E-vone.pdf */; };
 		A61F8CF01FE7D8F9004C924D /* EVONE_ CES_LASVEGAS.pdf in Resources */ = {isa = PBXBuildFile; fileRef = A61F8CEF1FE7D8F9004C924D /* EVONE_ CES_LASVEGAS.pdf */; };
+		A61F8CF21FE7F9F3004C924D /* ImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61F8CF11FE7F9F3004C924D /* ImageViewCell.swift */; };
+		A61F8CF41FE7FA0F004C924D /* TitleViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61F8CF31FE7FA0F004C924D /* TitleViewCell.swift */; };
+		A61F8CF61FE7FA1C004C924D /* BodyViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61F8CF51FE7FA1C004C924D /* BodyViewCell.swift */; };
 		A63C15341FE671F3000907E0 /* CustomeIntensityVisualEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63C15331FE671F3000907E0 /* CustomeIntensityVisualEffect.swift */; };
 		A63C15371FE67D49000907E0 /* evone_new.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A63C15361FE67D49000907E0 /* evone_new.mp4 */; };
 		A63C15391FE68011000907E0 /* LineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63C15381FE68011000907E0 /* LineModel.swift */; };
@@ -62,6 +65,9 @@
 		A61F8CEB1FE7BB53004C924D /* izome.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = izome.mp4; sourceTree = "<group>"; };
 		A61F8CED1FE7D737004C924D /* PRESS_RELEASE-E-vone.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "PRESS_RELEASE-E-vone.pdf"; sourceTree = "<group>"; };
 		A61F8CEF1FE7D8F9004C924D /* EVONE_ CES_LASVEGAS.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "EVONE_ CES_LASVEGAS.pdf"; sourceTree = "<group>"; };
+		A61F8CF11FE7F9F3004C924D /* ImageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewCell.swift; sourceTree = "<group>"; };
+		A61F8CF31FE7FA0F004C924D /* TitleViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewCell.swift; sourceTree = "<group>"; };
+		A61F8CF51FE7FA1C004C924D /* BodyViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyViewCell.swift; sourceTree = "<group>"; };
 		A63C15331FE671F3000907E0 /* CustomeIntensityVisualEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomeIntensityVisualEffect.swift; sourceTree = "<group>"; };
 		A63C15361FE67D49000907E0 /* evone_new.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = evone_new.mp4; path = ../../../../../Downloads/evone_new.mp4; sourceTree = "<group>"; };
 		A63C15381FE68011000907E0 /* LineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineModel.swift; sourceTree = "<group>"; };
@@ -253,6 +259,9 @@
 				A6699A941FCEC95700A4DF6A /* ShoeTableViewCell.swift */,
 				A6699A9A1FCF0D1F00A4DF6A /* ImageCollectionViewCell.swift */,
 				A6B77D8C1FDC77D000E7F322 /* TextCollectionViewCell.swift */,
+				A61F8CF11FE7F9F3004C924D /* ImageViewCell.swift */,
+				A61F8CF31FE7FA0F004C924D /* TitleViewCell.swift */,
+				A61F8CF51FE7FA1C004C924D /* BodyViewCell.swift */,
 			);
 			path = ViewCells;
 			sourceTree = "<group>";
@@ -407,9 +416,12 @@
 				A6699A951FCEC95700A4DF6A /* ShoeTableViewCell.swift in Sources */,
 				A63C15391FE68011000907E0 /* LineModel.swift in Sources */,
 				A63C153B1FE68765000907E0 /* CircleView.swift in Sources */,
+				A61F8CF61FE7FA1C004C924D /* BodyViewCell.swift in Sources */,
 				A6699A691FCEC80800A4DF6A /* ViewController.swift in Sources */,
 				A6E8BF051FCFE76600BC9C83 /* DemoViewController.swift in Sources */,
 				A63C15341FE671F3000907E0 /* CustomeIntensityVisualEffect.swift in Sources */,
+				A61F8CF41FE7FA0F004C924D /* TitleViewCell.swift in Sources */,
+				A61F8CF21FE7F9F3004C924D /* ImageViewCell.swift in Sources */,
 				A6699A991FCECB8800A4DF6A /* Shoe.swift in Sources */,
 				A6699A671FCEC80800A4DF6A /* AppDelegate.swift in Sources */,
 				A6B77D8D1FDC77D000E7F322 /* TextCollectionViewCell.swift in Sources */,
