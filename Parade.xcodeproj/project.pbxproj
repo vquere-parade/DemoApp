@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A61F8CEC1FE7BB53004C924D /* izome.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A61F8CEB1FE7BB53004C924D /* izome.mp4 */; };
+		A61F8CEE1FE7D737004C924D /* PRESS_RELEASE-E-vone.pdf in Resources */ = {isa = PBXBuildFile; fileRef = A61F8CED1FE7D737004C924D /* PRESS_RELEASE-E-vone.pdf */; };
+		A61F8CF01FE7D8F9004C924D /* EVONE_ CES_LASVEGAS.pdf in Resources */ = {isa = PBXBuildFile; fileRef = A61F8CEF1FE7D8F9004C924D /* EVONE_ CES_LASVEGAS.pdf */; };
 		A63C15341FE671F3000907E0 /* CustomeIntensityVisualEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63C15331FE671F3000907E0 /* CustomeIntensityVisualEffect.swift */; };
 		A63C15371FE67D49000907E0 /* evone_new.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A63C15361FE67D49000907E0 /* evone_new.mp4 */; };
 		A63C15391FE68011000907E0 /* LineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63C15381FE68011000907E0 /* LineModel.swift */; };
@@ -32,6 +35,9 @@
 		A6A956E81FE121F2004C3493 /* ProductPdf.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A956E71FE121F2004C3493 /* ProductPdf.swift */; };
 		A6A956EB1FE129CE004C3493 /* HeaderReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A956EA1FE129CE004C3493 /* HeaderReusableView.swift */; };
 		A6B77D8D1FDC77D000E7F322 /* TextCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B77D8C1FDC77D000E7F322 /* TextCollectionViewCell.swift */; };
+		A6DEB3961FE7ACD30060B827 /* izome.json in Resources */ = {isa = PBXBuildFile; fileRef = A6DEB3951FE7ACD30060B827 /* izome.json */; };
+		A6DEB39A1FE7B3C00060B827 /* evone.json in Resources */ = {isa = PBXBuildFile; fileRef = A6DEB3991FE7B3C00060B827 /* evone.json */; };
+		A6DEB39C1FE7B3D50060B827 /* evan.json in Resources */ = {isa = PBXBuildFile; fileRef = A6DEB39B1FE7B3D50060B827 /* evan.json */; };
 		A6E8BF051FCFE76600BC9C83 /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E8BF041FCFE76600BC9C83 /* DemoViewController.swift */; };
 		A6E8BF071FD017E600BC9C83 /* ShoeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E8BF061FD017E600BC9C83 /* ShoeViewController.swift */; };
 /* End PBXBuildFile section */
@@ -54,6 +60,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A61F8CEB1FE7BB53004C924D /* izome.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = izome.mp4; sourceTree = "<group>"; };
+		A61F8CED1FE7D737004C924D /* PRESS_RELEASE-E-vone.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "PRESS_RELEASE-E-vone.pdf"; sourceTree = "<group>"; };
+		A61F8CEF1FE7D8F9004C924D /* EVONE_ CES_LASVEGAS.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "EVONE_ CES_LASVEGAS.pdf"; sourceTree = "<group>"; };
 		A63C15331FE671F3000907E0 /* CustomeIntensityVisualEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomeIntensityVisualEffect.swift; sourceTree = "<group>"; };
 		A63C15361FE67D49000907E0 /* evone_new.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = evone_new.mp4; path = ../../../../../Downloads/evone_new.mp4; sourceTree = "<group>"; };
 		A63C15381FE68011000907E0 /* LineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineModel.swift; sourceTree = "<group>"; };
@@ -85,6 +94,9 @@
 		A6A956E71FE121F2004C3493 /* ProductPdf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductPdf.swift; sourceTree = "<group>"; };
 		A6A956EA1FE129CE004C3493 /* HeaderReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderReusableView.swift; sourceTree = "<group>"; };
 		A6B77D8C1FDC77D000E7F322 /* TextCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCollectionViewCell.swift; sourceTree = "<group>"; };
+		A6DEB3951FE7ACD30060B827 /* izome.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = izome.json; sourceTree = "<group>"; };
+		A6DEB3991FE7B3C00060B827 /* evone.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = evone.json; sourceTree = "<group>"; };
+		A6DEB39B1FE7B3D50060B827 /* evan.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = evan.json; sourceTree = "<group>"; };
 		A6E8BF041FCFE76600BC9C83 /* DemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoViewController.swift; sourceTree = "<group>"; };
 		A6E8BF061FD017E600BC9C83 /* ShoeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -153,7 +165,7 @@
 				A6817E171FD0809300922C20 /* Model */,
 				A6E8BF031FCFE75000BC9C83 /* ViewCells */,
 				A6E8BF021FCFE74300BC9C83 /* ViewControllers */,
-				A6817E1C1FD16AAD00922C20 /* Videos */,
+				A6817E1C1FD16AAD00922C20 /* Resources */,
 				A6699A661FCEC80800A4DF6A /* AppDelegate.swift */,
 				A6699A681FCEC80800A4DF6A /* ViewController.swift */,
 				A6699A6A1FCEC80800A4DF6A /* Main.storyboard */,
@@ -193,14 +205,20 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		A6817E1C1FD16AAD00922C20 /* Videos */ = {
+		A6817E1C1FD16AAD00922C20 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A61F8CEF1FE7D8F9004C924D /* EVONE_ CES_LASVEGAS.pdf */,
+				A61F8CED1FE7D737004C924D /* PRESS_RELEASE-E-vone.pdf */,
+				A61F8CEB1FE7BB53004C924D /* izome.mp4 */,
 				A63C15361FE67D49000907E0 /* evone_new.mp4 */,
 				A681A8501FE120A50003DF0B /* ANALYSE-DATAVIZ-AZZOUG-SAURAY.pdf */,
 				A6496BDF1FD70E7000D61091 /* evone.mp4 */,
+				A6DEB3951FE7ACD30060B827 /* izome.json */,
+				A6DEB3991FE7B3C00060B827 /* evone.json */,
+				A6DEB39B1FE7B3D50060B827 /* evan.json */,
 			);
-			path = Videos;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		A6817E231FD31A7700922C20 /* Frameworks */ = {
@@ -349,12 +367,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A61F8CF01FE7D8F9004C924D /* EVONE_ CES_LASVEGAS.pdf in Resources */,
 				A681A8511FE120A50003DF0B /* ANALYSE-DATAVIZ-AZZOUG-SAURAY.pdf in Resources */,
 				A6699A711FCEC80800A4DF6A /* LaunchScreen.storyboard in Resources */,
+				A61F8CEC1FE7BB53004C924D /* izome.mp4 in Resources */,
+				A6DEB3961FE7ACD30060B827 /* izome.json in Resources */,
 				A6496BE01FD70E7000D61091 /* evone.mp4 in Resources */,
 				A6699A6E1FCEC80800A4DF6A /* Assets.xcassets in Resources */,
 				A63C15371FE67D49000907E0 /* evone_new.mp4 in Resources */,
 				A6699A6C1FCEC80800A4DF6A /* Main.storyboard in Resources */,
+				A6DEB39C1FE7B3D50060B827 /* evan.json in Resources */,
+				A6DEB39A1FE7B3C00060B827 /* evone.json in Resources */,
+				A61F8CEE1FE7D737004C924D /* PRESS_RELEASE-E-vone.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

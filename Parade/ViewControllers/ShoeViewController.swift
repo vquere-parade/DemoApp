@@ -19,11 +19,14 @@ class ShoeViewController : ViewController {
     var shoe: Shoe?
 
     override func viewDidLoad() {
+        /*
         if let thisShoe = shoe {
+            
             self.title = thisShoe.name
             showImageView.image = UIImage(named: thisShoe.image)
             titleTextView.text = thisShoe.name
             descriptionTextView.text = thisShoe.description
         }
+         */
     }
 }

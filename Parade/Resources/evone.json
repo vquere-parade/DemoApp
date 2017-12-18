@@ -1,0 +1,28 @@
+{
+    "product_id": "evone",
+    "title": "EVone",
+    "image": "DSC_9396",
+    "models": [
+               {
+               "image": "DSC_9396",
+               "view_sequence": [
+                                 {
+                                 "mime_type": "image/jpeg",
+                                 "html_type": "img",
+                                 "content": "DSC_9396"
+                                 },
+                                 {
+                                 "mime_type": "text/plain",
+                                 "html_type": "h1",
+                                 "content": "Designed for Workers"
+                                 },
+                                 {
+                                 "mime_type": "text/plain",
+                                 "html_type": "p",
+                                 "content": "Izome is a fall detection shoe designed for workers"
+                                 }
+                                 ]
+               }
+               ]
+}
+

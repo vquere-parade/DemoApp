@@ -12,14 +12,14 @@ import UIKit
 class ProductCategory {
     
     var title: String
-    var info: String
+    var jsonFile: String?
     var segue: String
     var cellIdentifier: String
     var image: String
     
-    init(title: String, info: String, segue: String, cellIdentifier: String, image: String) {
+    init(title: String, jsonFile: String?, segue: String, cellIdentifier: String, image: String) {
         self.title = title
-        self.info = info
+        self.jsonFile = jsonFile
         self.segue = segue
         self.image = image
         self.cellIdentifier = cellIdentifier

@@ -26,13 +26,15 @@ class CategoryCollectionViewController : UIViewController, UICollectionViewDeleg
     
     override func viewDidLoad() {
         print("CategoryCollectionViewController")
-        evoneCategories.append(ProductCategory(title: "EVone Products", info: "Evone", segue: "shoeSegue", cellIdentifier: "imageCategoryCell", image: "1"))
-        evoneCategories.append(ProductCategory(title: "Fall demo", info: "",  segue: "demoSegue", cellIdentifier: "imageCategoryCell", image: "fall"))
-        evoneCategories.append(ProductVideo(title: "Video", info: "", segue: "playVideoSegue", cellIdentifier: "imageCategoryCell", image: "cloud", videoName: "evone_new", videoType: "mp4"))
-        evoneCategories.append(ProductCategory(title: "EVan Products", info: "Evan", segue: "shoeSegue", cellIdentifier: "imageCategoryCell", image: "9"))
+        evoneCategories.append(ProductPdf(title: "", segue: "pdfSegue", cellIdentifier: "imageCategoryCell", image: "1-presentation", pdfName: "EVONE_ CES_LASVEGAS"))
+        evoneCategories.append(ProductVideo(title: "", segue: "playVideoSegue", cellIdentifier: "imageCategoryCell", image: "2-video", videoName: "evone_new", videoType: "mp4"))
+        evoneCategories.append(ProductCategory(title: "", jsonFile: "evone", segue: "shoeSegue", cellIdentifier: "imageCategoryCell", image: "3-evone"))
+        evoneCategories.append(ProductCategory(title: "", jsonFile: "evan", segue: "shoeSegue", cellIdentifier: "imageCategoryCell", image: "4-evan"))
         
-        izomeCategories.append(ProductPdf(title: "Communiqué de presse", info: "This is a PDF", segue: "pdfSegue", cellIdentifier: "imageCategoryCell", image: "4", pdfName: "ANALYSE-DATAVIZ-AZZOUG-SAURAY"))
-        izomeCategories.append(ProductCategory(title: "Izome Products", info: "Izome", segue: "shoeSegue", cellIdentifier: "imageCategoryCell", image: "DSC_9396"))
+        izomeCategories.append(ProductVideo(title: "Izome Video", segue: "playVideoSegue", cellIdentifier: "imageCategoryCell", image: "5-videoizome", videoName: "izome", videoType: "mp4"))
+        izomeCategories.append(ProductCategory(title: "Izome Products", jsonFile: "izome", segue: "shoeSegue", cellIdentifier: "imageCategoryCell", image: "6-packshotizome"))
+        izomeCategories.append(ProductCategory(title: "", jsonFile: nil, segue: "demoSegue", cellIdentifier: "imageCategoryCell", image: "7-Falldemo"))
+        izomeCategories.append(ProductPdf(title: "Press Release", segue: "pdfSegue", cellIdentifier: "imageCategoryCell", image: "2-video", pdfName: "PRESS_RELEASE-E-vone"))
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -98,7 +100,7 @@ class CategoryCollectionViewController : UIViewController, UICollectionViewDeleg
                     if let oldView = cell.categoryImageView.viewWithTag(100) {
                         oldView.removeFromSuperview()
                     }
-                    cell.categoryImageView.addSubview(blurView)
+                    //cell.categoryImageView.addSubview(blurView)
                     cell.categoryLabel.text = text
                 }
             }
@@ -141,7 +143,7 @@ class CategoryCollectionViewController : UIViewController, UICollectionViewDeleg
             }
         } else if segue.identifier == "shoeSegue" {
             if let toViewController = segue.destination as? ShoeTableViewController {
-                toViewController.shoeCategory = selectedCategory?.info
+                toViewController.jsonFile = selectedCategory?.jsonFile
             }
         }
     }

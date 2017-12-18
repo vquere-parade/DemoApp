@@ -13,15 +13,31 @@ class ShoeTableViewController : UITableViewController {
     
     var shoes = [Shoe]()
     var selectedShoe: Shoe?
-    var shoeCategory: String?
+    var jsonFile: String?
     
     override func viewDidLoad() {
         self.tableView.rowHeight = 200
-        print("shoeCategory: "+shoeCategory!)
+        print("jsonFile: "+jsonFile!)
+        
+        //
+        
         let loremIpsum = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ultrices odio cursus felis ullamcorper, in semper arcu congue. In ornare diam vitae nulla dignissim, ac porttitor dolor consectetur. Curabitur dapibus placerat eros, et sodales lectus efficitur at. Vestibulum malesuada, mauris a convallis volutpat, urna lectus laoreet arcu, vitae dictum elit eros vitae mauris. Maecenas vitae enim quam. Phasellus aliquam dolor dolor. Quisque vel feugiat metus, sit amet posuere mauris. Etiam bibendum porttitor enim non porttitor. Praesent sit amet ultricies metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ultrices odio cursus felis ullamcorper, in semper arcu congue. In ornare diam vitae nulla dignissim, ac porttitor dolor consectetur. Curabitur dapibus placerat eros, et sodales lectus efficitur at. Vestibulum malesuada, mauris a convallis volutpat, urna lectus laoreet arcu, vitae dictum elit eros vitae mauris. Maecenas vitae enim quam. Phasellus aliquam dolor dolor. Quisque vel feugiat metus, sit amet posuere mauris. Etiam bibendum porttitor enim non porttitor. Praesent sit amet ultricies metus."
         
-        if let sc = shoeCategory {
-            self.title = sc
+        if let _jsonFile = jsonFile {
+            print("_jsonFile ok: "+_jsonFile)
+            if let filePath = Bundle.main.path(forResource: _jsonFile, ofType:"json") {
+                print("filePath ok")
+                let json = try? JSONSerialization.jsonObject(with: Data(contentsOf: URL(fileURLWithPath: filePath)), options: [])
+                guard let jsonContent = json as? [String: Any] else {
+                    fatalError("JSON error")
+                }
+                print("jsonContent ok")
+                self.title = jsonContent["title"] as! String
+                
+            }
+
+            //
+            /*
             if sc == "Evone" {
                 self.shoes.append(Shoe(name: "test", image: "1", description: loremIpsum))
                 self.shoes.append(Shoe(name: "test", image: "2", description: loremIpsum))
@@ -71,6 +87,7 @@ class ShoeTableViewController : UITableViewController {
             } else {
                 
             }
+            */
         }
         
         
