@@ -69,14 +69,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DSl-KY-Xhl">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="10" y="10" width="355" height="23.5"/>
                                         </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="DSl-KY-Xhl" firstAttribute="top" secondItem="7nh-9A-zki" secondAttribute="top" id="b3P-SO-2c1"/>
-                                        <constraint firstAttribute="bottom" secondItem="DSl-KY-Xhl" secondAttribute="bottom" id="lJS-5l-Fcc"/>
-                                        <constraint firstAttribute="trailing" secondItem="DSl-KY-Xhl" secondAttribute="trailing" id="pA1-Xn-6IG"/>
-                                        <constraint firstItem="DSl-KY-Xhl" firstAttribute="leading" secondItem="7nh-9A-zki" secondAttribute="leading" id="s5J-mG-44z"/>
+                                        <constraint firstItem="DSl-KY-Xhl" firstAttribute="top" secondItem="7nh-9A-zki" secondAttribute="top" constant="10" id="b3P-SO-2c1"/>
+                                        <constraint firstAttribute="bottom" secondItem="DSl-KY-Xhl" secondAttribute="bottom" constant="10" id="lJS-5l-Fcc"/>
+                                        <constraint firstAttribute="trailing" secondItem="DSl-KY-Xhl" secondAttribute="trailing" constant="10" id="pA1-Xn-6IG"/>
+                                        <constraint firstItem="DSl-KY-Xhl" firstAttribute="leading" secondItem="7nh-9A-zki" secondAttribute="leading" constant="10" id="s5J-mG-44z"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -319,7 +319,7 @@
                         <outlet property="collectionView" destination="qnu-hK-4Wb" id="7bg-eZ-m4D"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="shoeSegue" id="ihD-QJ-4tJ"/>
                         <segue destination="mCm-3S-nho" kind="show" identifier="demoSegue" id="luj-qG-axW"/>
-                        <segue destination="Bil-YB-lfm" kind="show" identifier="pdfSegue" id="iWw-8Z-HLo"/>
+                        <segue destination="Jnj-hA-tMT" kind="show" identifier="pdfSegue" id="iWw-8Z-HLo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jLw-pT-KjQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -385,10 +385,36 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="d37-e1-BIh"/>
                     </view>
+                    <navigationItem key="navigationItem" id="vZP-Pj-n1N">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="u21-mv-eYQ"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="wqh-h4-Q2Z"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="actionNavButton" destination="wqh-h4-Q2Z" id="LWU-rN-veb"/>
+                        <outlet property="cancelNavButton" destination="u21-mv-eYQ" id="9hc-c2-XhL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7ue-Yq-Ky9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="903" y="769"/>
+            <point key="canvasLocation" x="1240.8" y="768.66566716641682"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="7X3-IG-5nO">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Jnj-hA-tMT" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="TbL-ZS-XqO">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Bil-YB-lfm" kind="relationship" relationship="rootViewController" id="Fdg-Li-wZY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="El6-Bd-7Ne" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="398" y="788"/>
         </scene>
     </scenes>
     <resources>

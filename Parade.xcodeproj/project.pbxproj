@@ -7,17 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A60161761FEC18B1004AF1DE /* EVONE_ CES_LASVEGAS_JANVIER.pdf in Resources */ = {isa = PBXBuildFile; fileRef = A60161751FEC18B1004AF1DE /* EVONE_ CES_LASVEGAS_JANVIER.pdf */; };
+		A60161791FEC1E1A004AF1DE /* evone_new_video_en.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A60161781FEC1E1A004AF1DE /* evone_new_video_en.mp4 */; };
 		A61F8CEC1FE7BB53004C924D /* izome.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A61F8CEB1FE7BB53004C924D /* izome.mp4 */; };
 		A61F8CEE1FE7D737004C924D /* PRESS_RELEASE-E-vone.pdf in Resources */ = {isa = PBXBuildFile; fileRef = A61F8CED1FE7D737004C924D /* PRESS_RELEASE-E-vone.pdf */; };
-		A61F8CF01FE7D8F9004C924D /* EVONE_ CES_LASVEGAS.pdf in Resources */ = {isa = PBXBuildFile; fileRef = A61F8CEF1FE7D8F9004C924D /* EVONE_ CES_LASVEGAS.pdf */; };
 		A61F8CF21FE7F9F3004C924D /* ImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61F8CF11FE7F9F3004C924D /* ImageViewCell.swift */; };
 		A61F8CF41FE7FA0F004C924D /* TitleViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61F8CF31FE7FA0F004C924D /* TitleViewCell.swift */; };
 		A61F8CF61FE7FA1C004C924D /* BodyViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61F8CF51FE7FA1C004C924D /* BodyViewCell.swift */; };
 		A63C15341FE671F3000907E0 /* CustomeIntensityVisualEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63C15331FE671F3000907E0 /* CustomeIntensityVisualEffect.swift */; };
-		A63C15371FE67D49000907E0 /* evone_new.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A63C15361FE67D49000907E0 /* evone_new.mp4 */; };
 		A63C15391FE68011000907E0 /* LineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63C15381FE68011000907E0 /* LineModel.swift */; };
 		A63C153B1FE68765000907E0 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63C153A1FE68765000907E0 /* CircleView.swift */; };
-		A6496BE01FD70E7000D61091 /* evone.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A6496BDF1FD70E7000D61091 /* evone.mp4 */; };
 		A6699A671FCEC80800A4DF6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6699A661FCEC80800A4DF6A /* AppDelegate.swift */; };
 		A6699A691FCEC80800A4DF6A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6699A681FCEC80800A4DF6A /* ViewController.swift */; };
 		A6699A6C1FCEC80800A4DF6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6699A6A1FCEC80800A4DF6A /* Main.storyboard */; };
@@ -62,17 +61,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A60161751FEC18B1004AF1DE /* EVONE_ CES_LASVEGAS_JANVIER.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "EVONE_ CES_LASVEGAS_JANVIER.pdf"; sourceTree = "<group>"; };
+		A60161781FEC1E1A004AF1DE /* evone_new_video_en.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = evone_new_video_en.mp4; sourceTree = "<group>"; };
 		A61F8CEB1FE7BB53004C924D /* izome.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = izome.mp4; sourceTree = "<group>"; };
 		A61F8CED1FE7D737004C924D /* PRESS_RELEASE-E-vone.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "PRESS_RELEASE-E-vone.pdf"; sourceTree = "<group>"; };
-		A61F8CEF1FE7D8F9004C924D /* EVONE_ CES_LASVEGAS.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "EVONE_ CES_LASVEGAS.pdf"; sourceTree = "<group>"; };
 		A61F8CF11FE7F9F3004C924D /* ImageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewCell.swift; sourceTree = "<group>"; };
 		A61F8CF31FE7FA0F004C924D /* TitleViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewCell.swift; sourceTree = "<group>"; };
 		A61F8CF51FE7FA1C004C924D /* BodyViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyViewCell.swift; sourceTree = "<group>"; };
 		A63C15331FE671F3000907E0 /* CustomeIntensityVisualEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomeIntensityVisualEffect.swift; sourceTree = "<group>"; };
-		A63C15361FE67D49000907E0 /* evone_new.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = evone_new.mp4; path = ../../../../../Downloads/evone_new.mp4; sourceTree = "<group>"; };
 		A63C15381FE68011000907E0 /* LineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineModel.swift; sourceTree = "<group>"; };
 		A63C153A1FE68765000907E0 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
-		A6496BDF1FD70E7000D61091 /* evone.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = evone.mp4; sourceTree = "<group>"; };
 		A6699A631FCEC80800A4DF6A /* Parade.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Parade.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6699A661FCEC80800A4DF6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6699A681FCEC80800A4DF6A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -212,11 +210,10 @@
 		A6817E1C1FD16AAD00922C20 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				A61F8CEF1FE7D8F9004C924D /* EVONE_ CES_LASVEGAS.pdf */,
+				A60161781FEC1E1A004AF1DE /* evone_new_video_en.mp4 */,
+				A60161751FEC18B1004AF1DE /* EVONE_ CES_LASVEGAS_JANVIER.pdf */,
 				A61F8CED1FE7D737004C924D /* PRESS_RELEASE-E-vone.pdf */,
 				A61F8CEB1FE7BB53004C924D /* izome.mp4 */,
-				A63C15361FE67D49000907E0 /* evone_new.mp4 */,
-				A6496BDF1FD70E7000D61091 /* evone.mp4 */,
 				A6DEB3951FE7ACD30060B827 /* izome.json */,
 				A6DEB3991FE7B3C00060B827 /* evone.json */,
 				A6DEB39B1FE7B3D50060B827 /* evan.json */,
@@ -373,13 +370,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A61F8CF01FE7D8F9004C924D /* EVONE_ CES_LASVEGAS.pdf in Resources */,
 				A6699A711FCEC80800A4DF6A /* LaunchScreen.storyboard in Resources */,
+				A60161791FEC1E1A004AF1DE /* evone_new_video_en.mp4 in Resources */,
 				A61F8CEC1FE7BB53004C924D /* izome.mp4 in Resources */,
+				A60161761FEC18B1004AF1DE /* EVONE_ CES_LASVEGAS_JANVIER.pdf in Resources */,
 				A6DEB3961FE7ACD30060B827 /* izome.json in Resources */,
-				A6496BE01FD70E7000D61091 /* evone.mp4 in Resources */,
 				A6699A6E1FCEC80800A4DF6A /* Assets.xcassets in Resources */,
-				A63C15371FE67D49000907E0 /* evone_new.mp4 in Resources */,
 				A6699A6C1FCEC80800A4DF6A /* Main.storyboard in Resources */,
 				A6DEB39C1FE7B3D50060B827 /* evan.json in Resources */,
 				A6DEB39A1FE7B3C00060B827 /* evone.json in Resources */,

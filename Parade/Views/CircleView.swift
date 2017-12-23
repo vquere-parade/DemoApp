@@ -26,7 +26,7 @@ class CircleView: UIView {
     
     func resetCircle(frame: CGRect, color: CGColor) {
         
-        var rectSide: CGFloat = 0
+        let  rectSide: CGFloat = 0
         /*
         if (frame.size.width > frame.size.height) {
             rectSide = frame.size.height

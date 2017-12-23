@@ -26,16 +26,25 @@ class DemoViewController : ViewController {
     var circle : CircleView?
     
     override func viewDidLoad() {
-        
         DispatchQueue.global(qos: .background).async {
-            while true {
+            var keepGoing = true
+            while keepGoing {
                 if self.vibration {
                     AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
                     self.toggleTorch(on: true)
                 } else {
                     self.toggleTorch(on: false)
                 }
-                sleep(1)
+                DispatchQueue.main.async {
+                    if self.viewIfLoaded?.window == nil {
+                        keepGoing = false
+                        self.toggleTorch(on: false)
+                    }
+                }
+                if keepGoing {
+                    sleep(1)
+                }
+                
             }
         }
 
@@ -48,6 +57,10 @@ class DemoViewController : ViewController {
         
         blur()
         animate()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
     }
     
     func animate() {

@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="parade_dark" translatesAutoresizingMaskIntoConstraints="NO" id="1eA-go-Ttc">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoizomewhite" translatesAutoresizingMaskIntoConstraints="NO" id="1eA-go-Ttc">
                                 <rect key="frame" x="100" y="120" width="175" height="447"/>
                             </imageView>
                         </subviews>
@@ -38,6 +38,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="parade_dark" width="510" height="512"/>
+        <image name="logoizomewhite" width="1433" height="377"/>
     </resources>
 </document>

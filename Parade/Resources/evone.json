@@ -11,26 +11,6 @@
                     "mime_type": "image/jpeg",
                     "html_type": "img",
                     "content": "1"
-                },
-                {
-                    "mime_type": "text/plain",
-                    "html_type": "h1",
-                    "content": "E-Vone comes in Yellow"
-                },
-                {
-                    "mime_type": "text/plain",
-                    "html_type": "p",
-                    "content": "This is the new E-Vone shoe. It has amazing features like fall detection. It will take care of you and prevent any harm."
-                },
-                {
-                    "mime_type": "image/jpeg",
-                    "html_type": "img",
-                    "content": "2"
-                },
-                {
-                    "mime_type": "text/plain",
-                    "html_type": "h1",
-                    "content": "And it's great !"
                 }
             ]
         },

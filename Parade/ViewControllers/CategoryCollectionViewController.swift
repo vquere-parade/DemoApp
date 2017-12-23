@@ -26,8 +26,10 @@ class CategoryCollectionViewController : UIViewController, UICollectionViewDeleg
     
     override func viewDidLoad() {
         print("CategoryCollectionViewController")
-        evoneCategories.append(ProductPdf(title: "", segue: "pdfSegue", cellIdentifier: "imageCategoryCell", image: "1-presentation", pdfName: "EVONE_ CES_LASVEGAS"))
-        evoneCategories.append(ProductVideo(title: "", segue: "playVideoSegue", cellIdentifier: "imageCategoryCell", image: "2-video", videoName: "evone_new", videoType: "mp4"))
+        evoneCategories.append(ProductPdf(title: "", segue: "pdfSegue", cellIdentifier: "imageCategoryCell", image: "1-presentation", pdfName: "EVONE_ CES_LASVEGAS_JANVIER"))
+        //evoneCategories.append(ProductVideo(title: "", segue: "playVideoSegue", cellIdentifier: "imageCategoryCell", image: "2-video", videoName: "evone_video_en", videoType: "mp4"))
+        evoneCategories.append(ProductVideo(title: "", segue: "playVideoSegue", cellIdentifier: "imageCategoryCell", image: "2-video", videoName: "evone_new_video_en", videoType: "mp4"))
+
         evoneCategories.append(ProductCategory(title: "", jsonFile: "evone", segue: "shoeSegue", cellIdentifier: "imageCategoryCell", image: "3-evone"))
         evoneCategories.append(ProductCategory(title: "", jsonFile: "evan", segue: "shoeSegue", cellIdentifier: "imageCategoryCell", image: "4-evan"))
         
@@ -138,7 +140,7 @@ class CategoryCollectionViewController : UIViewController, UICollectionViewDeleg
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "pdfSegue" {
-            if let toViewController = segue.destination as? PdfViewController {
+            if let nc = segue.destination as? UINavigationController, let toViewController = nc.visibleViewController as? PdfViewController {
                 toViewController.productPdf = selectedCategory as? ProductPdf
             }
         } else if segue.identifier == "shoeSegue" {
