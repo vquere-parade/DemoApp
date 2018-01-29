@@ -26,14 +26,14 @@ class CategoryCollectionViewController : UIViewController, UICollectionViewDeleg
     
     override func viewDidLoad() {
         print("CategoryCollectionViewController")
-        evoneCategories.append(ProductPdf(title: "", segue: "pdfSegue", cellIdentifier: "imageCategoryCell", image: "1-presentation", pdfName: "EVONE_CES_LAS_VEGAS_JANVIER_2018"))
+        evoneCategories.append(ProductPdf(title: "", segue: "pdfSegue", cellIdentifier: "imageCategoryCell", image: "1-presentation", pdfName: "EVONE_ CES_LAS_VEGAS_JANVIER_2018"))
         //evoneCategories.append(ProductVideo(title: "", segue: "playVideoSegue", cellIdentifier: "imageCategoryCell", image: "2-video", videoName: "evone_video_en", videoType: "mp4"))
         evoneCategories.append(ProductVideo(title: "", segue: "playVideoSegue", cellIdentifier: "imageCategoryCell", image: "2-video", videoName: "evone_senior_en", videoType: "mp4"))
 
         evoneCategories.append(ProductCategory(title: "", jsonFile: "evone", segue: "shoeSegue", cellIdentifier: "imageCategoryCell", image: "3-evone"))
         evoneCategories.append(ProductCategory(title: "", jsonFile: "evan", segue: "shoeSegue", cellIdentifier: "imageCategoryCell", image: "4-evan"))
         
-        izomeCategories.append(ProductVideo(title: "", segue: "playVideoSegue", cellIdentifier: "imageCategoryCell", image: "5-videoizome", videoName: "izome", videoType: "mp4"))
+        izomeCategories.append(ProductVideo(title: "", segue: "playVideoSegue", cellIdentifier: "imageCategoryCell", image: "5-videoizome", videoName: "evone_tech", videoType: "mp4"))
         izomeCategories.append(ProductCategory(title: "", jsonFile: "izome", segue: "shoeSegue", cellIdentifier: "imageCategoryCell", image: "6-packshotizome"))
         izomeCategories.append(ProductCategory(title: "", jsonFile: nil, segue: "demoSegue", cellIdentifier: "imageCategoryCell", image: "7-Falldemo"))
         izomeCategories.append(ProductPdf(title: "Press Release", segue: "pdfSegue", cellIdentifier: "imageCategoryCell", image: "2-video", pdfName: "PRESS_RELEASE-E-vone"))

@@ -34,10 +34,13 @@ class ShoeViewController : UITableViewController {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "shoeImg", for: indexPath) as? ImageViewCell else {
                 fatalError("The dequeued cell is not an instance of ShoeTableViewCell.")
             }
-            cell.frame = CGRect(x: cell.bgImage.frame.origin.x,y: cell.bgImage.frame.origin.y,width: 400, height: 300);
-            cell.bgImage.frame = CGRect(x: cell.bgImage.frame.origin.x,y: cell.bgImage.frame.origin.y,width: 400, height: 300);
+            let image = UIImage(named: (mv?.content)!)
+            
+            cell.frame = CGRect(x: cell.bgImage.frame.origin.x,y: cell.bgImage.frame.origin.y, width: cell.frame.width, height: (image?.size.height)!);
+            cell.bgImage.frame = CGRect(x: cell.bgImage.frame.origin.x,y: cell.bgImage.frame.origin.y, width: cell.frame.width, height: (image?.size.height)!);
+            //cell.bgImage.frame = CGRect(x: cell.bgImage.frame.origin.x,y: cell.bgImage.frame.origin.y,width: 400, height: 300);
+             
             DispatchQueue.global(qos: .background).async {
-                let image = UIImage(named: (mv?.content)!)
                 DispatchQueue.main.async {
                     cell.bgImage.image = image
                 }
@@ -63,7 +66,7 @@ class ShoeViewController : UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if shoe?.viewSequence[indexPath.row].htmlType == "img" {
-            return 300
+            return 400
         } else {
             return UITableViewAutomaticDimension
         }
