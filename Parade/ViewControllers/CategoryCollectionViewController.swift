@@ -15,6 +15,7 @@ class CategoryCollectionViewController : UIViewController, UICollectionViewDeleg
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+    var callToActionCategories = [ProductCategory]()
     var evoneCategories = [ProductCategory]()
     var izomeCategories = [ProductCategory]()
     var selectedCategory: ProductCategory?
@@ -27,7 +28,6 @@ class CategoryCollectionViewController : UIViewController, UICollectionViewDeleg
     override func viewDidLoad() {
         print("CategoryCollectionViewController")
         evoneCategories.append(ProductPdf(title: "", segue: "pdfSegue", cellIdentifier: "imageCategoryCell", image: "1-presentation", pdfName: "EVONE_ CES_LAS_VEGAS_JANVIER_2018"))
-        //evoneCategories.append(ProductVideo(title: "", segue: "playVideoSegue", cellIdentifier: "imageCategoryCell", image: "2-video", videoName: "evone_video_en", videoType: "mp4"))
         evoneCategories.append(ProductVideo(title: "", segue: "playVideoSegue", cellIdentifier: "imageCategoryCell", image: "2-video", videoName: "evone_senior_en", videoType: "mp4"))
 
         evoneCategories.append(ProductCategory(title: "", jsonFile: "evone", segue: "shoeSegue", cellIdentifier: "imageCategoryCell", image: "3-evone"))
@@ -40,26 +40,30 @@ class CategoryCollectionViewController : UIViewController, UICollectionViewDeleg
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 2
+        return 3
     }
     
     func collectionView( _ collectionView: UICollectionView,
                                  numberOfItemsInSection section: Int) -> Int {
         print("section: "+String(section))
         if section == 0 {
-            return evoneCategories.count
+            return callToActionCategories.count
         } else if section == 1 {
+            return evoneCategories.count
+        } else if section == 2{
             return izomeCategories.count
-        } else {
+        }
+        else {
             return 0
         }
     }
     
     func collectionView( _ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         if indexPath.section == 0 {
-            selectedProduct = self.evoneCategories[indexPath.row]
+            selectedProduct = self.callToActionCategories[indexPath.row]
         } else if indexPath.section == 1 {
+            selectedProduct = self.evoneCategories[indexPath.row]
+        } else if indexPath.section == 2 {
             selectedProduct = self.izomeCategories[indexPath.row]
         } else {
             fatalError("Cell identifier not found")
@@ -81,10 +85,14 @@ class CategoryCollectionViewController : UIViewController, UICollectionViewDeleg
                 var image: UIImage?
                 var text: String?
                 if indexPath.section == 0 {
+                    image = UIImage(named: self.callToActionCategories[indexPath.row].image)
+                    text = self.callToActionCategories[indexPath.row].title
+                    
+                } else if indexPath.section == 1 {
                     image = UIImage(named: self.evoneCategories[indexPath.row].image)
                     text = self.evoneCategories[indexPath.row].title
                     
-                } else if indexPath.section == 1 {
+                } else if indexPath.section == 2 {
                     image = UIImage(named: self.izomeCategories[indexPath.row].image)
                     text = self.izomeCategories[indexPath.row].title
                 }
@@ -125,8 +133,10 @@ class CategoryCollectionViewController : UIViewController, UICollectionViewDeleg
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.section == 0 {
-            selectedCategory = evoneCategories[indexPath.row]
+            selectedCategory = callToActionCategories[indexPath.row]
         } else if indexPath.section == 1 {
+            selectedCategory = evoneCategories[indexPath.row]
+        } else if indexPath.section == 2 {
             selectedCategory = izomeCategories[indexPath.row]
         }
         
@@ -177,9 +187,10 @@ class CategoryCollectionViewController : UIViewController, UICollectionViewDeleg
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "categoryHeader", for: indexPath) as? HeaderReusableView
         if indexPath.section == 0 {
-            header?.headerImage.image = UIImage(named: "e-vone_logo")
-            
+            header?.headerImage.image = nil
         } else if indexPath.section == 1 {
+            header?.headerImage.image = UIImage(named: "e-vone_logo")
+        } else if indexPath.section == 2 {
             header?.headerImage.image = UIImage(named: "izome_logo")
         }
         if UIDevice.current.orientation == UIDeviceOrientation.portrait {

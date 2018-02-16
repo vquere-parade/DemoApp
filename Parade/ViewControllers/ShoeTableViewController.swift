@@ -16,13 +16,7 @@ class ShoeTableViewController : UITableViewController {
     var jsonFile: String?
     
     override func viewDidLoad() {
-        self.tableView.rowHeight = 200
-        print("jsonFile: "+jsonFile!)
-        
-        //
-        /*
-        let loremIpsum = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ultrices odio cursus felis ullamcorper, in semper arcu congue. In ornare diam vitae nulla dignissim, ac porttitor dolor consectetur. Curabitur dapibus placerat eros, et sodales lectus efficitur at. Vestibulum malesuada, mauris a convallis volutpat, urna lectus laoreet arcu, vitae dictum elit eros vitae mauris. Maecenas vitae enim quam. Phasellus aliquam dolor dolor. Quisque vel feugiat metus, sit amet posuere mauris. Etiam bibendum porttitor enim non porttitor. Praesent sit amet ultricies metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ultrices odio cursus felis ullamcorper, in semper arcu congue. In ornare diam vitae nulla dignissim, ac porttitor dolor consectetur. Curabitur dapibus placerat eros, et sodales lectus efficitur at. Vestibulum malesuada, mauris a convallis volutpat, urna lectus laoreet arcu, vitae dictum elit eros vitae mauris. Maecenas vitae enim quam. Phasellus aliquam dolor dolor. Quisque vel feugiat metus, sit amet posuere mauris. Etiam bibendum porttitor enim non porttitor. Praesent sit amet ultricies metus."
-         */
+        self.tableView.rowHeight = 200        
         if let _jsonFile = jsonFile {
             print("_jsonFile ok: "+_jsonFile)
             if let filePath = Bundle.main.path(forResource: _jsonFile, ofType:"json") {

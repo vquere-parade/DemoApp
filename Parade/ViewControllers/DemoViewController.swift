@@ -11,6 +11,8 @@ import CoreMotion
 import UIKit
 import AudioToolbox
 import AVFoundation
+import SwiftyJSON
+import Alamofire
 
 class DemoViewController : ViewController {
     
@@ -101,6 +103,14 @@ class DemoViewController : ViewController {
         if UIDevice.current.orientation == UIDeviceOrientation.faceDown {
             print("face down")
             vibration = true
+            // trigger the fall event
+            Alamofire.request("https://bla", method: .post, parameters: ["id": "", "key": ""], encoding: JSONEncoding.default, headers: HTTPHeaders()).response { response in
+                if response.response?.statusCode == 200 {
+                    // success
+                } else {
+                    // failure
+                }
+            }
         } else {
             print("face up")
             vibration = false
