@@ -28,6 +28,15 @@ class DemoViewController : ViewController {
     var circle : CircleView?
     
     override func viewDidLoad() {
+        
+        let userDefaults = UserDefaults.standard
+        let id = userDefaults.string(forKey: "id")
+        let key = userDefaults.string(forKey: "key")
+        
+        if id == nil || key == nil {
+            showInputDialog()
+        }
+        
         DispatchQueue.global(qos: .background).async {
             var keepGoing = true
             while keepGoing {
@@ -96,7 +105,6 @@ class DemoViewController : ViewController {
         }
         // 3
         fallImage.addSubview(blurView)
-        
     }
     @objc func orientationChanged(notification: NSNotification) {
         
@@ -104,13 +112,29 @@ class DemoViewController : ViewController {
             print("face down")
             vibration = true
             // trigger the fall event
-            Alamofire.request("https://bla", method: .post, parameters: ["id": "", "key": ""], encoding: JSONEncoding.default, headers: HTTPHeaders()).response { response in
-                if response.response?.statusCode == 200 {
-                    // success
-                } else {
-                    // failure
+            let userDefaults = UserDefaults.standard
+            let id = userDefaults.string(forKey: "id")
+            let key = userDefaults.string(forKey: "key")
+            if id != nil && key != nil {
+                let endpoint = Bundle.main.infoDictionary!["FAKE_FALL_ENDPOINT"] as! String
+                Alamofire.request(endpoint, method: .post, parameters: ["id": id!, "key": key!], encoding: JSONEncoding.default, headers: HTTPHeaders()).response { response in
+                    let code = response.response?.statusCode
+                    if code == 200 {
+                        // success
+                        print("success sending fall alert")
+                    } else if code == 401 {
+                        // failure
+                        print("error sending fall alert: 401")
+                        userDefaults.removeObject(forKey: "id")
+                        userDefaults.removeObject(forKey: "key")
+                        self.showToast(message: "Vos identifiants sont erronés. La chute n'a pas pu être générée")
+                    } else {
+                        print("error sending fall alert: ", code!)
+                        self.showToast(message: "Le serveur est hors ligne ou a rencontré un problème. Réessayez ultérieurement")
+                    }
                 }
             }
+            
         } else {
             print("face up")
             vibration = false
@@ -142,4 +166,63 @@ class DemoViewController : ViewController {
             print("Torch is not available")
         }
     }
+    
+    func showInputDialog() {
+        //Creating UIAlertController and
+        //Setting title and message for the alert dialog
+        let alertController = UIAlertController(title: "Authentification requise", message: "Afin de déclencher une alerte de test, rentrez vos identifiants", preferredStyle: .alert)
+        
+        //the confirm action taking the inputs
+        let confirmAction = UIAlertAction(title: "Valider", style: .default) { (_) in
+            
+            //getting the input values from user
+            let id = alertController.textFields?[0].text
+            let key = alertController.textFields?[1].text
+            
+            //self.labelMessage.text = "Name: " + name! + "Email: " + email!
+            let userDefaults = UserDefaults.standard
+            userDefaults.set(id, forKey: "id")
+            userDefaults.set(key, forKey: "key")
+        }
+        
+        //the cancel action doing nothing
+        let cancelAction = UIAlertAction(title: "Annuler", style: .cancel) { (_) in }
+        
+        //adding textfields to our dialog box
+        alertController.addTextField { (textField) in
+            textField.placeholder = "Nom d'utilisateur"
+        }
+        alertController.addTextField { (textField) in
+            textField.isSecureTextEntry = true
+            textField.placeholder = "Mot de passe"
+        }
+        
+        //adding the action to dialogbox
+        alertController.addAction(confirmAction)
+        alertController.addAction(cancelAction)
+        
+        //finally presenting the dialog box
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    /*
+    func showToast(message : String) {
+        
+        let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 75, y: self.view.frame.size.height-100, width: 150, height: 35))
+        toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        toastLabel.textColor = UIColor.white
+        toastLabel.textAlignment = .center;
+        toastLabel.font = UIFont(name: "Montserrat-Light", size: 12.0)
+        toastLabel.text = message
+        toastLabel.alpha = 1.0
+        toastLabel.layer.cornerRadius = 10;
+        toastLabel.clipsToBounds  =  true
+        self.view.addSubview(toastLabel)
+        UIView.animate(withDuration: 4.0, delay: 0.1, options: .curveEaseOut, animations: {
+            toastLabel.alpha = 0.0
+        }, completion: {(isCompleted) in
+            toastLabel.removeFromSuperview()
+        })
+    }
+ */
 }
