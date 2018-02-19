@@ -113,24 +113,25 @@ class DemoViewController : ViewController {
             vibration = true
             // trigger the fall event
             let userDefaults = UserDefaults.standard
-            let id = userDefaults.string(forKey: "id")
-            let key = userDefaults.string(forKey: "key")
+            let id = userDefaults.object(forKey: "id")
+            let key = userDefaults.object(forKey: "key")
             if id != nil && key != nil {
                 let endpoint = Bundle.main.infoDictionary!["FAKE_FALL_ENDPOINT"] as! String
                 Alamofire.request(endpoint, method: .post, parameters: ["id": id!, "key": key!], encoding: JSONEncoding.default, headers: HTTPHeaders()).response { response in
-                    let code = response.response?.statusCode
-                    if code == 200 {
-                        // success
-                        print("success sending fall alert")
-                    } else if code == 401 {
-                        // failure
-                        print("error sending fall alert: 401")
-                        userDefaults.removeObject(forKey: "id")
-                        userDefaults.removeObject(forKey: "key")
-                        self.showToast(message: "Vos identifiants sont erronés. La chute n'a pas pu être générée")
-                    } else {
-                        print("error sending fall alert: ", code!)
-                        self.showToast(message: "Le serveur est hors ligne ou a rencontré un problème. Réessayez ultérieurement")
+                    if let code = response.response?.statusCode {
+                        if code == 200 {
+                            // success
+                            print("success sending fall alert")
+                        } else if code == 401 {
+                            // failure
+                            print("error sending fall alert: 401")
+                            userDefaults.removeObject(forKey: "id")
+                            userDefaults.removeObject(forKey: "key")
+                            self.showToast(message: "Vos identifiants sont erronés. La chute n'a pas pu être générée")
+                        } else {
+                            print("error sending fall alert: ", code)
+                            self.showToast(message: "Le serveur est hors ligne ou a rencontré un problème. Réessayez ultérieurement")
+                        }
                     }
                 }
             }

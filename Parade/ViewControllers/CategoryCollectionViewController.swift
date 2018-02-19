@@ -18,6 +18,9 @@ class CategoryCollectionViewController : UIViewController, UICollectionViewDeleg
     var callToActionCategories = [ProductCategory]()
     var evoneCategories = [ProductCategory]()
     var izomeCategories = [ProductCategory]()
+    
+    var categories = [[ProductCategory]]()
+    
     var selectedCategory: ProductCategory?
     fileprivate let sectionInsets = UIEdgeInsets(top: 0.0, left: 10.0, bottom: 0.0, right: 10.0)
     //fileprivate let itemsPerRow: CGFloat = 2
@@ -27,16 +30,21 @@ class CategoryCollectionViewController : UIViewController, UICollectionViewDeleg
     
     override func viewDidLoad() {
         print("CategoryCollectionViewController")
-        evoneCategories.append(ProductPdf(title: "", segue: "pdfSegue", cellIdentifier: "imageCategoryCell", image: "1-presentation", pdfName: "EVONE_ CES_LAS_VEGAS_JANVIER_2018"))
-        evoneCategories.append(ProductVideo(title: "", segue: "playVideoSegue", cellIdentifier: "imageCategoryCell", image: "2-video", videoName: "evone_senior_en", videoType: "mp4"))
+        callToActionCategories.append(ProductText(title: "Discover Evone", text: "blablabla", segue: "shoeSegue", cellIdentifier: "textCategoryCell", size: 1))
+        callToActionCategories.append(ProductCategory(title: "", jsonFile: nil, segue: "demoSegue", cellIdentifier: "imageCategoryCell", image: "7-Falldemo", size: 1))
+        evoneCategories.append(ProductPdf(title: "", segue: "pdfSegue", cellIdentifier: "imageCategoryCell", image: "1-presentation", pdfName: "EVONE_ CES_LAS_VEGAS_JANVIER_2018", size: 2))
+        evoneCategories.append(ProductVideo(title: "", segue: "playVideoSegue", cellIdentifier: "imageCategoryCell", image: "2-video", videoName: "evone_senior_en", videoType: "mp4", size: 2))
 
-        evoneCategories.append(ProductCategory(title: "", jsonFile: "evone", segue: "shoeSegue", cellIdentifier: "imageCategoryCell", image: "3-evone"))
-        evoneCategories.append(ProductCategory(title: "", jsonFile: "evan", segue: "shoeSegue", cellIdentifier: "imageCategoryCell", image: "4-evan"))
+        evoneCategories.append(ProductCategory(title: "", jsonFile: "evone", segue: "shoeSegue", cellIdentifier: "imageCategoryCell", image: "3-evone", size: 1))
+        evoneCategories.append(ProductCategory(title: "", jsonFile: "evan", segue: "shoeSegue", cellIdentifier: "imageCategoryCell", image: "4-evan", size: 2))
         
-        izomeCategories.append(ProductVideo(title: "", segue: "playVideoSegue", cellIdentifier: "imageCategoryCell", image: "5-videoizome", videoName: "evone_tech", videoType: "mp4"))
-        izomeCategories.append(ProductCategory(title: "", jsonFile: "izome", segue: "shoeSegue", cellIdentifier: "imageCategoryCell", image: "6-packshotizome"))
-        izomeCategories.append(ProductCategory(title: "", jsonFile: nil, segue: "demoSegue", cellIdentifier: "imageCategoryCell", image: "7-Falldemo"))
-        izomeCategories.append(ProductPdf(title: "Press Release", segue: "pdfSegue", cellIdentifier: "imageCategoryCell", image: "2-video", pdfName: "PRESS_RELEASE-E-vone"))
+        izomeCategories.append(ProductVideo(title: "", segue: "playVideoSegue", cellIdentifier: "imageCategoryCell", image: "5-videoizome", videoName: "evone_tech", videoType: "mp4", size : 2))
+        izomeCategories.append(ProductCategory(title: "", jsonFile: "izome", segue: "shoeSegue", cellIdentifier: "imageCategoryCell", image: "6-packshotizome", size: 2))
+        izomeCategories.append(ProductPdf(title: "Press Release", segue: "pdfSegue", cellIdentifier: "imageCategoryCell", image: "2-video", pdfName: "PRESS_RELEASE-E-vone", size: 2))
+        
+        categories.append(callToActionCategories)
+        categories.append(evoneCategories)
+        categories.append(izomeCategories)
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -46,28 +54,12 @@ class CategoryCollectionViewController : UIViewController, UICollectionViewDeleg
     func collectionView( _ collectionView: UICollectionView,
                                  numberOfItemsInSection section: Int) -> Int {
         print("section: "+String(section))
-        if section == 0 {
-            return callToActionCategories.count
-        } else if section == 1 {
-            return evoneCategories.count
-        } else if section == 2{
-            return izomeCategories.count
-        }
-        else {
-            return 0
-        }
+        return categories[section].count
     }
     
     func collectionView( _ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if indexPath.section == 0 {
-            selectedProduct = self.callToActionCategories[indexPath.row]
-        } else if indexPath.section == 1 {
-            selectedProduct = self.evoneCategories[indexPath.row]
-        } else if indexPath.section == 2 {
-            selectedProduct = self.izomeCategories[indexPath.row]
-        } else {
-            fatalError("Cell identifier not found")
-        }
+        let item = self.categories[indexPath.section][indexPath.row]
+        selectedProduct = item
         guard let cellIdentifier = selectedProduct?.cellIdentifier else {
             fatalError("the cell identifier could not be set")
         }
@@ -76,26 +68,16 @@ class CategoryCollectionViewController : UIViewController, UICollectionViewDeleg
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as? ImageCollectionViewCell else {
                 fatalError("The dequeued cell is not an instance of CategoryCollectionViewCell.")
             }
-            cell.layer.cornerRadius = 7;
-            cell.layer.masksToBounds = true;
+            cell.layer.cornerRadius = 1;
+            //cell.layer.masksToBounds = true;
             //cell.viewBG.layer.borderWidth = 1
             //cell.viewBG.layer.borderColor = UIColor.gray.cgColor
             
             DispatchQueue.global(qos: .background).async {
                 var image: UIImage?
                 var text: String?
-                if indexPath.section == 0 {
-                    image = UIImage(named: self.callToActionCategories[indexPath.row].image)
-                    text = self.callToActionCategories[indexPath.row].title
-                    
-                } else if indexPath.section == 1 {
-                    image = UIImage(named: self.evoneCategories[indexPath.row].image)
-                    text = self.evoneCategories[indexPath.row].title
-                    
-                } else if indexPath.section == 2 {
-                    image = UIImage(named: self.izomeCategories[indexPath.row].image)
-                    text = self.izomeCategories[indexPath.row].title
-                }
+                image = UIImage(named: item.image!)
+                text = item.title
                 
                 DispatchQueue.main.async {
                     cell.categoryImageView.image = image
@@ -119,12 +101,13 @@ class CategoryCollectionViewController : UIViewController, UICollectionViewDeleg
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as? TextCollectionViewCell else {
                 fatalError("The dequeued cell is not an instance of CategoryCollectionViewCell.")
             }
-            cell.layer.cornerRadius = 7;
-            cell.layer.masksToBounds = true;
-            cell.viewBG.layer.borderWidth = 1
-            cell.viewBG.layer.borderColor = UIColor.gray.cgColor
+            cell.layer.cornerRadius = 3;
+            //cell.layer.masksToBounds = true;
+            //cell.viewBG.layer.borderWidth = 1
+            //cell.viewBG.layer.borderColor = UIColor.gray.cgColor
             
             cell.titleLabel.text = selectedProduct?.title
+            cell.subtitleLabel.text = (selectedProduct as! ProductText?)?.text
             return cell
         } else {
             fatalError("The cell identifier refers to no known identifiers")
@@ -132,14 +115,7 @@ class CategoryCollectionViewController : UIViewController, UICollectionViewDeleg
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.section == 0 {
-            selectedCategory = callToActionCategories[indexPath.row]
-        } else if indexPath.section == 1 {
-            selectedCategory = evoneCategories[indexPath.row]
-        } else if indexPath.section == 2 {
-            selectedCategory = izomeCategories[indexPath.row]
-        }
-        
+        selectedCategory = categories[indexPath.section][indexPath.row]
         if(selectedCategory!.segue != "playVideoSegue") {
             performSegue(withIdentifier: selectedCategory!.segue, sender: self)
 
@@ -168,9 +144,7 @@ class CategoryCollectionViewController : UIViewController, UICollectionViewDeleg
         print(pv.videoName)
         print(pv.videoType)
         let movieURL = Bundle.main.url(forResource: pv.videoName, withExtension: pv.videoType)!
-        //let asset = AVURLAsset(url: movieURL, options: nil)
         let player = AVPlayer(url: movieURL)
-        //let player = AVPlayer(playerItem: asset)
         let playerController = AVPlayerViewController()
         playerController.player = player
         present(playerController, animated: true) {
@@ -213,14 +187,16 @@ extension CategoryCollectionViewController : UICollectionViewDelegateFlowLayout 
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let item = categories[indexPath.section][indexPath.row]
+        let itemsPerRow = item.size
         
         if UIDevice.current.orientation.isLandscape {
-            let itemsPerRow : CGFloat = 3
+            //let itemsPerRow : CGFloat = 3
             let availableWidth = view.bounds.width - (sectionInsets.left * (itemsPerRow + 1))
             let widthPerItem = availableWidth / itemsPerRow
             return CGSize(width: widthPerItem, height: widthPerItem)
         } else {
-            let itemsPerRow : CGFloat = 2
+            //let itemsPerRow : CGFloat = 2
             let availableWidth = view.bounds.width - (sectionInsets.left * (itemsPerRow + 1))
             let widthPerItem = availableWidth / itemsPerRow
             return CGSize(width: widthPerItem, height: widthPerItem)
