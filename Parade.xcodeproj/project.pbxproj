@@ -37,6 +37,9 @@
 		A6A956E81FE121F2004C3493 /* ProductPdf.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A956E71FE121F2004C3493 /* ProductPdf.swift */; };
 		A6A956EB1FE129CE004C3493 /* HeaderReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A956EA1FE129CE004C3493 /* HeaderReusableView.swift */; };
 		A6B77D8D1FDC77D000E7F322 /* TextCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B77D8C1FDC77D000E7F322 /* TextCollectionViewCell.swift */; };
+		A6CE7E01203C188400DC72D7 /* FullsizeTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CE7E00203C188400DC72D7 /* FullsizeTextCell.swift */; };
+		A6CE7E03203C189F00DC72D7 /* FullsizeImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CE7E02203C189F00DC72D7 /* FullsizeImageCell.swift */; };
+		A6CE7E05203C18C500DC72D7 /* HalfsizeImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CE7E04203C18C500DC72D7 /* HalfsizeImageCell.swift */; };
 		A6DEB3961FE7ACD30060B827 /* izome.json in Resources */ = {isa = PBXBuildFile; fileRef = A6DEB3951FE7ACD30060B827 /* izome.json */; };
 		A6DEB39A1FE7B3C00060B827 /* evone.json in Resources */ = {isa = PBXBuildFile; fileRef = A6DEB3991FE7B3C00060B827 /* evone.json */; };
 		A6DEB39C1FE7B3D50060B827 /* evan.json in Resources */ = {isa = PBXBuildFile; fileRef = A6DEB39B1FE7B3D50060B827 /* evan.json */; };
@@ -103,6 +106,9 @@
 		A6A956E71FE121F2004C3493 /* ProductPdf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductPdf.swift; sourceTree = "<group>"; };
 		A6A956EA1FE129CE004C3493 /* HeaderReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderReusableView.swift; sourceTree = "<group>"; };
 		A6B77D8C1FDC77D000E7F322 /* TextCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCollectionViewCell.swift; sourceTree = "<group>"; };
+		A6CE7E00203C188400DC72D7 /* FullsizeTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullsizeTextCell.swift; sourceTree = "<group>"; };
+		A6CE7E02203C189F00DC72D7 /* FullsizeImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullsizeImageCell.swift; sourceTree = "<group>"; };
+		A6CE7E04203C18C500DC72D7 /* HalfsizeImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfsizeImageCell.swift; sourceTree = "<group>"; };
 		A6DEB3951FE7ACD30060B827 /* izome.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = izome.json; sourceTree = "<group>"; };
 		A6DEB3991FE7B3C00060B827 /* evone.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = evone.json; sourceTree = "<group>"; };
 		A6DEB39B1FE7B3D50060B827 /* evan.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = evan.json; sourceTree = "<group>"; };
@@ -284,6 +290,9 @@
 				A61F8CF11FE7F9F3004C924D /* ImageViewCell.swift */,
 				A61F8CF31FE7FA0F004C924D /* TitleViewCell.swift */,
 				A61F8CF51FE7FA1C004C924D /* BodyViewCell.swift */,
+				A6CE7E00203C188400DC72D7 /* FullsizeTextCell.swift */,
+				A6CE7E02203C189F00DC72D7 /* FullsizeImageCell.swift */,
+				A6CE7E04203C18C500DC72D7 /* HalfsizeImageCell.swift */,
 			);
 			path = ViewCells;
 			sourceTree = "<group>";
@@ -495,6 +504,7 @@
 			files = (
 				A6A956E81FE121F2004C3493 /* ProductPdf.swift in Sources */,
 				A681A84F1FE11F320003DF0B /* PdfViewController.swift in Sources */,
+				A6CE7E05203C18C500DC72D7 /* HalfsizeImageCell.swift in Sources */,
 				A6A956EB1FE129CE004C3493 /* HeaderReusableView.swift in Sources */,
 				A6699A971FCECAFC00A4DF6A /* ShoeTableViewController.swift in Sources */,
 				A6E8BF071FD017E600BC9C83 /* ShoeViewController.swift in Sources */,
@@ -509,8 +519,10 @@
 				A61F8CF41FE7FA0F004C924D /* TitleViewCell.swift in Sources */,
 				A61F8CF21FE7F9F3004C924D /* ImageViewCell.swift in Sources */,
 				A6699A991FCECB8800A4DF6A /* Shoe.swift in Sources */,
+				A6CE7E01203C188400DC72D7 /* FullsizeTextCell.swift in Sources */,
 				A6699A671FCEC80800A4DF6A /* AppDelegate.swift in Sources */,
 				A6B77D8D1FDC77D000E7F322 /* TextCollectionViewCell.swift in Sources */,
+				A6CE7E03203C189F00DC72D7 /* FullsizeImageCell.swift in Sources */,
 				A6699A9D1FCF0D3D00A4DF6A /* CategoryCollectionViewController.swift in Sources */,
 				A6817E191FD080A200922C20 /* ProductVideo.swift in Sources */,
 				A6699A9B1FCF0D1F00A4DF6A /* ImageCollectionViewCell.swift in Sources */,

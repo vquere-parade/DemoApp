@@ -1,21 +1,19 @@
 //
-//  TextCollectionViewCell.swift
+//  FullsizeTextCell.swift
 //  Parade
 //
-//  Created by Antoine Sauray on 09/12/2017.
-//  Copyright © 2017 Parade Protection. All rights reserved.
+//  Created by Antoine Sauray on 20/02/2018.
+//  Copyright © 2018 Parade Protection. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class TextCollectionViewCell : UICollectionViewCell {
-    
-    @IBOutlet weak var viewBG: UIView!
-    @IBOutlet weak var labelText: UILabel!
+class FullsizeTextCell : UICollectionViewCell {
     
     @IBOutlet weak var widthConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var title: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         self.contentView.translatesAutoresizingMaskIntoConstraints = false
