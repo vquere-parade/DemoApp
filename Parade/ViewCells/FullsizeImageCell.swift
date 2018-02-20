@@ -18,9 +18,20 @@ class FullsizeImageCell : UICollectionViewCell {
     @IBOutlet weak var widthConstraint: NSLayoutConstraint!
     override func awakeFromNib() {
         super.awakeFromNib()
+        //self.separatorInset = .zero
         self.contentView.translatesAutoresizingMaskIntoConstraints = false
+        self.layoutMargins = .zero
         let screenWidth = UIScreen.main.bounds.size.width
-        widthConstraint.constant = screenWidth - (2 * 12)
-        heightConstraint.constant = screenWidth - (2 * 12)
+        let screenHeight = UIScreen.main.bounds.size.height
+        var widthConstraintConstant = screenWidth - (2 * 12)
+        if screenHeight < screenWidth {
+            widthConstraintConstant = screenHeight - (2 * 12)
+        }
+        //let  widthConstraintConstant = screenWidth - (2 * 12)
+        print("widthConstraint.constant=%f", widthConstraintConstant)
+        print("screenWidth=%f", screenWidth)
+        
+        widthConstraint.constant = widthConstraintConstant
+        heightConstraint.constant = widthConstraintConstant
     }
 }

@@ -34,23 +34,29 @@ class CategoryCollectionViewController : UIViewController, UICollectionViewDeleg
             flowLayout.estimatedItemSize = UICollectionViewFlowLayoutAutomaticSize
         }
         print("CategoryCollectionViewController")
-        callToActionCategories.append(ProductText(title: "Discover Evone", text: "blablabla", segue: "shoeSegue", cellIdentifier: "fullSizeTextCell", size: 1))
+        callToActionCategories.append(ProductText(title: "Découvrez Evone", text: "Evone est une chaussure connectée qui détecte votre chute. Elle a été crée pour garantir la sécurité des personnes âgées.", segue: "shoeSegue", cellIdentifier: "fullSizeTextCell", size: 1))
+        
         callToActionCategories.append(ProductCategory(title: "", jsonFile: nil, segue: "demoSegue", cellIdentifier: "fullSizeImageCell", image: "7-Falldemo", size: 1))
-
         
-        evoneCategories.append(ProductPdf(title: "", segue: "pdfSegue", cellIdentifier: "halfSizeImageCell", image: "1-presentation", pdfName: "EVONE_ CES_LAS_VEGAS_JANVIER_2018", size: 2))
-        evoneCategories.append(ProductVideo(title: "", segue: "playVideoSegue", cellIdentifier: "halfSizeImageCell", image: "2-video", videoName: "evone_senior_en", videoType: "mp4", size: 2))
-
-        evoneCategories.append(ProductCategory(title: "", jsonFile: "evone", segue: "shoeSegue", cellIdentifier: "fullSizeImageCell", image: "3-evone", size: 1))
-        evoneCategories.append(ProductCategory(title: "", jsonFile: "evan", segue: "shoeSegue", cellIdentifier: "fullSizeImageCell", image: "4-evan", size: 2))
+        callToActionCategories.append(ProductText(title: "Nos technologies", text: "", segue: "", cellIdentifier: "fullSizeTextCell", size: 1))
+       
+        callToActionCategories.append(ProductPdf(title: "", segue: "pdfSegue", cellIdentifier: "halfSizeImageCell", image: "1-presentation", pdfName: "EVONE_ CES_LAS_VEGAS_JANVIER_2018", size: 2))
+       
+        callToActionCategories.append(ProductVideo(title: "", segue: "playVideoSegue", cellIdentifier: "halfSizeImageCell", image: "2-video", videoName: "evone_senior_en", videoType: "mp4", size: 2))
         
-        izomeCategories.append(ProductVideo(title: "", segue: "playVideoSegue", cellIdentifier: "fullSizeImageCell", image: "5-videoizome", videoName: "evone_tech", videoType: "mp4", size : 2))
-        izomeCategories.append(ProductCategory(title: "", jsonFile: "izome", segue: "shoeSegue", cellIdentifier: "fullSizeImageCell", image: "6-packshotizome", size: 2))
-        izomeCategories.append(ProductPdf(title: "Press Release", segue: "pdfSegue", cellIdentifier: "fullSizeImageCell", image: "2-video", pdfName: "PRESS_RELEASE-E-vone", size: 2))
+        callToActionCategories.append(ProductText(title: "Nos Modèles", text: "Homme et Femme, vous pourrez trouver chaussure à votre pied", segue: "", cellIdentifier: "fullSizeTextCell", size: 1))
+        
+        callToActionCategories.append(ProductCategory(title: "", jsonFile: "evone", segue: "shoeSegue", cellIdentifier: "halfSizeImageCell", image: "3-evone", size: 1))
+        callToActionCategories.append(ProductCategory(title: "", jsonFile: "evan", segue: "shoeSegue", cellIdentifier: "halfSizeImageCell", image: "4-evan", size: 2))
+        
+        callToActionCategories.append(ProductText(title: "Gamme Izome", text: "La technologie de détection de chute intégrée aux chaussures de travail", segue: "", cellIdentifier: "fullSizeTextCell", size: 1))
+        callToActionCategories.append(ProductVideo(title: "", segue: "playVideoSegue", cellIdentifier: "halfSizeImageCell", image: "5-videoizome", videoName: "evone_tech", videoType: "mp4", size : 2))
+        callToActionCategories.append(ProductCategory(title: "", jsonFile: "izome", segue: "shoeSegue", cellIdentifier: "halfSizeImageCell", image: "6-packshotizome", size: 2))
+        callToActionCategories.append(ProductPdf(title: "Press Release", segue: "pdfSegue", cellIdentifier: "fullSizeImageCell", image: "2-video", pdfName: "PRESS_RELEASE-E-vone", size: 2))
         
         categories.append(callToActionCategories)
-        categories.append(evoneCategories)
-        categories.append(izomeCategories)
+        //categories.append(evoneCategories)
+        //categories.append(izomeCategories)
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -74,36 +80,42 @@ class CategoryCollectionViewController : UIViewController, UICollectionViewDeleg
                 fatalError("The dequeued cell is not an instance of CategoryCollectionViewCell.")
             }
             cell.layer.cornerRadius = 1;
+            var image: UIImage?
+            var text: String?
+            image = UIImage(named: item.image!)
+            text = item.title
+            cell.image.image = image
+            cell.label.text = text
+            /*
             DispatchQueue.global(qos: .background).async {
-                var image: UIImage?
-                var text: String?
-                image = UIImage(named: item.image!)
-                text = item.title
+                
                 
                 DispatchQueue.main.async {
-                    cell.image.image = image
-                    cell.label.text = text
+                    
                 }
             }
-            print("got image set")
+ */
             return cell
         } else if cellIdentifier == "halfSizeImageCell" {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as? HalfsizeImageCell else {
                 fatalError("The dequeued cell is not an instance of CategoryCollectionViewCell.")
             }
             cell.layer.cornerRadius = 1;
+            var image: UIImage?
+            var text: String?
+            image = UIImage(named: item.image!)
+            text = item.title
+            cell.image.image = image
+            cell.label.text = text
+            /*
             DispatchQueue.global(qos: .background).async {
-                var image: UIImage?
-                var text: String?
-                image = UIImage(named: item.image!)
-                text = item.title
+                
                 
                 DispatchQueue.main.async {
-                    cell.image.image = image
-                    cell.label.text = text
+                    
                 }
             }
-            print("got image set")
+             */
             return cell
         } else if cellIdentifier == "fullSizeTextCell" {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as? FullsizeTextCell else {
@@ -111,6 +123,7 @@ class CategoryCollectionViewController : UIViewController, UICollectionViewDeleg
             }
             cell.layer.cornerRadius = 3;
             cell.title.text = selectedProduct?.title
+            cell.body.text = (selectedProduct as! ProductText).text
             return cell
         } else {
             fatalError("The cell identifier refers to no known identifiers")
@@ -119,10 +132,9 @@ class CategoryCollectionViewController : UIViewController, UICollectionViewDeleg
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedCategory = categories[indexPath.section][indexPath.row]
-        if(selectedCategory!.segue != "playVideoSegue") {
-            performSegue(withIdentifier: selectedCategory!.segue, sender: self)
-
-        } else {
+        if(selectedCategory!.segue != nil && selectedCategory!.segue != "playVideoSegue") {
+            performSegue(withIdentifier: selectedCategory!.segue!, sender: self)
+        } else if (selectedCategory!.segue == "playVideoSegue"){
             playVideo(productVideo: (selectedCategory as? ProductVideo))
         }
     }
@@ -155,14 +167,26 @@ class CategoryCollectionViewController : UIViewController, UICollectionViewDeleg
         }
     }
     
+    
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        //super.viewWillTransition(to: size, with: coordinator)
+        //collectionView.collectionViewLayout.invalidateLayout()
+        /*
+        coordinator.animate(alongsideTransition: { (_) in
+            NotificationCenter.default.post(name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+        }, completion: nil)
+         */
+        collectionView.collectionViewLayout.invalidateLayout()
+        collectionView.layoutIfNeeded()
         super.viewWillTransition(to: size, with: coordinator)
         //collectionView.collectionViewLayout.invalidateLayout()
-        collectionView.reloadData()
     }
     
+    
+    /*
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "categoryHeader", for: indexPath) as? HeaderReusableView
+        header!.layoutIfNeeded()
         if indexPath.section == 0 {
             header?.headerImage.image = nil
         } else if indexPath.section == 1 {
@@ -183,6 +207,6 @@ class CategoryCollectionViewController : UIViewController, UICollectionViewDeleg
         }
         return header!
     }
+    */
     
 }
-

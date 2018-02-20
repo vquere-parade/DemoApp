@@ -26,9 +26,9 @@ class DemoViewController : ViewController {
     
     let queue = DispatchQueue(label: "animationQueue", qos: .background)
     var circle : CircleView?
-    
+    var keepGoing : Bool = true
     override func viewDidLoad() {
-        
+        keepGoing = true
         let userDefaults = UserDefaults.standard
         let id = userDefaults.string(forKey: "id")
         let key = userDefaults.string(forKey: "key")
@@ -38,8 +38,8 @@ class DemoViewController : ViewController {
         }
         
         DispatchQueue.global(qos: .background).async {
-            var keepGoing = true
-            while keepGoing {
+            
+            while self.keepGoing {
                 if self.vibration {
                     AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
                     self.toggleTorch(on: true)
@@ -48,11 +48,11 @@ class DemoViewController : ViewController {
                 }
                 DispatchQueue.main.async {
                     if self.viewIfLoaded?.window == nil {
-                        keepGoing = false
+                        self.keepGoing = false
                         self.toggleTorch(on: false)
                     }
                 }
-                if keepGoing {
+                if self.keepGoing {
                     sleep(1)
                 }
                 
@@ -72,6 +72,7 @@ class DemoViewController : ViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        keepGoing = false
     }
     
     func animate() {

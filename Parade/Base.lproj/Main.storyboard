@@ -194,7 +194,7 @@
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4bV-fv-ldh">
                                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -288,14 +288,14 @@
                                                 <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="veg-QS-qQP">
                                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UNI-h1-E3a">
-                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="63.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UNI-h1-E3a">
+                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="34"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label body" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uSH-ou-QOp">
-                                                            <rect key="frame" x="0.0" y="63.5" width="50" height="41"/>
+                                                            <rect key="frame" x="0.0" y="50" width="50" height="0.0"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -307,8 +307,9 @@
                                                         <constraint firstAttribute="trailing" secondItem="uSH-ou-QOp" secondAttribute="trailing" id="1Nz-bQ-zP4"/>
                                                         <constraint firstAttribute="trailing" secondItem="UNI-h1-E3a" secondAttribute="trailing" id="BHh-XL-YZz"/>
                                                         <constraint firstItem="uSH-ou-QOp" firstAttribute="leading" secondItem="veg-QS-qQP" secondAttribute="leading" id="GoB-IX-XM4"/>
+                                                        <constraint firstAttribute="bottom" secondItem="uSH-ou-QOp" secondAttribute="bottom" id="GtJ-JY-Dbl"/>
                                                         <constraint firstItem="UNI-h1-E3a" firstAttribute="top" secondItem="veg-QS-qQP" secondAttribute="top" id="MS1-wz-n23"/>
-                                                        <constraint firstItem="uSH-ou-QOp" firstAttribute="top" secondItem="UNI-h1-E3a" secondAttribute="bottom" id="T30-Yp-gtq"/>
+                                                        <constraint firstItem="uSH-ou-QOp" firstAttribute="top" secondItem="UNI-h1-E3a" secondAttribute="bottom" constant="16" id="T30-Yp-gtq"/>
                                                         <constraint firstItem="UNI-h1-E3a" firstAttribute="leading" secondItem="veg-QS-qQP" secondAttribute="leading" id="mBp-Nw-fZK"/>
                                                     </constraints>
                                                 </view>
@@ -321,6 +322,7 @@
                                             <constraint firstItem="veg-QS-qQP" firstAttribute="leading" secondItem="E4m-LM-aPn" secondAttribute="leading" id="mDj-Va-3VY"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="body" destination="uSH-ou-QOp" id="xHF-RI-Hmb"/>
                                             <outlet property="title" destination="UNI-h1-E3a" id="ywK-mO-nBb"/>
                                             <outlet property="widthConstraint" destination="0EJ-Tg-H51" id="vZL-KK-odo"/>
                                         </connections>
@@ -384,11 +386,17 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fall" translatesAutoresizingMaskIntoConstraints="NO" id="1TJ-Ol-BBo">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fall Detection system" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jzC-Nj-M1S">
-                                <rect key="frame" x="0.0" y="535.5" width="375" height="31.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Démonstration" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jzC-Nj-M1S">
+                                <rect key="frame" x="30" y="535.5" width="315" height="31.5"/>
                                 <color key="backgroundColor" red="0.048542768906894802" green="0.043363058275870239" blue="0.17770463197969544" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Retournez votre téléphone pour générer une fausse chute. Les personnes concernées seront prévenues" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="avr-Qk-VtI">
+                                <rect key="frame" x="30" y="567" width="315" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IqX-ui-qNd">
@@ -401,14 +409,17 @@
                             <constraint firstAttribute="bottom" secondItem="IqX-ui-qNd" secondAttribute="bottom" id="29l-9Y-y8x"/>
                             <constraint firstItem="GTW-ow-Gt0" firstAttribute="bottom" secondItem="jzC-Nj-M1S" secondAttribute="bottom" constant="100" id="80X-XL-9Pt"/>
                             <constraint firstItem="1TJ-Ol-BBo" firstAttribute="top" secondItem="GTW-ow-Gt0" secondAttribute="top" id="AnT-XJ-K56"/>
+                            <constraint firstItem="avr-Qk-VtI" firstAttribute="leading" secondItem="GTW-ow-Gt0" secondAttribute="leading" constant="30" id="Mfw-7E-JoH"/>
                             <constraint firstItem="IqX-ui-qNd" firstAttribute="trailing" secondItem="GTW-ow-Gt0" secondAttribute="trailing" id="YEp-Xc-GdC"/>
-                            <constraint firstItem="GTW-ow-Gt0" firstAttribute="trailing" secondItem="jzC-Nj-M1S" secondAttribute="trailing" id="a8z-Kn-ULB"/>
+                            <constraint firstItem="jzC-Nj-M1S" firstAttribute="trailing" secondItem="GTW-ow-Gt0" secondAttribute="trailing" constant="-30" id="YFF-Qc-3tf"/>
                             <constraint firstItem="IqX-ui-qNd" firstAttribute="top" secondItem="jzC-Nj-M1S" secondAttribute="bottom" constant="10" id="alU-vL-pkU"/>
                             <constraint firstItem="IqX-ui-qNd" firstAttribute="leading" secondItem="GTW-ow-Gt0" secondAttribute="leading" id="iI1-2M-dU9"/>
+                            <constraint firstItem="avr-Qk-VtI" firstAttribute="top" secondItem="jzC-Nj-M1S" secondAttribute="bottom" id="nc5-i1-EaD"/>
                             <constraint firstItem="GTW-ow-Gt0" firstAttribute="trailing" secondItem="1TJ-Ol-BBo" secondAttribute="trailing" id="qHd-lF-r4p"/>
                             <constraint firstItem="GTW-ow-Gt0" firstAttribute="bottom" secondItem="1TJ-Ol-BBo" secondAttribute="bottom" id="qtl-hm-1Rx"/>
-                            <constraint firstItem="jzC-Nj-M1S" firstAttribute="leading" secondItem="GTW-ow-Gt0" secondAttribute="leading" id="xm7-eC-RsU"/>
+                            <constraint firstItem="jzC-Nj-M1S" firstAttribute="leading" secondItem="GTW-ow-Gt0" secondAttribute="leading" constant="30" id="xm7-eC-RsU"/>
                             <constraint firstItem="1TJ-Ol-BBo" firstAttribute="leading" secondItem="GTW-ow-Gt0" secondAttribute="leading" id="y5J-Zx-HNh"/>
+                            <constraint firstItem="GTW-ow-Gt0" firstAttribute="trailing" secondItem="avr-Qk-VtI" secondAttribute="trailing" constant="30" id="yxa-QE-A9p"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GTW-ow-Gt0"/>
                     </view>

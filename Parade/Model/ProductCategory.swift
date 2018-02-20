@@ -13,12 +13,12 @@ class ProductCategory {
     
     var title: String
     var jsonFile: String?
-    var segue: String
+    var segue: String?
     var cellIdentifier: String
     var image: String?
     var size : CGFloat
     
-    init(title: String, jsonFile: String?, segue: String, cellIdentifier: String, image: String?, size: CGFloat) {
+    init(title: String, jsonFile: String?, segue: String?, cellIdentifier: String, image: String?, size: CGFloat) {
         self.title = title
         self.jsonFile = jsonFile
         self.segue = segue
