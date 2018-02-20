@@ -22,7 +22,7 @@ class CategoryCollectionViewController : UIViewController, UICollectionViewDeleg
     var categories = [[ProductCategory]]()
     
     var selectedCategory: ProductCategory?
-    fileprivate let sectionInsets = UIEdgeInsets(top: 0.0, left: 10.0, bottom: 0.0, right: 10.0)
+    //fileprivate let sectionInsets = UIEdgeInsets(top: 0.0, left: 10.0, bottom: 0.0, right: 10.0)
     //fileprivate let itemsPerRow: CGFloat = 2
     
     var selectedProduct: ProductCategory?
@@ -38,8 +38,8 @@ class CategoryCollectionViewController : UIViewController, UICollectionViewDeleg
         callToActionCategories.append(ProductCategory(title: "", jsonFile: nil, segue: "demoSegue", cellIdentifier: "fullSizeImageCell", image: "7-Falldemo", size: 1))
 
         
-        evoneCategories.append(ProductPdf(title: "", segue: "pdfSegue", cellIdentifier: "fullSizeImageCell", image: "1-presentation", pdfName: "EVONE_ CES_LAS_VEGAS_JANVIER_2018", size: 2))
-        evoneCategories.append(ProductVideo(title: "", segue: "playVideoSegue", cellIdentifier: "fullSizeImageCell", image: "2-video", videoName: "evone_senior_en", videoType: "mp4", size: 2))
+        evoneCategories.append(ProductPdf(title: "", segue: "pdfSegue", cellIdentifier: "halfSizeImageCell", image: "1-presentation", pdfName: "EVONE_ CES_LAS_VEGAS_JANVIER_2018", size: 2))
+        evoneCategories.append(ProductVideo(title: "", segue: "playVideoSegue", cellIdentifier: "halfSizeImageCell", image: "2-video", videoName: "evone_senior_en", videoType: "mp4", size: 2))
 
         evoneCategories.append(ProductCategory(title: "", jsonFile: "evone", segue: "shoeSegue", cellIdentifier: "fullSizeImageCell", image: "3-evone", size: 1))
         evoneCategories.append(ProductCategory(title: "", jsonFile: "evan", segue: "shoeSegue", cellIdentifier: "fullSizeImageCell", image: "4-evan", size: 2))
@@ -74,10 +74,24 @@ class CategoryCollectionViewController : UIViewController, UICollectionViewDeleg
                 fatalError("The dequeued cell is not an instance of CategoryCollectionViewCell.")
             }
             cell.layer.cornerRadius = 1;
-            //cell.layer.masksToBounds = true;
-            //cell.viewBG.layer.borderWidth = 1
-            //cell.viewBG.layer.borderColor = UIColor.gray.cgColor
-            
+            DispatchQueue.global(qos: .background).async {
+                var image: UIImage?
+                var text: String?
+                image = UIImage(named: item.image!)
+                text = item.title
+                
+                DispatchQueue.main.async {
+                    cell.image.image = image
+                    cell.label.text = text
+                }
+            }
+            print("got image set")
+            return cell
+        } else if cellIdentifier == "halfSizeImageCell" {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as? HalfsizeImageCell else {
+                fatalError("The dequeued cell is not an instance of CategoryCollectionViewCell.")
+            }
+            cell.layer.cornerRadius = 1;
             DispatchQueue.global(qos: .background).async {
                 var image: UIImage?
                 var text: String?
