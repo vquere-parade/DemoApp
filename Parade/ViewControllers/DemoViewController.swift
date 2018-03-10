@@ -13,6 +13,13 @@ import AudioToolbox
 import AVFoundation
 import SwiftyJSON
 import Alamofire
+import MapKit
+
+extension Double {
+    func toString() -> String {
+        return String(format: "%.1f",self)
+    }
+}
 
 class DemoViewController : ViewController {
     
@@ -24,10 +31,14 @@ class DemoViewController : ViewController {
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var fallImage: UIImageView!
     
+    var locManager = CLLocationManager()
     let queue = DispatchQueue(label: "animationQueue", qos: .background)
     var circle : CircleView?
     var keepGoing : Bool = true
     override func viewDidLoad() {
+        
+        locManager.requestWhenInUseAuthorization()
+        
         keepGoing = true
         let userDefaults = UserDefaults.standard
         let id = userDefaults.string(forKey: "id")
@@ -37,28 +48,6 @@ class DemoViewController : ViewController {
             showInputDialog()
         }
         
-        DispatchQueue.global(qos: .background).async {
-            
-            while self.keepGoing {
-                if self.vibration {
-                    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
-                    self.toggleTorch(on: true)
-                } else {
-                    self.toggleTorch(on: false)
-                }
-                DispatchQueue.main.async {
-                    if self.viewIfLoaded?.window == nil {
-                        self.keepGoing = false
-                        self.toggleTorch(on: false)
-                    }
-                }
-                if self.keepGoing {
-                    sleep(1)
-                }
-                
-            }
-        }
-
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(self.orientationChanged),
@@ -73,6 +62,7 @@ class DemoViewController : ViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         keepGoing = false
+        NotificationCenter.default.removeObserver(self)
     }
     
     func animate() {
@@ -111,35 +101,50 @@ class DemoViewController : ViewController {
         
         if UIDevice.current.orientation == UIDeviceOrientation.faceDown {
             print("face down")
-            vibration = true
+            self.toggleTorch(on: true)
+            AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
             // trigger the fall event
             let userDefaults = UserDefaults.standard
             let id = userDefaults.object(forKey: "id")
             let key = userDefaults.object(forKey: "key")
             if id != nil && key != nil {
                 let endpoint = Bundle.main.infoDictionary!["FAKE_FALL_ENDPOINT"] as! String
-                Alamofire.request(endpoint, method: .post, parameters: ["id": id!, "key": key!], encoding: JSONEncoding.default, headers: HTTPHeaders()).response { response in
-                    if let code = response.response?.statusCode {
-                        if code == 200 {
-                            // success
-                            print("success sending fall alert")
-                        } else if code == 401 {
-                            // failure
-                            print("error sending fall alert: 401")
-                            userDefaults.removeObject(forKey: "id")
-                            userDefaults.removeObject(forKey: "key")
-                            self.showToast(message: "Vos identifiants sont erronés. La chute n'a pas pu être générée")
-                        } else {
-                            print("error sending fall alert: ", code)
-                            self.showToast(message: "Le serveur est hors ligne ou a rencontré un problème. Réessayez ultérieurement")
+                if( CLLocationManager.authorizationStatus() == CLAuthorizationStatus.authorizedWhenInUse) {
+                    if let currentLocation = locManager.location {
+                        let latitude = currentLocation.coordinate.latitude.toString()
+                        let longitude = currentLocation.coordinate.longitude.toString()
+                        print("latitude: %s", latitude)
+                        print("longitude: %s", longitude)
+                        let parameters = ["id": id!, "key": key!, "latitude": latitude, "longitude": longitude]
+                        Alamofire.request(endpoint, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: HTTPHeaders()).response { response in
+                            if let code = response.response?.statusCode {
+                                if code == 200 {
+                                    // success
+                                    print("success sending fall alert")
+                                } else if code == 401 {
+                                    // failure
+                                    print("error sending fall alert: 401")
+                                    userDefaults.removeObject(forKey: "id")
+                                    userDefaults.removeObject(forKey: "key")
+                                    self.showToast(message: "Vos identifiants sont erronés. La chute n'a pas pu être générée")
+                                } else {
+                                    print("error sending fall alert: ", code)
+                                    self.showToast(message: "Le serveur est hors ligne ou a rencontré un problème. Réessayez ultérieurement")
+                                }
+                            }
                         }
+                    } else {
+                        self.showToast(message: "Localisation indisponible")
                     }
+                } else {
+                    self.showToast(message: "Permission refusée pour l'accès à la géolocalisation")
                 }
+                
             }
             
         } else {
             print("face up")
-            vibration = false
+            self.toggleTorch(on: false)
         }
         self.circle?.removeFromSuperview()
 
@@ -172,7 +177,7 @@ class DemoViewController : ViewController {
     func showInputDialog() {
         //Creating UIAlertController and
         //Setting title and message for the alert dialog
-        let alertController = UIAlertController(title: "Authentification requise", message: "Afin de déclencher une alerte de test, rentrez vos identifiants", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Authentification supplémentaire recommandée", message: "Si vous souhaitez déclencher une alerte de test, vous devez vous identifier", preferredStyle: .alert)
         
         //the confirm action taking the inputs
         let confirmAction = UIAlertAction(title: "Valider", style: .default) { (_) in

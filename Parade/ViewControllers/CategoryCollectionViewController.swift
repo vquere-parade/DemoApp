@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import AVKit
 import AVFoundation
+import Alamofire
 
 class CategoryCollectionViewController : UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
@@ -133,6 +134,16 @@ class CategoryCollectionViewController : UIViewController, UICollectionViewDeleg
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedCategory = categories[indexPath.section][indexPath.row]
         if(selectedCategory!.segue != nil && selectedCategory!.segue != "playVideoSegue") {
+            if(selectedCategory!.segue == "demoSegue") {
+                let userDefaults = UserDefaults.standard
+                let caretakerEmail = userDefaults.string(forKey: "caretaker_email")
+                let caretakerPassword = userDefaults.string(forKey: "caretaker_password")
+                
+                if(caretakerEmail == nil || caretakerPassword == nil) {
+                    displayActionsDialog()
+                    return
+                }
+            }
             performSegue(withIdentifier: selectedCategory!.segue!, sender: self)
         } else if (selectedCategory!.segue == "playVideoSegue"){
             playVideo(productVideo: (selectedCategory as? ProductVideo))
@@ -183,30 +194,97 @@ class CategoryCollectionViewController : UIViewController, UICollectionViewDeleg
     }
     
     
-    /*
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "categoryHeader", for: indexPath) as? HeaderReusableView
-        header!.layoutIfNeeded()
-        if indexPath.section == 0 {
-            header?.headerImage.image = nil
-        } else if indexPath.section == 1 {
-            header?.headerImage.image = UIImage(named: "e-vone_logo")
-        } else if indexPath.section == 2 {
-            header?.headerImage.image = UIImage(named: "izome_logo")
+    func displaySignInDialog() {
+        //Creating UIAlertController and
+        //Setting title and message for the alert dialog
+        let alertController = UIAlertController(title: "Connection à un compte Caretaker", message: "Entrez vos identifiants", preferredStyle: .alert)
+        //the confirm action taking the inputs
+        let confirmAction = UIAlertAction(title: "Valider", style: .default) { (_) in
+            
+            //getting the input values from user
+            let email = alertController.textFields?[0].text
+            let password = alertController.textFields?[1].text
+           
+            let sv = UIViewController.displaySpinner(onView: self.view)
+            let parameters: Parameters = ["email": email, "password": password, "audience": "customer"]
+            Alamofire.request("https://authentication-dot-parade-194715.appspot.com/authenticate/caretaker", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
+                UIViewController.removeSpinner(spinner: sv)
+                print("statuscode:")
+                print(response.response?.statusCode)
+                if(response.response?.statusCode == 200) {
+                    //self.labelMessage.text = "Name: " + name! + "Email: " + email!
+                    let userDefaults = UserDefaults.standard
+                    userDefaults.set(email, forKey: "caretaker_email")
+                    userDefaults.set(password, forKey: "caretaker_password")
+                    self.performSegue(withIdentifier: "demoSegue", sender: self)
+                } else {
+                    let alert = UIAlertController(title: "Alert", message: "Message", preferredStyle: UIAlertControllerStyle.alert)
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
+            
+            
+            
         }
-        if UIDevice.current.orientation == UIDeviceOrientation.portrait {
-            header?.layoutMargins.left = 10
-            header?.layoutMargins.right = 100
-            header?.layoutMargins.top = 10
-            header?.layoutMargins.bottom = 100
-        } else {
-            header?.layoutMargins.left = 30
-            header?.layoutMargins.right = 100
-            header?.layoutMargins.top = 30
-            header?.layoutMargins.bottom = 100
+        //the cancel action doing nothing
+        let cancelAction = UIAlertAction(title: "Annuler", style: .cancel) { (_) in }
+        
+        //adding textfields to our dialog box
+        alertController.addTextField { (textField) in
+            textField.placeholder = "Nom d'utilisateur"
         }
-        return header!
+        alertController.addTextField { (textField) in
+            textField.isSecureTextEntry = true
+            textField.placeholder = "Mot de passe"
+        }
+        
+        //adding the action to dialogbox
+        alertController.addAction(confirmAction)
+        alertController.addAction(cancelAction)
+        //finally presenting the dialog box
+        self.present(alertController, animated: true, completion: nil)
     }
-    */
     
+    func displayActionsDialog() {
+        //Creating UIAlertController and
+        //Setting title and message for the alert dialog
+        let alertController = UIAlertController(title: "Un compte Caretaker est requis", message: "Afin de tester la détection de chute, un compte Caretaker est requis", preferredStyle: .alert)
+        let action1 = UIAlertAction(title: "Se connecter", style: .default, handler: { (action) -> Void in
+            print("Se connecter")
+            self.displaySignInDialog()
+        })
+        let action2 = UIAlertAction(title: "S'inscrire", style: .default, handler: { (action) -> Void in
+            print("S'inscrire")
+        })
+        // Cancel button
+        let cancel = UIAlertAction(title: "Cancel", style: .destructive, handler: { (action) -> Void in })
+        // Add action buttons and present the Alert
+        alertController.addAction(action1)
+        alertController.addAction(action2)
+        alertController.addAction(cancel)
+        self.present(alertController, animated: true, completion: nil)
+    }
+}
+
+extension UIViewController {
+    class func displaySpinner(onView : UIView) -> UIView {
+        let spinnerView = UIView.init(frame: onView.bounds)
+        spinnerView.backgroundColor = UIColor.init(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.5)
+        let ai = UIActivityIndicatorView.init(activityIndicatorStyle: .whiteLarge)
+        ai.startAnimating()
+        ai.center = spinnerView.center
+        
+        DispatchQueue.main.async {
+            spinnerView.addSubview(ai)
+            onView.addSubview(spinnerView)
+        }
+        
+        return spinnerView
+    }
+    
+    class func removeSpinner(spinner :UIView) {
+        DispatchQueue.main.async {
+            spinner.removeFromSuperview()
+        }
+    }
 }
