@@ -222,9 +222,6 @@ class CategoryCollectionViewController : UIViewController, UICollectionViewDeleg
                     self.present(alert, animated: true, completion: nil)
                 }
             }
-            
-            
-            
         }
         //the cancel action doing nothing
         let cancelAction = UIAlertAction(title: "Annuler", style: .cancel) { (_) in }
@@ -255,6 +252,7 @@ class CategoryCollectionViewController : UIViewController, UICollectionViewDeleg
         })
         let action2 = UIAlertAction(title: "S'inscrire", style: .default, handler: { (action) -> Void in
             print("S'inscrire")
+            self.performSegue(withIdentifier: "signupSegue", sender: self)
         })
         // Cancel button
         let cancel = UIAlertAction(title: "Cancel", style: .destructive, handler: { (action) -> Void in })

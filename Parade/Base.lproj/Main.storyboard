@@ -369,11 +369,82 @@
                         <segue destination="BYZ-38-t0r" kind="show" identifier="shoeSegue" id="ihD-QJ-4tJ"/>
                         <segue destination="mCm-3S-nho" kind="show" identifier="demoSegue" id="luj-qG-axW"/>
                         <segue destination="Jnj-hA-tMT" kind="show" identifier="pdfSegue" id="iWw-8Z-HLo"/>
+                        <segue destination="2tV-8o-PX8" kind="show" identifier="signupSegue" id="vQD-sh-W5b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jLw-pT-KjQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-722.39999999999998" y="-141.67916041979012"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="uIo-Fb-kXn">
+            <objects>
+                <viewController id="2tV-8o-PX8" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hGG-iA-33h">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="D5V-yl-hUK">
+                                <rect key="frame" x="15" y="79" width="345" height="230"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7c5-eb-mdW">
+                                        <rect key="frame" x="0.0" y="0.0" width="345" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" textContentType="email"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Prénom" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cvq-tq-MpX">
+                                        <rect key="frame" x="0.0" y="40" width="345" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" textContentType="name"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nom" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1n2-GL-mIR">
+                                        <rect key="frame" x="0.0" y="80" width="345" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" textContentType="family-name"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Adresse" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rGk-f2-yX1">
+                                        <rect key="frame" x="0.0" y="120" width="345" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" textContentType="street-address"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Numéro de téléphone" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4jl-38-I8d">
+                                        <rect key="frame" x="0.0" y="160" width="345" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" textContentType="tel"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mot de passe" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GoB-De-hzM">
+                                        <rect key="frame" x="0.0" y="200" width="345" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" textContentType="password"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vi6-VC-c22">
+                                <rect key="frame" x="0.0" y="334" width="375" height="30"/>
+                                <state key="normal" title="Valider"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vi6-VC-c22" firstAttribute="top" secondItem="D5V-yl-hUK" secondAttribute="bottom" constant="25" id="D2c-tm-11V"/>
+                            <constraint firstItem="D5V-yl-hUK" firstAttribute="top" secondItem="NtO-Ou-wqf" secondAttribute="top" constant="15" id="ECf-La-ykB"/>
+                            <constraint firstItem="D5V-yl-hUK" firstAttribute="leading" secondItem="NtO-Ou-wqf" secondAttribute="leading" constant="15" id="EET-iN-q0b"/>
+                            <constraint firstItem="NtO-Ou-wqf" firstAttribute="trailing" secondItem="vi6-VC-c22" secondAttribute="trailing" id="aTc-Yy-WEe"/>
+                            <constraint firstItem="vi6-VC-c22" firstAttribute="leading" secondItem="NtO-Ou-wqf" secondAttribute="leading" id="cfa-aW-EUR"/>
+                            <constraint firstItem="NtO-Ou-wqf" firstAttribute="trailing" secondItem="D5V-yl-hUK" secondAttribute="trailing" constant="15" id="vIf-mW-nrv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="NtO-Ou-wqf"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XsE-CB-OGz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1791" y="641"/>
         </scene>
         <!--Demonstration-->
         <scene sceneID="bQ6-pC-mDT">
