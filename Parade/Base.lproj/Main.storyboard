@@ -376,10 +376,10 @@
             </objects>
             <point key="canvasLocation" x="-722.39999999999998" y="-141.67916041979012"/>
         </scene>
-        <!--View Controller-->
+        <!--Création de compte-->
         <scene sceneID="uIo-Fb-kXn">
             <objects>
-                <viewController id="2tV-8o-PX8" sceneMemberID="viewController">
+                <viewController title="Création de compte" id="2tV-8o-PX8" customClass="SignupViewController" customModule="Parade" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hGG-iA-33h">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -391,7 +391,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="345" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" textContentType="email"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" textContentType="email"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Prénom" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cvq-tq-MpX">
                                         <rect key="frame" x="0.0" y="40" width="345" height="30"/>
@@ -421,7 +421,7 @@
                                         <rect key="frame" x="0.0" y="200" width="345" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" textContentType="password"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
                                 </subviews>
                             </stackView>
@@ -441,6 +441,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NtO-Ou-wqf"/>
                     </view>
+                    <connections>
+                        <outlet property="addressTextField" destination="rGk-f2-yX1" id="Llf-Qt-EAr"/>
+                        <outlet property="emailTextField" destination="7c5-eb-mdW" id="Osd-cx-zEL"/>
+                        <outlet property="firstnameTextField" destination="cvq-tq-MpX" id="u5J-hT-4ZL"/>
+                        <outlet property="nameTextField" destination="1n2-GL-mIR" id="GW3-OX-YzA"/>
+                        <outlet property="passwordTextField" destination="GoB-De-hzM" id="qRX-oK-ql6"/>
+                        <outlet property="phoneTextField" destination="4jl-38-I8d" id="D9k-r0-Mjc"/>
+                        <outlet property="validateButton" destination="vi6-VC-c22" id="lSo-mI-LhY"/>
+                        <segue destination="mCm-3S-nho" kind="show" identifier="demoSegue" id="ybc-ra-efL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XsE-CB-OGz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -550,4 +560,7 @@
         <image name="e-vone_logo" width="405" height="73"/>
         <image name="fall" width="2810" height="1600"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="ybc-ra-efL"/>
+    </inferredMetricsTieBreakers>
 </document>

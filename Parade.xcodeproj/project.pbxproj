@@ -34,6 +34,7 @@
 		A6822F5B1FFD435E00D1432E /* EVONE_ CES_LAS_VEGAS_JANVIER_2018.pdf in Resources */ = {isa = PBXBuildFile; fileRef = A6822F5A1FFD435E00D1432E /* EVONE_ CES_LAS_VEGAS_JANVIER_2018.pdf */; };
 		A6822F5D1FFD685500D1432E /* evone_tech.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A6822F5C1FFD685400D1432E /* evone_tech.mp4 */; };
 		A6861E562053DA44003CB6BE /* Authenticate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6861E552053DA44003CB6BE /* Authenticate.swift */; };
+		A6861E582053F14A003CB6BE /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6861E572053F14A003CB6BE /* SignupViewController.swift */; };
 		A6A782DB1FFBA16500D5CD53 /* evone_senior_en.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A6A782DA1FFBA16500D5CD53 /* evone_senior_en.mp4 */; };
 		A6A956E81FE121F2004C3493 /* ProductPdf.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A956E71FE121F2004C3493 /* ProductPdf.swift */; };
 		A6A956EB1FE129CE004C3493 /* HeaderReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A956EA1FE129CE004C3493 /* HeaderReusableView.swift */; };
@@ -105,6 +106,7 @@
 		A6822F5A1FFD435E00D1432E /* EVONE_ CES_LAS_VEGAS_JANVIER_2018.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "EVONE_ CES_LAS_VEGAS_JANVIER_2018.pdf"; sourceTree = "<group>"; };
 		A6822F5C1FFD685400D1432E /* evone_tech.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = evone_tech.mp4; sourceTree = "<group>"; };
 		A6861E552053DA44003CB6BE /* Authenticate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authenticate.swift; sourceTree = "<group>"; };
+		A6861E572053F14A003CB6BE /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		A6A782DA1FFBA16500D5CD53 /* evone_senior_en.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = evone_senior_en.mp4; sourceTree = "<group>"; };
 		A6A956E71FE121F2004C3493 /* ProductPdf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductPdf.swift; sourceTree = "<group>"; };
 		A6A956EA1FE129CE004C3493 /* HeaderReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderReusableView.swift; sourceTree = "<group>"; };
@@ -292,6 +294,7 @@
 				A6699A9C1FCF0D3D00A4DF6A /* CategoryCollectionViewController.swift */,
 				A6E8BF041FCFE76600BC9C83 /* DemoViewController.swift */,
 				A681A84E1FE11F320003DF0B /* PdfViewController.swift */,
+				A6861E572053F14A003CB6BE /* SignupViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -522,6 +525,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6861E582053F14A003CB6BE /* SignupViewController.swift in Sources */,
 				A6A956E81FE121F2004C3493 /* ProductPdf.swift in Sources */,
 				A681A84F1FE11F320003DF0B /* PdfViewController.swift in Sources */,
 				A6CE7E05203C18C500DC72D7 /* HalfsizeImageCell.swift in Sources */,

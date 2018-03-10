@@ -139,12 +139,14 @@ class CategoryCollectionViewController : UIViewController, UICollectionViewDeleg
                 let caretakerEmail = userDefaults.string(forKey: "caretaker_email")
                 let caretakerPassword = userDefaults.string(forKey: "caretaker_password")
                 
-                if(caretakerEmail == nil || caretakerPassword == nil) {
+                if let email = caretakerEmail, let password = caretakerPassword {
+                    signInAndPerformSegue(email: email, password: password)
+                } else {
                     displayActionsDialog()
-                    return
                 }
+            } else {
+                performSegue(withIdentifier: selectedCategory!.segue!, sender: self)
             }
-            performSegue(withIdentifier: selectedCategory!.segue!, sender: self)
         } else if (selectedCategory!.segue == "playVideoSegue"){
             playVideo(productVideo: (selectedCategory as? ProductVideo))
         }
@@ -202,26 +204,10 @@ class CategoryCollectionViewController : UIViewController, UICollectionViewDeleg
         let confirmAction = UIAlertAction(title: "Valider", style: .default) { (_) in
             
             //getting the input values from user
-            let email = alertController.textFields?[0].text
-            let password = alertController.textFields?[1].text
-           
-            let sv = UIViewController.displaySpinner(onView: self.view)
-            let parameters: Parameters = ["email": email, "password": password, "audience": "customer"]
-            Alamofire.request("https://authentication-dot-parade-194715.appspot.com/authenticate/caretaker", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
-                UIViewController.removeSpinner(spinner: sv)
-                print("statuscode:")
-                print(response.response?.statusCode)
-                if(response.response?.statusCode == 200) {
-                    //self.labelMessage.text = "Name: " + name! + "Email: " + email!
-                    let userDefaults = UserDefaults.standard
-                    userDefaults.set(email, forKey: "caretaker_email")
-                    userDefaults.set(password, forKey: "caretaker_password")
-                    self.performSegue(withIdentifier: "demoSegue", sender: self)
-                } else {
-                    let alert = UIAlertController(title: "Alert", message: "Message", preferredStyle: UIAlertControllerStyle.alert)
-                    self.present(alert, animated: true, completion: nil)
-                }
+            if let email = alertController.textFields?[0].text, let password = alertController.textFields?[1].text {
+                self.signInAndPerformSegue(email: email, password: password)
             }
+           
         }
         //the cancel action doing nothing
         let cancelAction = UIAlertAction(title: "Annuler", style: .cancel) { (_) in }
@@ -255,34 +241,31 @@ class CategoryCollectionViewController : UIViewController, UICollectionViewDeleg
             self.performSegue(withIdentifier: "signupSegue", sender: self)
         })
         // Cancel button
-        let cancel = UIAlertAction(title: "Cancel", style: .destructive, handler: { (action) -> Void in })
+        let cancel = UIAlertAction(title: "Annuler", style: .destructive, handler: { (action) -> Void in })
         // Add action buttons and present the Alert
         alertController.addAction(action1)
         alertController.addAction(action2)
         alertController.addAction(cancel)
         self.present(alertController, animated: true, completion: nil)
     }
-}
-
-extension UIViewController {
-    class func displaySpinner(onView : UIView) -> UIView {
-        let spinnerView = UIView.init(frame: onView.bounds)
-        spinnerView.backgroundColor = UIColor.init(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.5)
-        let ai = UIActivityIndicatorView.init(activityIndicatorStyle: .whiteLarge)
-        ai.startAnimating()
-        ai.center = spinnerView.center
-        
-        DispatchQueue.main.async {
-            spinnerView.addSubview(ai)
-            onView.addSubview(spinnerView)
-        }
-        
-        return spinnerView
-    }
     
-    class func removeSpinner(spinner :UIView) {
-        DispatchQueue.main.async {
-            spinner.removeFromSuperview()
+    func signInAndPerformSegue(email: String, password: String) {
+        let sv = UIViewController.displaySpinner(onView: self.view)
+        let parameters: Parameters = ["email": email, "password": password, "audience": "customer"]
+        Alamofire.request("https://authentication-dot-parade-194715.appspot.com/authenticate/caretaker", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
+            UIViewController.removeSpinner(spinner: sv)
+            if(response.response?.statusCode == 200) {
+                //self.labelMessage.text = "Name: " + name! + "Email: " + email!
+                let userDefaults = UserDefaults.standard
+                userDefaults.set(email, forKey: "caretaker_email")
+                userDefaults.set(password, forKey: "caretaker_password")
+                self.performSegue(withIdentifier: "demoSegue", sender: self)
+            } else {
+                let alert = UIAlertController(title: "Echec de la connection", message: "Vos identifiants sont incorrects", preferredStyle: UIAlertControllerStyle.alert)
+                let ok = UIAlertAction(title: "Ok", style: .cancel, handler: { (action) -> Void in })
+                alert.addAction(ok)
+                self.present(alert, animated: true, completion: nil)
+            }
         }
     }
 }
