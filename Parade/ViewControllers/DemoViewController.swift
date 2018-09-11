@@ -12,7 +12,7 @@ import UIKit
 class DemoViewController : UIViewController {
     private static let blinkAnimationDuration = 0.7
     private static let blinkAnimationDelay = 1.5
-    private static let blinkAnimationRepeatCount: Float = 3
+    private static let blinkAnimationRepeatCount: Float = 3.5
     
     @IBOutlet weak var personImage: UIImageView!
     
