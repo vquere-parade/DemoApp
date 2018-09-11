@@ -6,230 +6,129 @@
 //  Copyright © 2017 Parade Protection. All rights reserved.
 //
 
-import Foundation
 import CoreMotion
 import UIKit
-import AudioToolbox
-import AVFoundation
-import SwiftyJSON
-import Alamofire
-import MapKit
 
-extension Double {
-    func toString() -> String {
-        return String(format: "%.1f",self)
-    }
-}
-
-class DemoViewController : ViewController {
+class DemoViewController : UIViewController {
+    private static let blinkAnimationDuration = 0.7
+    private static let blinkAnimationDelay = 1.5
+    private static let blinkAnimationRepeatCount: Float = 3
     
+    @IBOutlet weak var personImage: UIImageView!
     
-    @IBOutlet weak var container: UIView!
-    var motionManager: CMMotionManager!
-    var vibration : Bool = false
+    @IBOutlet weak var fallDetectedLabel: UILabel!
     
-    @IBOutlet weak var label: UILabel!
-    @IBOutlet weak var fallImage: UIImageView!
+    @IBOutlet weak var stepsImage: UIImageView!
     
-    var locManager = CLLocationManager()
-    let queue = DispatchQueue(label: "animationQueue", qos: .background)
-    var circle : CircleView?
-    var keepGoing : Bool = true
-    override func viewDidLoad() {
+    @IBOutlet weak var alertChainLabel: UILabel!
+    
+    private var alertTriggered = false
+    
+    private var currentStep = 0
+    
+    private lazy var personAnimation: CABasicAnimation = {
+        let anim = CABasicAnimation(keyPath: "contents")
+        anim.duration = DemoViewController.blinkAnimationDuration
+        anim.repeatCount = .infinity
+        anim.autoreverses = true
+        anim.fromValue = UIImage(named: "person")!.cgImage
+        anim.toValue =  UIImage(named: "person_highlight")!.cgImage
+        anim.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
         
-        locManager.requestWhenInUseAuthorization()
+        return anim
+    }()
+    
+    private lazy var stepAnimations: [CAAnimation] = {
+        var animations = [CAAnimation]()
         
-        keepGoing = true
-        let userDefaults = UserDefaults.standard
-        let id = userDefaults.string(forKey: "id")
-        let key = userDefaults.string(forKey: "key")
-        
-        if id == nil || key == nil {
-            showInputDialog()
+        for i in 1...5 {
+            let anim = CABasicAnimation(keyPath: "contents")
+            anim.duration = DemoViewController.blinkAnimationDuration
+            anim.repeatCount = DemoViewController.blinkAnimationRepeatCount
+            anim.autoreverses = true
+            anim.fromValue = UIImage(named: "step_\(i)")!.cgImage
+            anim.toValue =  UIImage(named: "step_\(i)_highlight")!.cgImage
+            anim.timingFunction = CAMediaTimingFunction(name:kCAMediaTimingFunctionEaseOut)
+            anim.delegate = self
+            anim.setValue("step", forKey: "name")
+            
+            animations.append(anim)
         }
+        
+        return animations
+    }()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
         NotificationCenter.default.addObserver(
             self,
-            selector: #selector(self.orientationChanged),
+            selector: #selector(self.orientationChanged(_:)),
             name: .UIDeviceOrientationDidChange,
             object: nil)
+    }
+    
+    @objc func orientationChanged(_ notification: NSNotification) {
+        guard UIDevice.current.orientation == UIDeviceOrientation.faceDown && !alertTriggered else {
+            return
+        }
+        
+        alertTriggered = true
+        
+        animatePerson()
+        animateSteps()
+        toggleLabelsVisibility(true)
+    }
+    
+    private func animatePerson() {
+        personImage.layer.add(personAnimation, forKey: "person")
+    }
+    
+    private func animateSteps() {
+        stepsImage.image = UIImage(named: "step_0")
+        stepsImage.layer.add(stepAnimations[0], forKey: "step")
+    }
+    
+    private func toggleLabelsVisibility(_ visible: Bool) {
+        UIView.animate(withDuration: 1, delay: 0, options: [.curveEaseIn], animations: {
+            let alpha = visible ? CGFloat(1) : CGFloat(0)
+            
+            self.fallDetectedLabel.alpha = alpha
+            self.alertChainLabel.alpha = alpha
+        },
+        completion: nil)
+    }
+}
 
+extension DemoViewController : CAAnimationDelegate {
+    func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+        guard let animName = anim.value(forKey: "name") as? String, animName == "step" else {
+            return
+        }
         
-        blur()
-        animate()
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        keepGoing = false
-        NotificationCenter.default.removeObserver(self)
-    }
-    
-    func animate() {
-        //circles.append(CircleView(frame: CGRect(x: 0, y: 0, width: 40, height: 40)))
-        //circles.append(CircleView(frame: CGRect(x: 0, y: 0, width: 30, height: 30)))
-        circle = CircleView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
-        self.circle?.center = view.center
-        self.view?.addSubview(circle!)
-        var size = self.view.frame.width * 0.9
-        if self.view.frame.height < size {
-            size = self.view.frame.height * 0.9
-        }
-        queue.async {
-            while true {
-                DispatchQueue.main.async {
-                    self.circle?.resizeCircleWithPulseAinmation(size, duration: 1.0)
-                }
-                sleep(1)
-            }
-        }
-    }
-    
-    func blur() {
-        let darkBlur = UIBlurEffect(style: UIBlurEffectStyle.dark)
-        // 2
-        let blurView = CustomIntensityVisualEffectView(effect: darkBlur, intensity: CGFloat(0.5))
-        blurView.frame = view.bounds
-        blurView.tag = 101
-        if let oldView = fallImage.viewWithTag(101) {
-            oldView.removeFromSuperview()
-        }
-        // 3
-        fallImage.addSubview(blurView)
-    }
-    @objc func orientationChanged(notification: NSNotification) {
+        currentStep += 1
         
-        if UIDevice.current.orientation == UIDeviceOrientation.faceDown {
-            print("face down")
-            self.toggleTorch(on: true)
-            AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
-            // trigger the fall event
-            let userDefaults = UserDefaults.standard
-            let id = userDefaults.object(forKey: "id")
-            let key = userDefaults.object(forKey: "key")
-            if id != nil && key != nil {
-                let endpoint = Bundle.main.infoDictionary!["FAKE_FALL_ENDPOINT"] as! String
-                if( CLLocationManager.authorizationStatus() == CLAuthorizationStatus.authorizedWhenInUse) {
-                    if let currentLocation = locManager.location {
-                        let latitude = currentLocation.coordinate.latitude.toString()
-                        let longitude = currentLocation.coordinate.longitude.toString()
-                        print("latitude: %s", latitude)
-                        print("longitude: %s", longitude)
-                        let parameters = ["id": id!, "key": key!, "latitude": latitude, "longitude": longitude]
-                        Alamofire.request(endpoint, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: HTTPHeaders()).response { response in
-                            if let code = response.response?.statusCode {
-                                if code == 200 {
-                                    // success
-                                    print("success sending fall alert")
-                                } else if code == 401 {
-                                    // failure
-                                    print("error sending fall alert: 401")
-                                    userDefaults.removeObject(forKey: "id")
-                                    userDefaults.removeObject(forKey: "key")
-                                    self.showToast(message: "Vos identifiants sont erronés. La chute n'a pas pu être générée")
-                                } else {
-                                    print("error sending fall alert: ", code)
-                                    self.showToast(message: "Le serveur est hors ligne ou a rencontré un problème. Réessayez ultérieurement")
-                                }
-                            }
-                        }
-                    } else {
-                        self.showToast(message: "Localisation indisponible")
-                    }
-                } else {
-                    self.showToast(message: "Permission refusée pour l'accès à la géolocalisation")
-                }
-                
-            }
+        guard currentStep < stepAnimations.count else {
+            currentStep = 0
             
-        } else {
-            print("face up")
-            self.toggleTorch(on: false)
-        }
-        self.circle?.removeFromSuperview()
-
-        blur()
-        animate()
-    }
-    
-    func toggleTorch(on: Bool) {
-        guard let device = AVCaptureDevice.default(for: AVMediaType.video)
-            else {return}
-        if device.hasTorch {
-            do {
-                try device.lockForConfiguration()
-                
-                if on == true {
-                    device.torchMode = .on
-                } else {
-                    device.torchMode = .off
-                }
-                
-                device.unlockForConfiguration()
-            } catch {
-                print("Torch could not be used")
-            }
-        } else {
-            print("Torch is not available")
-        }
-    }
-    
-    func showInputDialog() {
-        //Creating UIAlertController and
-        //Setting title and message for the alert dialog
-        let alertController = UIAlertController(title: "Authentification supplémentaire recommandée", message: "Si vous souhaitez déclencher une alerte de test, vous devez vous identifier", preferredStyle: .alert)
-        
-        //the confirm action taking the inputs
-        let confirmAction = UIAlertAction(title: "Valider", style: .default) { (_) in
+            personImage.layer.removeAllAnimations()
             
-            //getting the input values from user
-            let id = alertController.textFields?[0].text
-            let key = alertController.textFields?[1].text
+            stepsImage.image = nil
+            stepsImage.layer.removeAllAnimations()
             
-            //self.labelMessage.text = "Name: " + name! + "Email: " + email!
-            let userDefaults = UserDefaults.standard
-            userDefaults.set(id, forKey: "id")
-            userDefaults.set(key, forKey: "key")
+            toggleLabelsVisibility(false)
+            
+            alertTriggered = false
+            
+            showToast(message: NSLocalizedString("Alert chain completed", comment: "Toast message when a fall is detected"))
+            
+            return
         }
         
-        //the cancel action doing nothing
-        let cancelAction = UIAlertAction(title: "Annuler", style: .cancel) { (_) in }
+        stepsImage.image = UIImage(named: "step_\(currentStep)")
         
-        //adding textfields to our dialog box
-        alertController.addTextField { (textField) in
-            textField.placeholder = "Nom d'utilisateur"
-        }
-        alertController.addTextField { (textField) in
-            textField.isSecureTextEntry = true
-            textField.placeholder = "Mot de passe"
-        }
-        
-        //adding the action to dialogbox
-        alertController.addAction(confirmAction)
-        alertController.addAction(cancelAction)
-        
-        //finally presenting the dialog box
-        self.present(alertController, animated: true, completion: nil)
+        let nextAnim = stepAnimations[currentStep]
+        nextAnim.beginTime = CACurrentMediaTime() + DemoViewController.blinkAnimationDelay
+        stepsImage.layer.add(nextAnim, forKey: "step")
     }
-    
-    /*
-    func showToast(message : String) {
-        
-        let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 75, y: self.view.frame.size.height-100, width: 150, height: 35))
-        toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.6)
-        toastLabel.textColor = UIColor.white
-        toastLabel.textAlignment = .center;
-        toastLabel.font = UIFont(name: "Montserrat-Light", size: 12.0)
-        toastLabel.text = message
-        toastLabel.alpha = 1.0
-        toastLabel.layer.cornerRadius = 10;
-        toastLabel.clipsToBounds  =  true
-        self.view.addSubview(toastLabel)
-        UIView.animate(withDuration: 4.0, delay: 0.1, options: .curveEaseOut, animations: {
-            toastLabel.alpha = 0.0
-        }, completion: {(isCompleted) in
-            toastLabel.removeFromSuperview()
-        })
-    }
- */
 }

@@ -7,61 +7,39 @@
 //
 
 import Foundation
-import UIKit
 
-class Shoe {
+struct Shoe: Decodable {
+    let title: String
+    let productId: String
+    let image: String
+    let models : [Model]
     
-    class Model {
-        class ViewSequence {
-            var mimeType: String
-            var htmlType: String
-            var content: String
-            init?(json: [String: Any]) {
-                self.mimeType = json["mime_type"] as! String
-                self.htmlType = json["html_type"] as! String
-                self.content = json["content"] as! String
-            }
-        }
-        var image: String
-        var viewSequence: [ViewSequence]
-    
-        init?(json: [String: Any]) {
-            self.image = json["image"] as! String
-            self.viewSequence = [ViewSequence]()
-            let viewSequence = json["view_sequence"] as! [[String: Any]]
-            for vs in viewSequence {
-                if let v = ViewSequence(json: vs) {
-                    self.viewSequence.append(v)
-                }
-            }
-        }
+    enum CodingKeys: String, CodingKey {
+        case title
+        case productId = "product_id"
+        case image
+        case models
     }
     
-    var title: String
-    var productId: String
-    var models : [Model]
-    var image: String
-    
-    init(title: String, productId: String, image: String, models: [Model]) {
-        self.title = title
-        self.image = image
-        self.productId = productId
-        self.models = [Model]()
-    }
-    
-    init?(json: [String: Any]) {
-        self.title = json["title"] as! String
-        self.image = json["image"] as! String
-        self.productId = json["product_id"] as! String
-        let models = json["models"] as! [[String: Any]]
-        self.models = [Model]()
-        for m in models {
-            if let sv = Model(json: m) {
-                self.models.append(sv)
-            } else {
-                print("fail with json")
+    struct Model: Decodable {
+        let image: String
+        let viewSequences: [ViewSequence]
+        
+        enum CodingKeys: String, CodingKey {
+            case image
+            case viewSequences = "view_sequence"
+        }
+        
+        struct ViewSequence: Decodable {
+            let mimeType: String
+            let htmlType: String
+            let content: String
+            
+            enum CodingKeys: String, CodingKey {
+                case mimeType = "mime_type"
+                case htmlType = "html_type"
+                case content
             }
         }
-        print(models)
     }
 }

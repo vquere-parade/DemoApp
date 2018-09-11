@@ -15,7 +15,6 @@
 		A63C15391FE68011000907E0 /* LineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63C15381FE68011000907E0 /* LineModel.swift */; };
 		A63C153B1FE68765000907E0 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63C153A1FE68765000907E0 /* CircleView.swift */; };
 		A6699A671FCEC80800A4DF6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6699A661FCEC80800A4DF6A /* AppDelegate.swift */; };
-		A6699A691FCEC80800A4DF6A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6699A681FCEC80800A4DF6A /* ViewController.swift */; };
 		A6699A6C1FCEC80800A4DF6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6699A6A1FCEC80800A4DF6A /* Main.storyboard */; };
 		A6699A6E1FCEC80800A4DF6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6699A6D1FCEC80800A4DF6A /* Assets.xcassets */; };
 		A6699A711FCEC80800A4DF6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6699A6F1FCEC80800A4DF6A /* LaunchScreen.storyboard */; };
@@ -25,30 +24,22 @@
 		A6699A971FCECAFC00A4DF6A /* ShoeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6699A961FCECAFC00A4DF6A /* ShoeTableViewController.swift */; };
 		A6699A991FCECB8800A4DF6A /* Shoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6699A981FCECB8800A4DF6A /* Shoe.swift */; };
 		A6699A9B1FCF0D1F00A4DF6A /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6699A9A1FCF0D1F00A4DF6A /* ImageCollectionViewCell.swift */; };
-		A6699A9D1FCF0D3D00A4DF6A /* CategoryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6699A9C1FCF0D3D00A4DF6A /* CategoryCollectionViewController.swift */; };
-		A6699AA11FCF424E00A4DF6A /* ProductCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6699AA01FCF424E00A4DF6A /* ProductCategory.swift */; };
-		A67B0B83203AD0E7008B9EA6 /* ProductText.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67B0B82203AD0E7008B9EA6 /* ProductText.swift */; };
-		A6817E191FD080A200922C20 /* ProductVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6817E181FD080A200922C20 /* ProductVideo.swift */; };
-		A6817E291FD31BD000922C20 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6817E241FD31A7700922C20 /* AudioToolbox.framework */; };
+		A6699A9D1FCF0D3D00A4DF6A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6699A9C1FCF0D3D00A4DF6A /* HomeViewController.swift */; };
 		A681A84F1FE11F320003DF0B /* PdfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A681A84E1FE11F320003DF0B /* PdfViewController.swift */; };
 		A6822F5B1FFD435E00D1432E /* EVONE_ CES_LAS_VEGAS_JANVIER_2018.pdf in Resources */ = {isa = PBXBuildFile; fileRef = A6822F5A1FFD435E00D1432E /* EVONE_ CES_LAS_VEGAS_JANVIER_2018.pdf */; };
 		A6822F5D1FFD685500D1432E /* evone_tech.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A6822F5C1FFD685400D1432E /* evone_tech.mp4 */; };
-		A6861E562053DA44003CB6BE /* Authenticate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6861E552053DA44003CB6BE /* Authenticate.swift */; };
-		A6861E582053F14A003CB6BE /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6861E572053F14A003CB6BE /* SignupViewController.swift */; };
 		A6A782DB1FFBA16500D5CD53 /* evone_senior_en.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A6A782DA1FFBA16500D5CD53 /* evone_senior_en.mp4 */; };
-		A6A956E81FE121F2004C3493 /* ProductPdf.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A956E71FE121F2004C3493 /* ProductPdf.swift */; };
-		A6A956EB1FE129CE004C3493 /* HeaderReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A956EA1FE129CE004C3493 /* HeaderReusableView.swift */; };
 		A6B77D8D1FDC77D000E7F322 /* TextCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B77D8C1FDC77D000E7F322 /* TextCollectionViewCell.swift */; };
-		A6CE7E01203C188400DC72D7 /* FullsizeTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CE7E00203C188400DC72D7 /* FullsizeTextCell.swift */; };
-		A6CE7E03203C189F00DC72D7 /* FullsizeImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CE7E02203C189F00DC72D7 /* FullsizeImageCell.swift */; };
-		A6CE7E05203C18C500DC72D7 /* HalfsizeImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CE7E04203C18C500DC72D7 /* HalfsizeImageCell.swift */; };
-		A6CE7E07203C473700DC72D7 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6CE7E06203C473700DC72D7 /* MapKit.framework */; };
 		A6DEB3961FE7ACD30060B827 /* izome.json in Resources */ = {isa = PBXBuildFile; fileRef = A6DEB3951FE7ACD30060B827 /* izome.json */; };
 		A6DEB39A1FE7B3C00060B827 /* evone.json in Resources */ = {isa = PBXBuildFile; fileRef = A6DEB3991FE7B3C00060B827 /* evone.json */; };
 		A6DEB39C1FE7B3D50060B827 /* evan.json in Resources */ = {isa = PBXBuildFile; fileRef = A6DEB39B1FE7B3D50060B827 /* evan.json */; };
 		A6E8BF051FCFE76600BC9C83 /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E8BF041FCFE76600BC9C83 /* DemoViewController.swift */; };
 		A6E8BF071FD017E600BC9C83 /* ShoeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E8BF061FD017E600BC9C83 /* ShoeViewController.swift */; };
-		C8CAD84D244F975693469B30 /* Pods_Parade.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AFD4FA75286B013F3D92D34 /* Pods_Parade.framework */; };
+		F47820492140042A00AF5A34 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47820482140042A00AF5A34 /* MenuItem.swift */; };
+		F4863DE9214027B400D2BC6F /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4863DE8214027B400D2BC6F /* HomeCell.swift */; };
+		F4D37DED21406BA30059991F /* ColumnFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D37DEC21406BA30059991F /* ColumnFlowLayout.swift */; };
+		F4D37DF1214078280059991F /* Pods_Parade.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4D37DF0214078280059991F /* Pods_Parade.framework */; };
+		F4D37DF3214078300059991F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4D37DF2214078300059991F /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,7 +72,6 @@
 		A63C153A1FE68765000907E0 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		A6699A631FCEC80800A4DF6A /* Parade.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Parade.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6699A661FCEC80800A4DF6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A6699A681FCEC80800A4DF6A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A6699A6B1FCEC80800A4DF6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A6699A6D1FCEC80800A4DF6A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A6699A701FCEC80800A4DF6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -96,24 +86,13 @@
 		A6699A961FCECAFC00A4DF6A /* ShoeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoeTableViewController.swift; sourceTree = "<group>"; };
 		A6699A981FCECB8800A4DF6A /* Shoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shoe.swift; sourceTree = "<group>"; };
 		A6699A9A1FCF0D1F00A4DF6A /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
-		A6699A9C1FCF0D3D00A4DF6A /* CategoryCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewController.swift; sourceTree = "<group>"; };
-		A6699AA01FCF424E00A4DF6A /* ProductCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCategory.swift; sourceTree = "<group>"; };
-		A67B0B81203AD060008B9EA6 /* Parade.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Parade.entitlements; sourceTree = "<group>"; };
-		A67B0B82203AD0E7008B9EA6 /* ProductText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductText.swift; sourceTree = "<group>"; };
-		A6817E181FD080A200922C20 /* ProductVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductVideo.swift; sourceTree = "<group>"; };
+		A6699A9C1FCF0D3D00A4DF6A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A6817E241FD31A7700922C20 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		A681A84E1FE11F320003DF0B /* PdfViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfViewController.swift; sourceTree = "<group>"; };
 		A6822F5A1FFD435E00D1432E /* EVONE_ CES_LAS_VEGAS_JANVIER_2018.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "EVONE_ CES_LAS_VEGAS_JANVIER_2018.pdf"; sourceTree = "<group>"; };
 		A6822F5C1FFD685400D1432E /* evone_tech.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = evone_tech.mp4; sourceTree = "<group>"; };
-		A6861E552053DA44003CB6BE /* Authenticate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authenticate.swift; sourceTree = "<group>"; };
-		A6861E572053F14A003CB6BE /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		A6A782DA1FFBA16500D5CD53 /* evone_senior_en.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = evone_senior_en.mp4; sourceTree = "<group>"; };
-		A6A956E71FE121F2004C3493 /* ProductPdf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductPdf.swift; sourceTree = "<group>"; };
-		A6A956EA1FE129CE004C3493 /* HeaderReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderReusableView.swift; sourceTree = "<group>"; };
 		A6B77D8C1FDC77D000E7F322 /* TextCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCollectionViewCell.swift; sourceTree = "<group>"; };
-		A6CE7E00203C188400DC72D7 /* FullsizeTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullsizeTextCell.swift; sourceTree = "<group>"; };
-		A6CE7E02203C189F00DC72D7 /* FullsizeImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullsizeImageCell.swift; sourceTree = "<group>"; };
-		A6CE7E04203C18C500DC72D7 /* HalfsizeImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfsizeImageCell.swift; sourceTree = "<group>"; };
 		A6CE7E06203C473700DC72D7 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		A6DEB3951FE7ACD30060B827 /* izome.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = izome.json; sourceTree = "<group>"; };
 		A6DEB3991FE7B3C00060B827 /* evone.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = evone.json; sourceTree = "<group>"; };
@@ -122,6 +101,12 @@
 		A6E8BF061FD017E600BC9C83 /* ShoeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoeViewController.swift; sourceTree = "<group>"; };
 		A6F83E96203733D600DAEED8 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6F83E97203733D600DAEED8 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F47820482140042A00AF5A34 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
+		F4863DE8214027B400D2BC6F /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
+		F4D37DEC21406BA30059991F /* ColumnFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColumnFlowLayout.swift; sourceTree = "<group>"; };
+		F4D37DEE214078280059991F /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4D37DF0214078280059991F /* Pods_Parade.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_Parade.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4D37DF2214078300059991F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,9 +114,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6817E291FD31BD000922C20 /* AudioToolbox.framework in Frameworks */,
-				A6CE7E07203C473700DC72D7 /* MapKit.framework in Frameworks */,
-				C8CAD84D244F975693469B30 /* Pods_Parade.framework in Frameworks */,
+				F4D37DF3214078300059991F /* AVFoundation.framework in Frameworks */,
+				F4D37DF1214078280059991F /* Pods_Parade.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,8 +179,7 @@
 		A6699A651FCEC80800A4DF6A /* Parade */ = {
 			isa = PBXGroup;
 			children = (
-				A6861E542053DA3A003CB6BE /* Network */,
-				A67B0B81203AD060008B9EA6 /* Parade.entitlements */,
+				F47820472140041700AF5A34 /* Home */,
 				A63C15321FE671DD000907E0 /* Utils */,
 				A6A956E91FE129BD004C3493 /* Views */,
 				A6817E171FD0809300922C20 /* Model */,
@@ -204,7 +187,6 @@
 				A6E8BF021FCFE74300BC9C83 /* ViewControllers */,
 				A6817E1C1FD16AAD00922C20 /* Resources */,
 				A6699A661FCEC80800A4DF6A /* AppDelegate.swift */,
-				A6699A681FCEC80800A4DF6A /* ViewController.swift */,
 				A6699A6A1FCEC80800A4DF6A /* Main.storyboard */,
 				A6699A6D1FCEC80800A4DF6A /* Assets.xcassets */,
 				A6699A6F1FCEC80800A4DF6A /* LaunchScreen.storyboard */,
@@ -235,10 +217,6 @@
 			isa = PBXGroup;
 			children = (
 				A6699A981FCECB8800A4DF6A /* Shoe.swift */,
-				A6699AA01FCF424E00A4DF6A /* ProductCategory.swift */,
-				A6817E181FD080A200922C20 /* ProductVideo.swift */,
-				A6A956E71FE121F2004C3493 /* ProductPdf.swift */,
-				A67B0B82203AD0E7008B9EA6 /* ProductText.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -260,6 +238,9 @@
 		A6817E231FD31A7700922C20 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F4D37DF2214078300059991F /* AVFoundation.framework */,
+				F4D37DEE214078280059991F /* Alamofire.framework */,
+				F4D37DF0214078280059991F /* Pods_Parade.framework */,
 				A6CE7E06203C473700DC72D7 /* MapKit.framework */,
 				A6F83E96203733D600DAEED8 /* Alamofire.framework */,
 				A6F83E97203733D600DAEED8 /* SwiftyJSON.framework */,
@@ -269,18 +250,9 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		A6861E542053DA3A003CB6BE /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				A6861E552053DA44003CB6BE /* Authenticate.swift */,
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
 		A6A956E91FE129BD004C3493 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A6A956EA1FE129CE004C3493 /* HeaderReusableView.swift */,
 				A63C153A1FE68765000907E0 /* CircleView.swift */,
 			);
 			path = Views;
@@ -291,10 +263,8 @@
 			children = (
 				A6E8BF061FD017E600BC9C83 /* ShoeViewController.swift */,
 				A6699A961FCECAFC00A4DF6A /* ShoeTableViewController.swift */,
-				A6699A9C1FCF0D3D00A4DF6A /* CategoryCollectionViewController.swift */,
 				A6E8BF041FCFE76600BC9C83 /* DemoViewController.swift */,
 				A681A84E1FE11F320003DF0B /* PdfViewController.swift */,
-				A6861E572053F14A003CB6BE /* SignupViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -308,11 +278,19 @@
 				A61F8CF11FE7F9F3004C924D /* ImageViewCell.swift */,
 				A61F8CF31FE7FA0F004C924D /* TitleViewCell.swift */,
 				A61F8CF51FE7FA1C004C924D /* BodyViewCell.swift */,
-				A6CE7E00203C188400DC72D7 /* FullsizeTextCell.swift */,
-				A6CE7E02203C189F00DC72D7 /* FullsizeImageCell.swift */,
-				A6CE7E04203C18C500DC72D7 /* HalfsizeImageCell.swift */,
 			);
 			path = ViewCells;
+			sourceTree = "<group>";
+		};
+		F47820472140041700AF5A34 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F47820482140042A00AF5A34 /* MenuItem.swift */,
+				A6699A9C1FCF0D3D00A4DF6A /* HomeViewController.swift */,
+				F4863DE8214027B400D2BC6F /* HomeCell.swift */,
+				F4D37DEC21406BA30059991F /* ColumnFlowLayout.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -381,7 +359,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0910;
-				LastUpgradeCheck = 0910;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Parade Protection";
 				TargetAttributes = {
 					A6699A621FCEC80800A4DF6A = {
@@ -504,14 +482,10 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Parade/Pods-Parade-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/KYDrawerController/KYDrawerController.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KYDrawerController.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -525,33 +499,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6861E582053F14A003CB6BE /* SignupViewController.swift in Sources */,
-				A6A956E81FE121F2004C3493 /* ProductPdf.swift in Sources */,
 				A681A84F1FE11F320003DF0B /* PdfViewController.swift in Sources */,
-				A6CE7E05203C18C500DC72D7 /* HalfsizeImageCell.swift in Sources */,
-				A6A956EB1FE129CE004C3493 /* HeaderReusableView.swift in Sources */,
+				F4D37DED21406BA30059991F /* ColumnFlowLayout.swift in Sources */,
 				A6699A971FCECAFC00A4DF6A /* ShoeTableViewController.swift in Sources */,
 				A6E8BF071FD017E600BC9C83 /* ShoeViewController.swift in Sources */,
 				A6699A951FCEC95700A4DF6A /* ShoeTableViewCell.swift in Sources */,
+				F4863DE9214027B400D2BC6F /* HomeCell.swift in Sources */,
 				A63C15391FE68011000907E0 /* LineModel.swift in Sources */,
 				A63C153B1FE68765000907E0 /* CircleView.swift in Sources */,
-				A67B0B83203AD0E7008B9EA6 /* ProductText.swift in Sources */,
 				A61F8CF61FE7FA1C004C924D /* BodyViewCell.swift in Sources */,
-				A6699A691FCEC80800A4DF6A /* ViewController.swift in Sources */,
 				A6E8BF051FCFE76600BC9C83 /* DemoViewController.swift in Sources */,
 				A63C15341FE671F3000907E0 /* CustomeIntensityVisualEffect.swift in Sources */,
 				A61F8CF41FE7FA0F004C924D /* TitleViewCell.swift in Sources */,
 				A61F8CF21FE7F9F3004C924D /* ImageViewCell.swift in Sources */,
 				A6699A991FCECB8800A4DF6A /* Shoe.swift in Sources */,
-				A6CE7E01203C188400DC72D7 /* FullsizeTextCell.swift in Sources */,
 				A6699A671FCEC80800A4DF6A /* AppDelegate.swift in Sources */,
 				A6B77D8D1FDC77D000E7F322 /* TextCollectionViewCell.swift in Sources */,
-				A6CE7E03203C189F00DC72D7 /* FullsizeImageCell.swift in Sources */,
-				A6699A9D1FCF0D3D00A4DF6A /* CategoryCollectionViewController.swift in Sources */,
-				A6861E562053DA44003CB6BE /* Authenticate.swift in Sources */,
-				A6817E191FD080A200922C20 /* ProductVideo.swift in Sources */,
+				F47820492140042A00AF5A34 /* MenuItem.swift in Sources */,
+				A6699A9D1FCF0D3D00A4DF6A /* HomeViewController.swift in Sources */,
 				A6699A9B1FCF0D1F00A4DF6A /* ImageCollectionViewCell.swift in Sources */,
-				A6699AA11FCF424E00A4DF6A /* ProductCategory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -620,6 +586,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -627,6 +594,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -677,6 +645,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -684,6 +653,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -723,6 +693,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J2MT6QBYDK;
 				INFOPLIST_FILE = Parade/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.parade-protection.presentation";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -742,6 +713,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J2MT6QBYDK;
 				INFOPLIST_FILE = Parade/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.parade-protection.presentation";
 				PRODUCT_NAME = "$(TARGET_NAME)";

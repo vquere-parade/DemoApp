@@ -10,41 +10,24 @@ import Foundation
 import UIKit
 
 class ShoeTableViewController : UITableViewController {
+    var jsonFile: String!
     
-    var shoes = [Shoe.Model]()
-    var selectedShoe: Shoe.Model?
-    var jsonFile: String?
+    lazy var shoe = { () -> Shoe in
+        let data = try! Data(contentsOf: Bundle.main.url(forResource: jsonFile, withExtension: "json")!)
+        
+        return try! JSONDecoder().decode(Shoe.self, from: data)
+    }()
     
     override func viewDidLoad() {
+        super.viewDidLoad()
+        
         self.tableView.rowHeight = 200        
-        if let _jsonFile = jsonFile {
-            print("_jsonFile ok: "+_jsonFile)
-            if let filePath = Bundle.main.path(forResource: _jsonFile, ofType:"json") {
-                print("filePath ok")
-                let json = try? JSONSerialization.jsonObject(with: Data(contentsOf: URL(fileURLWithPath: filePath)), options: [])
-                guard let jsonContent = json as? [String: Any] else {
-                    fatalError("JSON error")
-                }
-                print("jsonContent ok")
-                let shoe = Shoe(json: jsonContent)
-                self.title = shoe?.title
-                for model in (shoe?.models)! {
-                    self.shoes.append(model)
-                }
-            }
-        }
-        
-        
-        
-        
-    }
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
+
+        title = shoe.title
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return shoes.count
+        return shoe.models.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -52,7 +35,7 @@ class ShoeTableViewController : UITableViewController {
             fatalError("The dequeued cell is not an instance of ShoeTableViewCell.")
         }
         DispatchQueue.global(qos: .background).async {
-            let image = UIImage(named: self.shoes[indexPath.row].image)
+            let image = UIImage(named: self.shoe.models[indexPath.row].image)
             DispatchQueue.main.async {
                 cell.shoeImageView.image = image
             }
@@ -61,17 +44,15 @@ class ShoeTableViewController : UITableViewController {
         return cell
     }
     
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedShoe = shoes[indexPath.row]
-        performSegue(withIdentifier: "showShoeSegue", sender: self)
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showShoeSegue" {
-            if let toViewController = segue.destination as? ShoeViewController {
-                toViewController.shoe = selectedShoe
-            }
+        switch segue.identifier {
+        case "ShoeDetailSegue":
+            let viewController = segue.destination as! ShoeViewController
+            
+            let selectedItemIndex = tableView.indexPathForSelectedRow!.row
+            viewController.shoe = shoe.models[selectedItemIndex]
+        default:
+            break
         }
     }
 }

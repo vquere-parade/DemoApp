@@ -6,14 +6,8 @@
 //  Copyright © 2017 Parade Protection. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class BodyViewCell : UITableViewCell {
-    
     @IBOutlet weak var bodyLabel: UILabel!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
 }

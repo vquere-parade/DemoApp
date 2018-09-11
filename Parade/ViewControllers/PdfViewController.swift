@@ -14,7 +14,7 @@ class PdfViewController: UIViewController, MFMailComposeViewControllerDelegate {
     
     @IBOutlet weak var actionNavButton: UIBarButtonItem!
     @IBOutlet weak var cancelNavButton: UIBarButtonItem!
-    var productPdf: ProductPdf?
+    var productPdf: String!
     var webView: WKWebView?
     
 
@@ -34,16 +34,13 @@ class PdfViewController: UIViewController, MFMailComposeViewControllerDelegate {
         actionNavButton.action =  #selector(actionButtonTapped(sender:))
         actionNavButton.target =  self
         
-        cancelNavButton.action =  #selector(cancelButtonTapped(sender:))
-        cancelNavButton.target =  self
-        
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(self.orientationChanged),
             name: .UIDeviceOrientationDidChange,
             object: nil)
         //Bundle.main.url(forResource: pv.videoName, withExtension: pv.videoType)!
-        if let pdfURL = Bundle.main.url(forResource: productPdf?.pdfName, withExtension: "pdf")  {
+        if let pdfURL = Bundle.main.url(forResource: productPdf, withExtension: "pdf")  {
             do {
                 print("do")
                 let data = try Data(contentsOf: pdfURL)
@@ -72,7 +69,7 @@ class PdfViewController: UIViewController, MFMailComposeViewControllerDelegate {
     
     func sendEmail() {
         if MFMailComposeViewController.canSendMail() {
-            if let pdfURL = Bundle.main.url(forResource: productPdf?.pdfName, withExtension: "pdf")  {
+            if let pdfURL = Bundle.main.url(forResource: productPdf, withExtension: "pdf")  {
                 do {
                     print("do")
                     let data = try Data(contentsOf: pdfURL)

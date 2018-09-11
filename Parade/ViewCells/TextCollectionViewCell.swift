@@ -6,11 +6,9 @@
 //  Copyright © 2017 Parade Protection. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class TextCollectionViewCell : UICollectionViewCell {
-    
     @IBOutlet weak var viewBG: UIView!
     @IBOutlet weak var labelText: UILabel!
     
