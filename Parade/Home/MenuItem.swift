@@ -6,10 +6,12 @@
 //  Copyright © 2018 Parade Protection. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct MenuItem {
     let title: String
+    let image: UIImage
+    let imageHighlight: UIImage
     let type: Type
 }
 

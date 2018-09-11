@@ -9,5 +9,7 @@
 import UIKit
 
 class HomeCell: UICollectionViewCell {
+    @IBOutlet weak var backgroundImage: UIImageView!
+    
     @IBOutlet weak var title: UILabel!
 }

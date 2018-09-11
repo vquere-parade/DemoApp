@@ -177,20 +177,43 @@
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="haX-QO-8rt">
-                                                    <rect key="frame" x="3.6666666666666679" y="15.666666666666666" width="43.333333333333329" height="20.333333333333336"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="I3x-CP-hLM">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="haX-QO-8rt" customClass="PaddingLabel" customModule="Parade" customModuleProvider="target">
+                                                    <rect key="frame" x="1.6666666666666679" y="11.666666666666666" width="47.666666666666657" height="28.333333333333336"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="topInset">
+                                                            <real key="value" value="4"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="bottomInset">
+                                                            <real key="value" value="4"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="leftInset">
+                                                            <real key="value" value="2"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="rightInset">
+                                                            <real key="value" value="2"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </label>
                                             </subviews>
                                         </view>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
+                                            <constraint firstItem="I3x-CP-hLM" firstAttribute="top" secondItem="5wS-PE-N6R" secondAttribute="top" id="DMn-ck-p8h"/>
                                             <constraint firstItem="haX-QO-8rt" firstAttribute="centerX" secondItem="5wS-PE-N6R" secondAttribute="centerX" id="EIF-zK-6Us"/>
+                                            <constraint firstAttribute="bottom" secondItem="I3x-CP-hLM" secondAttribute="bottom" id="b72-FN-Sk8"/>
+                                            <constraint firstAttribute="trailing" secondItem="I3x-CP-hLM" secondAttribute="trailing" id="d4a-Hs-dSl"/>
+                                            <constraint firstItem="I3x-CP-hLM" firstAttribute="leading" secondItem="5wS-PE-N6R" secondAttribute="leading" id="eJN-W4-Z1m"/>
                                             <constraint firstItem="haX-QO-8rt" firstAttribute="centerY" secondItem="5wS-PE-N6R" secondAttribute="centerY" id="gCw-aX-Pjj"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="backgroundImage" destination="I3x-CP-hLM" id="9G2-wD-cdg"/>
                                             <outlet property="title" destination="haX-QO-8rt" id="hvR-Ob-G1b"/>
                                         </connections>
                                     </collectionViewCell>
@@ -314,6 +337,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="person" width="200" height="200"/>
+        <image name="person" width="972" height="972"/>
     </resources>
 </document>
