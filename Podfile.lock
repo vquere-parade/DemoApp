@@ -30,12 +30,14 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
+  - Zip (1.1.0)
 
 DEPENDENCIES:
   - Crashlytics (~> 3.10.7)
   - Fabric (~> 1.7.11)
   - Firebase/Core
   - Firebase/Storage
+  - Zip (~> 1.1)
 
 SPEC CHECKSUMS:
   Crashlytics: ccaac42660eb9351b9960c0d66106b0bcf99f4fa
@@ -48,7 +50,8 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
   GTMSessionFetcher: 0c4baf0a73acd0041bf9f71ea018deedab5ea84e
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  Zip: 8877eede3dda76bcac281225c20e71c25270774c
 
-PODFILE CHECKSUM: bd24c972c3a794d75c647b5ed0c79266bac23d95
+PODFILE CHECKSUM: da574e888ef3dd173eb83fed7aa3dab02988d7ea
 
 COCOAPODS: 1.4.0

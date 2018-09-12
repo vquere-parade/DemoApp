@@ -36,6 +36,8 @@
 		A6E8BF051FCFE76600BC9C83 /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E8BF041FCFE76600BC9C83 /* DemoViewController.swift */; };
 		A6E8BF071FD017E600BC9C83 /* ShoeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E8BF061FD017E600BC9C83 /* ShoeViewController.swift */; };
 		F404F44121480BB800C2A7A4 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F404F44021480BB800C2A7A4 /* PaddingLabel.swift */; };
+		F411F49F2149394100BCD01E /* UpdateContentTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = F411F49E2149394100BCD01E /* UpdateContentTask.swift */; };
+		F411F4A121495C1600BCD01E /* URL+cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = F411F4A021495C1600BCD01E /* URL+cache.swift */; };
 		F42C071521490A4F003C93F4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F42C071421490A4F003C93F4 /* GoogleService-Info.plist */; };
 		F47820492140042A00AF5A34 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47820482140042A00AF5A34 /* MenuItem.swift */; };
 		F4863DE9214027B400D2BC6F /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4863DE8214027B400D2BC6F /* HomeCell.swift */; };
@@ -104,6 +106,8 @@
 		A6F83E96203733D600DAEED8 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6F83E97203733D600DAEED8 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F404F44021480BB800C2A7A4 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
+		F411F49E2149394100BCD01E /* UpdateContentTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateContentTask.swift; sourceTree = "<group>"; };
+		F411F4A021495C1600BCD01E /* URL+cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+cache.swift"; sourceTree = "<group>"; };
 		F42C071421490A4F003C93F4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F47820482140042A00AF5A34 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		F4863DE8214027B400D2BC6F /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
@@ -154,6 +158,7 @@
 			children = (
 				A63C15331FE671F3000907E0 /* CustomeIntensityVisualEffect.swift */,
 				A63C15381FE68011000907E0 /* LineModel.swift */,
+				F411F4A021495C1600BCD01E /* URL+cache.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -295,6 +300,7 @@
 				F4863DE8214027B400D2BC6F /* HomeCell.swift */,
 				F4D37DEC21406BA30059991F /* ColumnFlowLayout.swift */,
 				F404F44021480BB800C2A7A4 /* PaddingLabel.swift */,
+				F411F49E2149394100BCD01E /* UpdateContentTask.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -491,12 +497,14 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Parade/Pods-Parade-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Zip/Zip.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Zip.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -530,6 +538,7 @@
 				A6E8BF071FD017E600BC9C83 /* ShoeViewController.swift in Sources */,
 				A6699A951FCEC95700A4DF6A /* ShoeTableViewCell.swift in Sources */,
 				F4863DE9214027B400D2BC6F /* HomeCell.swift in Sources */,
+				F411F49F2149394100BCD01E /* UpdateContentTask.swift in Sources */,
 				A63C15391FE68011000907E0 /* LineModel.swift in Sources */,
 				A63C153B1FE68765000907E0 /* CircleView.swift in Sources */,
 				A61F8CF61FE7FA1C004C924D /* BodyViewCell.swift in Sources */,
@@ -541,6 +550,7 @@
 				A6699A671FCEC80800A4DF6A /* AppDelegate.swift in Sources */,
 				A6B77D8D1FDC77D000E7F322 /* TextCollectionViewCell.swift in Sources */,
 				F404F44121480BB800C2A7A4 /* PaddingLabel.swift in Sources */,
+				F411F4A121495C1600BCD01E /* URL+cache.swift in Sources */,
 				F47820492140042A00AF5A34 /* MenuItem.swift in Sources */,
 				A6699A9D1FCF0D3D00A4DF6A /* HomeViewController.swift in Sources */,
 				A6699A9B1FCF0D1F00A4DF6A /* ImageCollectionViewCell.swift in Sources */,

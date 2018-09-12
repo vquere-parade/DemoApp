@@ -13,6 +13,10 @@ import AVFoundation
 class HomeViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
+    private var updateTask: UpdateContentTask?
+    
+    private var updateItemIndexPath: IndexPath?
+    
     let menuItems = [
         MenuItem(
             title: NSLocalizedString("Elevator Pitch", comment: "Elevator Pitch menu item"),
@@ -88,10 +92,7 @@ class HomeViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        // deselect menu items after a segue
-        for indexPath in collectionView.indexPathsForSelectedItems ?? [] {
-            collectionView.deselectItem(at: indexPath, animated: false)
-        }
+        deselectItems()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -119,6 +120,27 @@ class HomeViewController: UIViewController {
             break
         }
     }
+    
+    deinit {
+        updateTask?.cancel()
+    }
+    
+    fileprivate func deselectItems() {
+        // deselect menu items after a segue
+        for indexPath in collectionView.indexPathsForSelectedItems ?? [] {
+            collectionView.deselectItem(at: indexPath, animated: false)
+        }
+    }
+    private func updateContent(){
+        guard updateTask == nil else {
+            return
+        }
+        
+        updateTask = UpdateContentTask()
+        updateTask!.delegate = self
+        
+        updateTask!.execute()
+    }
 }
 
 extension HomeViewController: UICollectionViewDataSource {
@@ -137,6 +159,9 @@ extension HomeViewController: UICollectionViewDataSource {
         
         cell.title.text = item.title
         
+        let hideActivityIndicator = updateTask == nil || updateItemIndexPath != indexPath
+        cell.activityIndicator.isHidden = hideActivityIndicator
+        
         return cell
     }
 }
@@ -153,7 +178,7 @@ extension HomeViewController: UICollectionViewDelegate {
         case .PDF:
             performSegue(withIdentifier: "PDFSegue", sender: self)
         case let .Video(file, type):
-            let url = Bundle.main.url(forResource: file, withExtension: type)!
+            let url = URL.urlFromCacheOrBundle(forResource: file, withExtension: type)!
             
             playVideo(withURL: url)
         case .Collection:
@@ -161,7 +186,14 @@ extension HomeViewController: UICollectionViewDelegate {
         case let .Link(url):
             UIApplication.shared.open(URL(string: url)!, options: [:], completionHandler: nil)
         case .Update:
-            performSegue(withIdentifier: "DemoSegue", sender: self)
+            deselectItems()
+            
+            updateContent()
+            
+            updateItemIndexPath = indexPath
+            
+            collectionView.reloadItems(at: [updateItemIndexPath!])
+            break
         }
     }
     
@@ -182,6 +214,28 @@ extension HomeViewController: UICollectionViewDelegate {
         
         present(playerController, animated: true) {
             player.play()
+        }
+    }
+}
+
+extension HomeViewController : UpdateContentTaskDelegate {
+    func didSuccessUpdatingContent() {
+        taskFinished(withSuccess: true)
+    }
+    
+    func didFailUpdatingContent(error: Error) {
+        taskFinished(withSuccess: false)
+    }
+    
+    func taskFinished(withSuccess success: Bool) {
+        updateTask = nil
+        
+        collectionView.reloadItems(at: [updateItemIndexPath!])
+        
+        if success {
+            showToast(message: NSLocalizedString("Content updated", comment: "Toast message when the content has been updated"))
+        } else {
+            showToast(message: NSLocalizedString("Fail to update content", comment: "Toast message when the content couldn't be updated"))
         }
     }
 }

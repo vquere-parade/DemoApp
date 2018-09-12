@@ -40,7 +40,7 @@ class PdfViewController: UIViewController, MFMailComposeViewControllerDelegate {
             name: .UIDeviceOrientationDidChange,
             object: nil)
         //Bundle.main.url(forResource: pv.videoName, withExtension: pv.videoType)!
-        if let pdfURL = Bundle.main.url(forResource: productPdf, withExtension: "pdf")  {
+        if let pdfURL = URL.urlFromCacheOrBundle(forResource: productPdf, withExtension: "pdf")  {
             do {
                 print("do")
                 let data = try Data(contentsOf: pdfURL)
@@ -69,7 +69,7 @@ class PdfViewController: UIViewController, MFMailComposeViewControllerDelegate {
     
     func sendEmail() {
         if MFMailComposeViewController.canSendMail() {
-            if let pdfURL = Bundle.main.url(forResource: productPdf, withExtension: "pdf")  {
+            if let pdfURL = URL.urlFromCacheOrBundle(forResource: productPdf, withExtension: "pdf")  {
                 do {
                     print("do")
                     let data = try Data(contentsOf: pdfURL)

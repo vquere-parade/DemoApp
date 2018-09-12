@@ -201,18 +201,27 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
+                                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="REY-7X-5Nn">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="0.59600572183098588" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </activityIndicatorView>
                                             </subviews>
                                         </view>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="I3x-CP-hLM" firstAttribute="top" secondItem="5wS-PE-N6R" secondAttribute="top" id="DMn-ck-p8h"/>
                                             <constraint firstItem="haX-QO-8rt" firstAttribute="centerX" secondItem="5wS-PE-N6R" secondAttribute="centerX" id="EIF-zK-6Us"/>
+                                            <constraint firstAttribute="trailing" secondItem="REY-7X-5Nn" secondAttribute="trailing" id="ROz-0z-fpx"/>
+                                            <constraint firstItem="REY-7X-5Nn" firstAttribute="top" secondItem="5wS-PE-N6R" secondAttribute="top" id="ZSt-jy-MVS"/>
+                                            <constraint firstAttribute="bottom" secondItem="REY-7X-5Nn" secondAttribute="bottom" id="aNB-8X-Duw"/>
                                             <constraint firstAttribute="bottom" secondItem="I3x-CP-hLM" secondAttribute="bottom" id="b72-FN-Sk8"/>
                                             <constraint firstAttribute="trailing" secondItem="I3x-CP-hLM" secondAttribute="trailing" id="d4a-Hs-dSl"/>
                                             <constraint firstItem="I3x-CP-hLM" firstAttribute="leading" secondItem="5wS-PE-N6R" secondAttribute="leading" id="eJN-W4-Z1m"/>
+                                            <constraint firstItem="REY-7X-5Nn" firstAttribute="leading" secondItem="5wS-PE-N6R" secondAttribute="leading" id="fhz-1r-HKJ"/>
                                             <constraint firstItem="haX-QO-8rt" firstAttribute="centerY" secondItem="5wS-PE-N6R" secondAttribute="centerY" id="gCw-aX-Pjj"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="activityIndicator" destination="REY-7X-5Nn" id="Rz7-CW-gOh"/>
                                             <outlet property="backgroundImage" destination="I3x-CP-hLM" id="9G2-wD-cdg"/>
                                             <outlet property="title" destination="haX-QO-8rt" id="hvR-Ob-G1b"/>
                                         </connections>

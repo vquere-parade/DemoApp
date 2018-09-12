@@ -13,7 +13,7 @@ class ShoeTableViewController : UITableViewController {
     var jsonFile: String!
     
     lazy var shoe = { () -> Shoe in
-        let data = try! Data(contentsOf: Bundle.main.url(forResource: jsonFile, withExtension: "json")!)
+        let data = try! Data(contentsOf: URL.urlFromCacheOrBundle(forResource: jsonFile, withExtension: "json")!)
         
         return try! JSONDecoder().decode(Shoe.self, from: data)
     }()
