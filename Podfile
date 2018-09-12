@@ -3,4 +3,8 @@ platform :ios, '11.0'
 use_frameworks!
 
 target 'Parade' do
+    pod 'Firebase/Core'
+    pod 'Firebase/Storage'
+    pod 'Fabric', '~> 1.7.11'
+    pod 'Crashlytics', '~> 3.10.7'
 end
