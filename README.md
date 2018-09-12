@@ -1,2 +1,2 @@
-# Application pour Pirch
+# Application pour Pitch
 Application pour illustrer un pitch e-vone
