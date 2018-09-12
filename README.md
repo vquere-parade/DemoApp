@@ -1,2 +1,2 @@
-# Lancement CES Las Vegas
-Application de lancement du produit E-Vone au CES Las Vegas
+# Application pour Pitch
+Application pour illustrer un pitch e-vone
