@@ -38,9 +38,9 @@
 		F404F44121480BB800C2A7A4 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F404F44021480BB800C2A7A4 /* PaddingLabel.swift */; };
 		F411F49F2149394100BCD01E /* UpdateContentTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = F411F49E2149394100BCD01E /* UpdateContentTask.swift */; };
 		F411F4A121495C1600BCD01E /* URL+cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = F411F4A021495C1600BCD01E /* URL+cache.swift */; };
-		F42C071521490A4F003C93F4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F42C071421490A4F003C93F4 /* GoogleService-Info.plist */; };
 		F47820492140042A00AF5A34 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47820482140042A00AF5A34 /* MenuItem.swift */; };
 		F4863DE9214027B400D2BC6F /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4863DE8214027B400D2BC6F /* HomeCell.swift */; };
+		F4C431AE214ACB4E00CCBD37 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4C431AD214ACB4E00CCBD37 /* GoogleService-Info.plist */; };
 		F4D37DED21406BA30059991F /* ColumnFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D37DEC21406BA30059991F /* ColumnFlowLayout.swift */; };
 		F4D37DF1214078280059991F /* Pods_Parade.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4D37DF0214078280059991F /* Pods_Parade.framework */; };
 		F4D37DF3214078300059991F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4D37DF2214078300059991F /* AVFoundation.framework */; };
@@ -108,9 +108,9 @@
 		F404F44021480BB800C2A7A4 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		F411F49E2149394100BCD01E /* UpdateContentTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateContentTask.swift; sourceTree = "<group>"; };
 		F411F4A021495C1600BCD01E /* URL+cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+cache.swift"; sourceTree = "<group>"; };
-		F42C071421490A4F003C93F4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F47820482140042A00AF5A34 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		F4863DE8214027B400D2BC6F /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
+		F4C431AD214ACB4E00CCBD37 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F4D37DEC21406BA30059991F /* ColumnFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColumnFlowLayout.swift; sourceTree = "<group>"; };
 		F4D37DEE214078280059991F /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4D37DF0214078280059991F /* Pods_Parade.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_Parade.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -197,8 +197,8 @@
 				A6817E1C1FD16AAD00922C20 /* Resources */,
 				A6699A661FCEC80800A4DF6A /* AppDelegate.swift */,
 				A6699A6A1FCEC80800A4DF6A /* Main.storyboard */,
-				F42C071421490A4F003C93F4 /* GoogleService-Info.plist */,
 				A6699A6D1FCEC80800A4DF6A /* Assets.xcassets */,
+				F4C431AD214ACB4E00CCBD37 /* GoogleService-Info.plist */,
 				A6699A6F1FCEC80800A4DF6A /* LaunchScreen.storyboard */,
 				A6699A721FCEC80800A4DF6A /* Info.plist */,
 			);
@@ -377,7 +377,7 @@
 				TargetAttributes = {
 					A6699A621FCEC80800A4DF6A = {
 						CreatedOnToolsVersion = 9.1;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
 								enabled = 1;
@@ -389,12 +389,12 @@
 					};
 					A6699A761FCEC80800A4DF6A = {
 						CreatedOnToolsVersion = 9.1;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						TestTargetID = A6699A621FCEC80800A4DF6A;
 					};
 					A6699A811FCEC80800A4DF6A = {
 						CreatedOnToolsVersion = 9.1;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						TestTargetID = A6699A621FCEC80800A4DF6A;
 					};
 				};
@@ -429,10 +429,10 @@
 				A6DEB3961FE7ACD30060B827 /* izome.json in Resources */,
 				A6699A6E1FCEC80800A4DF6A /* Assets.xcassets in Resources */,
 				A6699A6C1FCEC80800A4DF6A /* Main.storyboard in Resources */,
+				F4C431AE214ACB4E00CCBD37 /* GoogleService-Info.plist in Resources */,
 				A6822F5B1FFD435E00D1432E /* EVONE_ CES_LAS_VEGAS_JANVIER_2018.pdf in Resources */,
 				A6DEB39C1FE7B3D50060B827 /* evan.json in Resources */,
 				A6822F5D1FFD685500D1432E /* evone_tech.mp4 in Resources */,
-				F42C071521490A4F003C93F4 /* GoogleService-Info.plist in Resources */,
 				A6DEB39A1FE7B3C00060B827 /* evone.json in Resources */,
 				A61F8CEE1FE7D737004C924D /* PRESS_RELEASE-E-vone.pdf in Resources */,
 			);
@@ -724,15 +724,16 @@
 			baseConfigurationReference = 9D7DDE40D3E4624CA228863E /* Pods-Parade.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J2MT6QBYDK;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Parade/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.parade-protection.presentation";
+				PRODUCT_BUNDLE_IDENTIFIER = com.parade.app4pitch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -744,16 +745,17 @@
 			baseConfigurationReference = 9C3B3E386A26263EFD35D854 /* Pods-Parade.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J2MT6QBYDK;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = FNDY8C6D3A;
 				INFOPLIST_FILE = Parade/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.parade-protection.presentation";
+				PRODUCT_BUNDLE_IDENTIFIER = com.parade.app4pitch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "664e633b-1ef4-4c4a-8310-a065402de13a";
+				PROVISIONING_PROFILE_SPECIFIER = Parade2018;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -764,11 +766,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = ParadeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = parade.ParadeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Parade.app/Parade";
@@ -780,11 +784,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = ParadeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = parade.ParadeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Parade.app/Parade";
@@ -795,11 +801,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = ParadeUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = parade.ParadeUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Parade;
@@ -810,11 +818,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = ParadeUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = parade.ParadeUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Parade;
