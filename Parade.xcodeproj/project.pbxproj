@@ -33,7 +33,6 @@
 		A6DEB3961FE7ACD30060B827 /* izome.json in Resources */ = {isa = PBXBuildFile; fileRef = A6DEB3951FE7ACD30060B827 /* izome.json */; };
 		A6DEB39A1FE7B3C00060B827 /* evone.json in Resources */ = {isa = PBXBuildFile; fileRef = A6DEB3991FE7B3C00060B827 /* evone.json */; };
 		A6DEB39C1FE7B3D50060B827 /* evan.json in Resources */ = {isa = PBXBuildFile; fileRef = A6DEB39B1FE7B3D50060B827 /* evan.json */; };
-		A6E8BF051FCFE76600BC9C83 /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E8BF041FCFE76600BC9C83 /* DemoViewController.swift */; };
 		A6E8BF071FD017E600BC9C83 /* ShoeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E8BF061FD017E600BC9C83 /* ShoeViewController.swift */; };
 		F404F44121480BB800C2A7A4 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F404F44021480BB800C2A7A4 /* PaddingLabel.swift */; };
 		F411F49F2149394100BCD01E /* UpdateContentTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = F411F49E2149394100BCD01E /* UpdateContentTask.swift */; };
@@ -41,6 +40,12 @@
 		F47820492140042A00AF5A34 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47820482140042A00AF5A34 /* MenuItem.swift */; };
 		F4863DE9214027B400D2BC6F /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4863DE8214027B400D2BC6F /* HomeCell.swift */; };
 		F4C431AE214ACB4E00CCBD37 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4C431AD214ACB4E00CCBD37 /* GoogleService-Info.plist */; };
+		F4CE47C7214B9379000DEFD8 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4CE47C6214B9379000DEFD8 /* CoreBluetooth.framework */; };
+		F4CE47D3214BA196000DEFD8 /* DemoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4CE47D1214BA196000DEFD8 /* DemoView.xib */; };
+		F4CE47D4214BA196000DEFD8 /* DemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CE47D2214BA196000DEFD8 /* DemoView.swift */; };
+		F4CE47D8214BA1B5000DEFD8 /* ShoeDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CE47D5214BA1B5000DEFD8 /* ShoeDemoViewController.swift */; };
+		F4CE47D9214BA1B5000DEFD8 /* BaseDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CE47D6214BA1B5000DEFD8 /* BaseDemoViewController.swift */; };
+		F4CE47DA214BA1B5000DEFD8 /* PitchDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CE47D7214BA1B5000DEFD8 /* PitchDemoViewController.swift */; };
 		F4D37DED21406BA30059991F /* ColumnFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D37DEC21406BA30059991F /* ColumnFlowLayout.swift */; };
 		F4D37DF1214078280059991F /* Pods_Parade.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4D37DF0214078280059991F /* Pods_Parade.framework */; };
 		F4D37DF3214078300059991F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4D37DF2214078300059991F /* AVFoundation.framework */; };
@@ -101,7 +106,6 @@
 		A6DEB3951FE7ACD30060B827 /* izome.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = izome.json; sourceTree = "<group>"; };
 		A6DEB3991FE7B3C00060B827 /* evone.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = evone.json; sourceTree = "<group>"; };
 		A6DEB39B1FE7B3D50060B827 /* evan.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = evan.json; sourceTree = "<group>"; };
-		A6E8BF041FCFE76600BC9C83 /* DemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoViewController.swift; sourceTree = "<group>"; };
 		A6E8BF061FD017E600BC9C83 /* ShoeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoeViewController.swift; sourceTree = "<group>"; };
 		A6F83E96203733D600DAEED8 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6F83E97203733D600DAEED8 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,6 +115,12 @@
 		F47820482140042A00AF5A34 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		F4863DE8214027B400D2BC6F /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		F4C431AD214ACB4E00CCBD37 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F4CE47C6214B9379000DEFD8 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		F4CE47D1214BA196000DEFD8 /* DemoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DemoView.xib; path = Demo.xib/DemoView.xib; sourceTree = "<group>"; };
+		F4CE47D2214BA196000DEFD8 /* DemoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DemoView.swift; path = Demo.xib/DemoView.swift; sourceTree = "<group>"; };
+		F4CE47D5214BA1B5000DEFD8 /* ShoeDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShoeDemoViewController.swift; path = Demo.xib/ShoeDemoViewController.swift; sourceTree = "<group>"; };
+		F4CE47D6214BA1B5000DEFD8 /* BaseDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseDemoViewController.swift; path = Demo.xib/BaseDemoViewController.swift; sourceTree = "<group>"; };
+		F4CE47D7214BA1B5000DEFD8 /* PitchDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PitchDemoViewController.swift; path = Demo.xib/PitchDemoViewController.swift; sourceTree = "<group>"; };
 		F4D37DEC21406BA30059991F /* ColumnFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColumnFlowLayout.swift; sourceTree = "<group>"; };
 		F4D37DEE214078280059991F /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4D37DF0214078280059991F /* Pods_Parade.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_Parade.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,6 +132,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4CE47C7214B9379000DEFD8 /* CoreBluetooth.framework in Frameworks */,
 				F4D37DF3214078300059991F /* AVFoundation.framework in Frameworks */,
 				F4D37DF1214078280059991F /* Pods_Parade.framework in Frameworks */,
 			);
@@ -188,6 +199,7 @@
 		A6699A651FCEC80800A4DF6A /* Parade */ = {
 			isa = PBXGroup;
 			children = (
+				F45F1492214AF5F9007E9087 /* Demo */,
 				F47820472140041700AF5A34 /* Home */,
 				A63C15321FE671DD000907E0 /* Utils */,
 				A6A956E91FE129BD004C3493 /* Views */,
@@ -248,6 +260,7 @@
 		A6817E231FD31A7700922C20 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F4CE47C6214B9379000DEFD8 /* CoreBluetooth.framework */,
 				F4D37DF2214078300059991F /* AVFoundation.framework */,
 				F4D37DEE214078280059991F /* Alamofire.framework */,
 				F4D37DF0214078280059991F /* Pods_Parade.framework */,
@@ -273,7 +286,6 @@
 			children = (
 				A6E8BF061FD017E600BC9C83 /* ShoeViewController.swift */,
 				A6699A961FCECAFC00A4DF6A /* ShoeTableViewController.swift */,
-				A6E8BF041FCFE76600BC9C83 /* DemoViewController.swift */,
 				A681A84E1FE11F320003DF0B /* PdfViewController.swift */,
 			);
 			path = ViewControllers;
@@ -290,6 +302,18 @@
 				A61F8CF51FE7FA1C004C924D /* BodyViewCell.swift */,
 			);
 			path = ViewCells;
+			sourceTree = "<group>";
+		};
+		F45F1492214AF5F9007E9087 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				F4CE47D6214BA1B5000DEFD8 /* BaseDemoViewController.swift */,
+				F4CE47D7214BA1B5000DEFD8 /* PitchDemoViewController.swift */,
+				F4CE47D5214BA1B5000DEFD8 /* ShoeDemoViewController.swift */,
+				F4CE47D2214BA196000DEFD8 /* DemoView.swift */,
+				F4CE47D1214BA196000DEFD8 /* DemoView.xib */,
+			);
+			name = Demo;
 			sourceTree = "<group>";
 		};
 		F47820472140041700AF5A34 /* Home */ = {
@@ -425,6 +449,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6699A711FCEC80800A4DF6A /* LaunchScreen.storyboard in Resources */,
+				F4CE47D3214BA196000DEFD8 /* DemoView.xib in Resources */,
 				A6A782DB1FFBA16500D5CD53 /* evone_senior_en.mp4 in Resources */,
 				A6DEB3961FE7ACD30060B827 /* izome.json in Resources */,
 				A6699A6E1FCEC80800A4DF6A /* Assets.xcassets in Resources */,
@@ -538,12 +563,14 @@
 				A6E8BF071FD017E600BC9C83 /* ShoeViewController.swift in Sources */,
 				A6699A951FCEC95700A4DF6A /* ShoeTableViewCell.swift in Sources */,
 				F4863DE9214027B400D2BC6F /* HomeCell.swift in Sources */,
+				F4CE47DA214BA1B5000DEFD8 /* PitchDemoViewController.swift in Sources */,
 				F411F49F2149394100BCD01E /* UpdateContentTask.swift in Sources */,
 				A63C15391FE68011000907E0 /* LineModel.swift in Sources */,
 				A63C153B1FE68765000907E0 /* CircleView.swift in Sources */,
 				A61F8CF61FE7FA1C004C924D /* BodyViewCell.swift in Sources */,
-				A6E8BF051FCFE76600BC9C83 /* DemoViewController.swift in Sources */,
+				F4CE47D8214BA1B5000DEFD8 /* ShoeDemoViewController.swift in Sources */,
 				A63C15341FE671F3000907E0 /* CustomeIntensityVisualEffect.swift in Sources */,
+				F4CE47D9214BA1B5000DEFD8 /* BaseDemoViewController.swift in Sources */,
 				A61F8CF41FE7FA0F004C924D /* TitleViewCell.swift in Sources */,
 				A61F8CF21FE7F9F3004C924D /* ImageViewCell.swift in Sources */,
 				A6699A991FCECB8800A4DF6A /* Shoe.swift in Sources */,
@@ -554,6 +581,7 @@
 				F47820492140042A00AF5A34 /* MenuItem.swift in Sources */,
 				A6699A9D1FCF0D3D00A4DF6A /* HomeViewController.swift in Sources */,
 				A6699A9B1FCF0D1F00A4DF6A /* ImageCollectionViewCell.swift in Sources */,
+				F4CE47D4214BA196000DEFD8 /* DemoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

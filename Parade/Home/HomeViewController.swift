@@ -172,9 +172,9 @@ extension HomeViewController: UICollectionViewDelegate {
         
         switch itemType {
         case .Pitch:
-            performSegue(withIdentifier: "DemoSegue", sender: self)
+            performSegue(withIdentifier: "PitchDemoSegue", sender: self)
         case .Demo:
-            performSegue(withIdentifier: "DemoSegue", sender: self)
+            performSegue(withIdentifier: "ShoeDemoSegue", sender: self)
         case .PDF:
             performSegue(withIdentifier: "PDFSegue", sender: self)
         case let .Video(file, type):

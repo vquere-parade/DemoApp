@@ -246,77 +246,39 @@
                     <connections>
                         <outlet property="collectionView" destination="2Tv-Rn-0wG" id="A5g-vo-TWX"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="CollectionSegue" id="ihD-QJ-4tJ"/>
-                        <segue destination="mCm-3S-nho" kind="show" identifier="DemoSegue" id="luj-qG-axW"/>
+                        <segue destination="mCm-3S-nho" kind="show" identifier="PitchDemoSegue" id="luj-qG-axW"/>
                         <segue destination="Bil-YB-lfm" kind="show" identifier="PDFSegue" id="Rs9-3B-BB0"/>
+                        <segue destination="cQV-Ci-vZ9" kind="show" identifier="ShoeDemoSegue" id="VbJ-zw-6Fv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jLw-pT-KjQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2247.1999999999998" y="5.8470764617691158"/>
         </scene>
-        <!--Demonstration-->
+        <!--Elevator Pitch-->
         <scene sceneID="bQ6-pC-mDT">
             <objects>
-                <viewController title="Demonstration" id="mCm-3S-nho" customClass="DemoViewController" customModule="Parade" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="lMq-an-koL">
+                <viewController title="Elevator Pitch" id="mCm-3S-nho" customClass="PitchDemoViewController" customModule="Parade" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Mz0-vZ-AnG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="3pg-aV-vFp">
-                                <rect key="frame" x="82" y="190.33333333333334" width="250" height="472.66666666666663"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Dua-fx-jKG">
-                                        <rect key="frame" x="50" y="0.0" width="150" height="178.33333333333334"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" translatesAutoresizingMaskIntoConstraints="NO" id="sTy-oh-142">
-                                                <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="150" id="Std-Hv-GXQ"/>
-                                                    <constraint firstAttribute="height" constant="150" id="qhp-xA-rQz"/>
-                                                </constraints>
-                                            </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fall detected" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MrY-0W-ier">
-                                                <rect key="frame" x="0.0" y="157.99999999999997" width="150" height="20.333333333333343"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ZQa-k1-ZbX">
-                                        <rect key="frame" x="0.0" y="194.33333333333334" width="250" height="278.33333333333326"/>
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sVN-dU-43c" userLabel="steps">
-                                                <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="250" id="9Co-Co-mbB"/>
-                                                    <constraint firstAttribute="height" constant="250" id="Eft-Ep-Og1"/>
-                                                </constraints>
-                                            </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alert chain" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HMo-Kz-i0X">
-                                                <rect key="frame" x="0.0" y="257.99999999999994" width="250" height="20.333333333333314"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                                <variation key="widthClass=regular" axis="horizontal"/>
-                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B3g-SQ-bLj" customClass="DemoView" customModule="Parade" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="116" width="414" height="620"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="3pg-aV-vFp" firstAttribute="centerY" secondItem="GTW-ow-Gt0" secondAttribute="centerY" id="a7B-bg-Y1Y"/>
-                            <constraint firstItem="3pg-aV-vFp" firstAttribute="centerX" secondItem="GTW-ow-Gt0" secondAttribute="centerX" id="ul0-kP-7cc"/>
+                            <constraint firstItem="B3g-SQ-bLj" firstAttribute="trailing" secondItem="QUR-LJ-C5e" secondAttribute="trailing" id="Bhv-D5-wDM"/>
+                            <constraint firstItem="B3g-SQ-bLj" firstAttribute="top" secondItem="QUR-LJ-C5e" secondAttribute="top" id="RF4-h4-5KX"/>
+                            <constraint firstItem="B3g-SQ-bLj" firstAttribute="bottom" secondItem="QUR-LJ-C5e" secondAttribute="bottom" id="agX-RC-a8p"/>
+                            <constraint firstItem="B3g-SQ-bLj" firstAttribute="leading" secondItem="QUR-LJ-C5e" secondAttribute="leading" id="br6-bL-cCF"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="GTW-ow-Gt0"/>
+                        <viewLayoutGuide key="safeArea" id="QUR-LJ-C5e"/>
                     </view>
                     <connections>
-                        <outlet property="alertChainLabel" destination="HMo-Kz-i0X" id="BRs-xl-UI7"/>
-                        <outlet property="fallDetectedLabel" destination="MrY-0W-ier" id="Wb3-Mn-HG5"/>
-                        <outlet property="personImage" destination="sTy-oh-142" id="sZj-To-zbC"/>
-                        <outlet property="stepsImage" destination="sVN-dU-43c" id="Xuv-je-Lyj"/>
+                        <outlet property="demoView" destination="B3g-SQ-bLj" id="DeG-0V-qeh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zve-3d-W4y" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -342,10 +304,37 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7ue-Yq-Ky9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1119" y="922"/>
+            <point key="canvasLocation" x="-2248" y="930"/>
+        </scene>
+        <!--Shoe Demo-->
+        <scene sceneID="1kL-qp-QSz">
+            <objects>
+                <viewController title="Shoe Demo" id="cQV-Ci-vZ9" customClass="ShoeDemoViewController" customModule="Parade" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nFw-pt-3dn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9iF-51-v0g" customClass="DemoView" customModule="Parade" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="116" width="414" height="620"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="9iF-51-v0g" firstAttribute="bottom" secondItem="pAE-QF-Krm" secondAttribute="bottom" id="Ped-3f-gYr"/>
+                            <constraint firstItem="9iF-51-v0g" firstAttribute="top" secondItem="pAE-QF-Krm" secondAttribute="top" id="SId-Dw-5hj"/>
+                            <constraint firstItem="9iF-51-v0g" firstAttribute="trailing" secondItem="pAE-QF-Krm" secondAttribute="trailing" id="pPD-TB-Ble"/>
+                            <constraint firstItem="9iF-51-v0g" firstAttribute="leading" secondItem="pAE-QF-Krm" secondAttribute="leading" id="tMC-QN-UVW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="pAE-QF-Krm"/>
+                    </view>
+                    <connections>
+                        <outlet property="demoView" destination="9iF-51-v0g" id="5U5-GV-7AP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zcf-uF-OwC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1120" y="929"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="person" width="972" height="972"/>
-    </resources>
 </document>
