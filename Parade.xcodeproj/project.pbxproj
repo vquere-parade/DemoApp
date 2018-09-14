@@ -46,6 +46,7 @@
 		F4CE47D8214BA1B5000DEFD8 /* ShoeDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CE47D5214BA1B5000DEFD8 /* ShoeDemoViewController.swift */; };
 		F4CE47D9214BA1B5000DEFD8 /* BaseDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CE47D6214BA1B5000DEFD8 /* BaseDemoViewController.swift */; };
 		F4CE47DA214BA1B5000DEFD8 /* PitchDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CE47D7214BA1B5000DEFD8 /* PitchDemoViewController.swift */; };
+		F4CE47DB214C041B000DEFD8 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6817E241FD31A7700922C20 /* AudioToolbox.framework */; };
 		F4D37DED21406BA30059991F /* ColumnFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D37DEC21406BA30059991F /* ColumnFlowLayout.swift */; };
 		F4D37DF1214078280059991F /* Pods_Parade.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4D37DF0214078280059991F /* Pods_Parade.framework */; };
 		F4D37DF3214078300059991F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4D37DF2214078300059991F /* AVFoundation.framework */; };
@@ -132,6 +133,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4CE47DB214C041B000DEFD8 /* AudioToolbox.framework in Frameworks */,
 				F4CE47C7214B9379000DEFD8 /* CoreBluetooth.framework in Frameworks */,
 				F4D37DF3214078300059991F /* AVFoundation.framework in Frameworks */,
 				F4D37DF1214078280059991F /* Pods_Parade.framework in Frameworks */,
@@ -401,7 +403,7 @@
 				TargetAttributes = {
 					A6699A621FCEC80800A4DF6A = {
 						CreatedOnToolsVersion = 9.1;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
 								enabled = 1;
@@ -752,14 +754,14 @@
 			baseConfigurationReference = 9D7DDE40D3E4624CA228863E /* Pods-Parade.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X3Y3P7BV38;
 				INFOPLIST_FILE = Parade/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.parade.app4pitch;
+				PRODUCT_BUNDLE_IDENTIFIER = com.parade.app4pitche;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -773,17 +775,17 @@
 			baseConfigurationReference = 9C3B3E386A26263EFD35D854 /* Pods-Parade.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = FNDY8C6D3A;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X3Y3P7BV38;
 				INFOPLIST_FILE = Parade/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.parade.app4pitch;
+				PRODUCT_BUNDLE_IDENTIFIER = com.parade.app4pitche;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "664e633b-1ef4-4c4a-8310-a065402de13a";
-				PROVISIONING_PROFILE_SPECIFIER = Parade2018;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

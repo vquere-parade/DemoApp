@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AVFoundation
+import AudioToolbox
 
 class PitchDemoViewController: BaseDemoViewController {
 
@@ -20,9 +22,30 @@ class PitchDemoViewController: BaseDemoViewController {
     
     @objc func orientationChanged(_ notification: NSNotification) {
         guard UIDevice.current.orientation == UIDeviceOrientation.faceDown else {
+            toggleTorch(on: false)
+            
             return
         }
         
+        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+        
+        toggleTorch(on: true)
+        
         startFallAnimation()
+    }
+    
+    func toggleTorch(on: Bool) {
+        guard let device = AVCaptureDevice.default(for: AVMediaType.video), device.hasTorch else {
+            return
+        }
+        
+        do {
+            try device.lockForConfiguration()
+            
+            device.torchMode = on == true ? .on : .off
+            
+            device.unlockForConfiguration()
+        } catch {
+        }
     }
 }
