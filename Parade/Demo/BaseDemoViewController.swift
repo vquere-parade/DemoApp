@@ -73,6 +73,19 @@ class BaseDemoViewController: UIViewController {
         toggleLabelsVisibility(true)
     }
     
+    func cancelFallAnimation() {
+        currentStep = 0
+        
+        demoView.personImage.layer.removeAllAnimations()
+        
+        demoView.stepsImage.image = nil
+        demoView.stepsImage.layer.removeAllAnimations()
+        
+        toggleLabelsVisibility(false)
+        
+        animtationStarted = false
+    }
+    
     private func animatePerson() {
         demoView.personImage.layer.add(personAnimation, forKey: "person")
     }
@@ -95,23 +108,14 @@ class BaseDemoViewController: UIViewController {
 
 extension BaseDemoViewController : CAAnimationDelegate {
     func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
-        guard let animName = anim.value(forKey: "name") as? String, animName == "step" else {
+        guard let animName = anim.value(forKey: "name") as? String, animName == "step", flag else {
             return
         }
         
         currentStep += 1
         
         guard currentStep < stepAnimations.count else {
-            currentStep = 0
-            
-            demoView.personImage.layer.removeAllAnimations()
-            
-            demoView.stepsImage.image = nil
-            demoView.stepsImage.layer.removeAllAnimations()
-            
-            toggleLabelsVisibility(false)
-            
-            animtationStarted = false
+            cancelFallAnimation()
             
             showToast(message: NSLocalizedString("Alert chain completed", comment: "Toast message when a fall is detected"))
             

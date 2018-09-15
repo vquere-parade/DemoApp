@@ -39,13 +39,16 @@
 		F411F4A121495C1600BCD01E /* URL+cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = F411F4A021495C1600BCD01E /* URL+cache.swift */; };
 		F47820492140042A00AF5A34 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47820482140042A00AF5A34 /* MenuItem.swift */; };
 		F4863DE9214027B400D2BC6F /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4863DE8214027B400D2BC6F /* HomeCell.swift */; };
+		F4AD7E0B214C4F5C00750CB6 /* ShoeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AD7E04214C4F5B00750CB6 /* ShoeManager.swift */; };
+		F4AD7E0C214C4F5C00750CB6 /* DemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AD7E05214C4F5B00750CB6 /* DemoView.swift */; };
+		F4AD7E0D214C4F5C00750CB6 /* ShoeDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AD7E06214C4F5B00750CB6 /* ShoeDemoViewController.swift */; };
+		F4AD7E0E214C4F5C00750CB6 /* PairingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AD7E07214C4F5B00750CB6 /* PairingViewController.swift */; };
+		F4AD7E0F214C4F5C00750CB6 /* PitchDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AD7E08214C4F5C00750CB6 /* PitchDemoViewController.swift */; };
+		F4AD7E10214C4F5C00750CB6 /* DemoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4AD7E09214C4F5C00750CB6 /* DemoView.xib */; };
+		F4AD7E11214C4F5C00750CB6 /* BaseDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AD7E0A214C4F5C00750CB6 /* BaseDemoViewController.swift */; };
+		F4AD7E13214C676700750CB6 /* DeviceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AD7E12214C676700750CB6 /* DeviceCell.swift */; };
 		F4C431AE214ACB4E00CCBD37 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4C431AD214ACB4E00CCBD37 /* GoogleService-Info.plist */; };
 		F4CE47C7214B9379000DEFD8 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4CE47C6214B9379000DEFD8 /* CoreBluetooth.framework */; };
-		F4CE47D3214BA196000DEFD8 /* DemoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4CE47D1214BA196000DEFD8 /* DemoView.xib */; };
-		F4CE47D4214BA196000DEFD8 /* DemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CE47D2214BA196000DEFD8 /* DemoView.swift */; };
-		F4CE47D8214BA1B5000DEFD8 /* ShoeDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CE47D5214BA1B5000DEFD8 /* ShoeDemoViewController.swift */; };
-		F4CE47D9214BA1B5000DEFD8 /* BaseDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CE47D6214BA1B5000DEFD8 /* BaseDemoViewController.swift */; };
-		F4CE47DA214BA1B5000DEFD8 /* PitchDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CE47D7214BA1B5000DEFD8 /* PitchDemoViewController.swift */; };
 		F4CE47DB214C041B000DEFD8 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6817E241FD31A7700922C20 /* AudioToolbox.framework */; };
 		F4D37DED21406BA30059991F /* ColumnFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D37DEC21406BA30059991F /* ColumnFlowLayout.swift */; };
 		F4D37DF1214078280059991F /* Pods_Parade.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4D37DF0214078280059991F /* Pods_Parade.framework */; };
@@ -115,13 +118,16 @@
 		F411F4A021495C1600BCD01E /* URL+cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+cache.swift"; sourceTree = "<group>"; };
 		F47820482140042A00AF5A34 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		F4863DE8214027B400D2BC6F /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
+		F4AD7E04214C4F5B00750CB6 /* ShoeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShoeManager.swift; path = Demo/ShoeManager.swift; sourceTree = "<group>"; };
+		F4AD7E05214C4F5B00750CB6 /* DemoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DemoView.swift; path = Demo/DemoView.swift; sourceTree = "<group>"; };
+		F4AD7E06214C4F5B00750CB6 /* ShoeDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShoeDemoViewController.swift; path = Demo/ShoeDemoViewController.swift; sourceTree = "<group>"; };
+		F4AD7E07214C4F5B00750CB6 /* PairingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PairingViewController.swift; path = Demo/PairingViewController.swift; sourceTree = "<group>"; };
+		F4AD7E08214C4F5C00750CB6 /* PitchDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PitchDemoViewController.swift; path = Demo/PitchDemoViewController.swift; sourceTree = "<group>"; };
+		F4AD7E09214C4F5C00750CB6 /* DemoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DemoView.xib; path = Demo/DemoView.xib; sourceTree = "<group>"; };
+		F4AD7E0A214C4F5C00750CB6 /* BaseDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseDemoViewController.swift; path = Demo/BaseDemoViewController.swift; sourceTree = "<group>"; };
+		F4AD7E12214C676700750CB6 /* DeviceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DeviceCell.swift; path = Demo/DeviceCell.swift; sourceTree = "<group>"; };
 		F4C431AD214ACB4E00CCBD37 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F4CE47C6214B9379000DEFD8 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
-		F4CE47D1214BA196000DEFD8 /* DemoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DemoView.xib; path = Demo.xib/DemoView.xib; sourceTree = "<group>"; };
-		F4CE47D2214BA196000DEFD8 /* DemoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DemoView.swift; path = Demo.xib/DemoView.swift; sourceTree = "<group>"; };
-		F4CE47D5214BA1B5000DEFD8 /* ShoeDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShoeDemoViewController.swift; path = Demo.xib/ShoeDemoViewController.swift; sourceTree = "<group>"; };
-		F4CE47D6214BA1B5000DEFD8 /* BaseDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseDemoViewController.swift; path = Demo.xib/BaseDemoViewController.swift; sourceTree = "<group>"; };
-		F4CE47D7214BA1B5000DEFD8 /* PitchDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PitchDemoViewController.swift; path = Demo.xib/PitchDemoViewController.swift; sourceTree = "<group>"; };
 		F4D37DEC21406BA30059991F /* ColumnFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColumnFlowLayout.swift; sourceTree = "<group>"; };
 		F4D37DEE214078280059991F /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4D37DF0214078280059991F /* Pods_Parade.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_Parade.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -309,11 +315,14 @@
 		F45F1492214AF5F9007E9087 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
-				F4CE47D6214BA1B5000DEFD8 /* BaseDemoViewController.swift */,
-				F4CE47D7214BA1B5000DEFD8 /* PitchDemoViewController.swift */,
-				F4CE47D5214BA1B5000DEFD8 /* ShoeDemoViewController.swift */,
-				F4CE47D2214BA196000DEFD8 /* DemoView.swift */,
-				F4CE47D1214BA196000DEFD8 /* DemoView.xib */,
+				F4AD7E0A214C4F5C00750CB6 /* BaseDemoViewController.swift */,
+				F4AD7E05214C4F5B00750CB6 /* DemoView.swift */,
+				F4AD7E09214C4F5C00750CB6 /* DemoView.xib */,
+				F4AD7E07214C4F5B00750CB6 /* PairingViewController.swift */,
+				F4AD7E08214C4F5C00750CB6 /* PitchDemoViewController.swift */,
+				F4AD7E06214C4F5B00750CB6 /* ShoeDemoViewController.swift */,
+				F4AD7E04214C4F5B00750CB6 /* ShoeManager.swift */,
+				F4AD7E12214C676700750CB6 /* DeviceCell.swift */,
 			);
 			name = Demo;
 			sourceTree = "<group>";
@@ -451,7 +460,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6699A711FCEC80800A4DF6A /* LaunchScreen.storyboard in Resources */,
-				F4CE47D3214BA196000DEFD8 /* DemoView.xib in Resources */,
 				A6A782DB1FFBA16500D5CD53 /* evone_senior_en.mp4 in Resources */,
 				A6DEB3961FE7ACD30060B827 /* izome.json in Resources */,
 				A6699A6E1FCEC80800A4DF6A /* Assets.xcassets in Resources */,
@@ -460,6 +468,7 @@
 				A6822F5B1FFD435E00D1432E /* EVONE_ CES_LAS_VEGAS_JANVIER_2018.pdf in Resources */,
 				A6DEB39C1FE7B3D50060B827 /* evan.json in Resources */,
 				A6822F5D1FFD685500D1432E /* evone_tech.mp4 in Resources */,
+				F4AD7E10214C4F5C00750CB6 /* DemoView.xib in Resources */,
 				A6DEB39A1FE7B3C00060B827 /* evone.json in Resources */,
 				A61F8CEE1FE7D737004C924D /* PRESS_RELEASE-E-vone.pdf in Resources */,
 			);
@@ -559,21 +568,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4AD7E0C214C4F5C00750CB6 /* DemoView.swift in Sources */,
 				A681A84F1FE11F320003DF0B /* PdfViewController.swift in Sources */,
+				F4AD7E0D214C4F5C00750CB6 /* ShoeDemoViewController.swift in Sources */,
+				F4AD7E13214C676700750CB6 /* DeviceCell.swift in Sources */,
 				F4D37DED21406BA30059991F /* ColumnFlowLayout.swift in Sources */,
 				A6699A971FCECAFC00A4DF6A /* ShoeTableViewController.swift in Sources */,
 				A6E8BF071FD017E600BC9C83 /* ShoeViewController.swift in Sources */,
 				A6699A951FCEC95700A4DF6A /* ShoeTableViewCell.swift in Sources */,
 				F4863DE9214027B400D2BC6F /* HomeCell.swift in Sources */,
-				F4CE47DA214BA1B5000DEFD8 /* PitchDemoViewController.swift in Sources */,
 				F411F49F2149394100BCD01E /* UpdateContentTask.swift in Sources */,
+				F4AD7E0B214C4F5C00750CB6 /* ShoeManager.swift in Sources */,
 				A63C15391FE68011000907E0 /* LineModel.swift in Sources */,
+				F4AD7E11214C4F5C00750CB6 /* BaseDemoViewController.swift in Sources */,
 				A63C153B1FE68765000907E0 /* CircleView.swift in Sources */,
 				A61F8CF61FE7FA1C004C924D /* BodyViewCell.swift in Sources */,
-				F4CE47D8214BA1B5000DEFD8 /* ShoeDemoViewController.swift in Sources */,
 				A63C15341FE671F3000907E0 /* CustomeIntensityVisualEffect.swift in Sources */,
-				F4CE47D9214BA1B5000DEFD8 /* BaseDemoViewController.swift in Sources */,
 				A61F8CF41FE7FA0F004C924D /* TitleViewCell.swift in Sources */,
+				F4AD7E0F214C4F5C00750CB6 /* PitchDemoViewController.swift in Sources */,
 				A61F8CF21FE7F9F3004C924D /* ImageViewCell.swift in Sources */,
 				A6699A991FCECB8800A4DF6A /* Shoe.swift in Sources */,
 				A6699A671FCEC80800A4DF6A /* AppDelegate.swift in Sources */,
@@ -582,8 +594,8 @@
 				F411F4A121495C1600BCD01E /* URL+cache.swift in Sources */,
 				F47820492140042A00AF5A34 /* MenuItem.swift in Sources */,
 				A6699A9D1FCF0D3D00A4DF6A /* HomeViewController.swift in Sources */,
+				F4AD7E0E214C4F5C00750CB6 /* PairingViewController.swift in Sources */,
 				A6699A9B1FCF0D1F00A4DF6A /* ImageCollectionViewCell.swift in Sources */,
-				F4CE47D4214BA196000DEFD8 /* DemoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
