@@ -9,13 +9,16 @@
 import CoreBluetooth
 
 @objc class ShoeManager: NSObject {
+    private let fallServiceUUID = CBUUID(string: "0xFFE0")
+    private let fallCharacteristicUUID = CBUUID(string: "0xFFE5")
+    
     private var centralManager: CBCentralManager!
     
     @objc dynamic var shoe: CBPeripheral?
     
     @objc dynamic var state: CBManagerState = .unknown
     
-    @objc dynamic var discoveredPeriphicals = [CBPeripheral]()
+    @objc dynamic var discoveredPeripherals = [CBPeripheral]()
     
     @objc dynamic var fall = false
     
@@ -27,23 +30,23 @@ import CoreBluetooth
         centralManager = CBCentralManager(delegate: self, queue: centralQueue)
     }
     
-    func scanForPeripherals(withServices services: [CBUUID]?, options: [String:Any]?) {
-        discoveredPeriphicals.removeAll()
+    func scanForPeripherals() {
+        discoveredPeripherals.removeAll()
         
-        centralManager.scanForPeripherals(withServices: services, options: options)
+        centralManager.scanForPeripherals(withServices: nil)
     }
     
     func stopScan() {
         centralManager.stopScan()
     }
     
-    func connect(periphical: CBPeripheral) {
-        UserDefaults.standard.set(periphical.identifier.uuidString, forKey: "shoeIdentifier")
+    func connect(peripheral: CBPeripheral) {
+        UserDefaults.standard.set(peripheral.identifier.uuidString, forKey: "shoeIdentifier")
         
-        shoe = periphical
+        shoe = peripheral
         shoe!.delegate = self
         
-        centralManager.connect(periphical)
+        centralManager.connect(peripheral)
     }
 }
 
@@ -58,7 +61,7 @@ extension ShoeManager: CBCentralManagerDelegate {
         DispatchQueue.main.async {
             if let shoeIdentifier = UserDefaults.standard.string(forKey: "shoeIdentifier") {
                 if shoeIdentifier == peripheral.identifier.uuidString {
-                    self.connect(periphical: peripheral)
+                    self.connect(peripheral: peripheral)
                     
                     self.stopScan()
                 }
@@ -66,21 +69,21 @@ extension ShoeManager: CBCentralManagerDelegate {
                 return
             }
             
-            if !self.discoveredPeriphicals.contains(peripheral) {
-                self.discoveredPeriphicals.append(peripheral)
+            if !self.discoveredPeripherals.contains(peripheral) {
+                self.discoveredPeripherals.append(peripheral)
             }
         }
     }
     
     func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
-        peripheral.discoverServices(nil)
+        peripheral.discoverServices([fallServiceUUID])
     }
     
     func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
         DispatchQueue.main.async {
             self.shoe = nil
         
-            self.scanForPeripherals(withServices: nil, options: nil)
+            self.scanForPeripherals()
         }
     }
 }
@@ -88,19 +91,29 @@ extension ShoeManager: CBCentralManagerDelegate {
 extension ShoeManager: CBPeripheralDelegate {
     func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
         for service in peripheral.services! {
-            peripheral.discoverCharacteristics(nil, for: service)
+            if service.uuid == fallServiceUUID {
+                peripheral.discoverCharacteristics([fallCharacteristicUUID], for: service)
+                
+                break
+            }
         }
     }
     
     func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
         for characteristic in service.characteristics! {
-            peripheral.setNotifyValue(true, for: characteristic)
+            if characteristic.uuid == fallCharacteristicUUID {
+                peripheral.readValue(for: characteristic)
+            }
         }
     }
     
     func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
         DispatchQueue.main.async {
-            self.fall = true
+            if let value = characteristic.value, UInt8(value[2]) > 0  {
+                self.fall = true
+            }
+
+            peripheral.readValue(for: characteristic)
         }
     }
 }

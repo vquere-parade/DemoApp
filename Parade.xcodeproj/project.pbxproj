@@ -27,7 +27,6 @@
 		A6699A9D1FCF0D3D00A4DF6A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6699A9C1FCF0D3D00A4DF6A /* HomeViewController.swift */; };
 		A681A84F1FE11F320003DF0B /* PdfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A681A84E1FE11F320003DF0B /* PdfViewController.swift */; };
 		A6822F5B1FFD435E00D1432E /* EVONE_ CES_LAS_VEGAS_JANVIER_2018.pdf in Resources */ = {isa = PBXBuildFile; fileRef = A6822F5A1FFD435E00D1432E /* EVONE_ CES_LAS_VEGAS_JANVIER_2018.pdf */; };
-		A6822F5D1FFD685500D1432E /* evone_tech.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A6822F5C1FFD685400D1432E /* evone_tech.mp4 */; };
 		A6A782DB1FFBA16500D5CD53 /* evone_senior_en.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A6A782DA1FFBA16500D5CD53 /* evone_senior_en.mp4 */; };
 		A6B77D8D1FDC77D000E7F322 /* TextCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B77D8C1FDC77D000E7F322 /* TextCollectionViewCell.swift */; };
 		A6DEB3961FE7ACD30060B827 /* izome.json in Resources */ = {isa = PBXBuildFile; fileRef = A6DEB3951FE7ACD30060B827 /* izome.json */; };
@@ -103,7 +102,6 @@
 		A6817E241FD31A7700922C20 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		A681A84E1FE11F320003DF0B /* PdfViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfViewController.swift; sourceTree = "<group>"; };
 		A6822F5A1FFD435E00D1432E /* EVONE_ CES_LAS_VEGAS_JANVIER_2018.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "EVONE_ CES_LAS_VEGAS_JANVIER_2018.pdf"; sourceTree = "<group>"; };
-		A6822F5C1FFD685400D1432E /* evone_tech.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = evone_tech.mp4; sourceTree = "<group>"; };
 		A6A782DA1FFBA16500D5CD53 /* evone_senior_en.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = evone_senior_en.mp4; sourceTree = "<group>"; };
 		A6B77D8C1FDC77D000E7F322 /* TextCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCollectionViewCell.swift; sourceTree = "<group>"; };
 		A6CE7E06203C473700DC72D7 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -254,7 +252,6 @@
 		A6817E1C1FD16AAD00922C20 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				A6822F5C1FFD685400D1432E /* evone_tech.mp4 */,
 				A6822F5A1FFD435E00D1432E /* EVONE_ CES_LAS_VEGAS_JANVIER_2018.pdf */,
 				A6A782DA1FFBA16500D5CD53 /* evone_senior_en.mp4 */,
 				A61F8CED1FE7D737004C924D /* PRESS_RELEASE-E-vone.pdf */,
@@ -412,7 +409,7 @@
 				TargetAttributes = {
 					A6699A621FCEC80800A4DF6A = {
 						CreatedOnToolsVersion = 9.1;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
 								enabled = 1;
@@ -467,7 +464,6 @@
 				F4C431AE214ACB4E00CCBD37 /* GoogleService-Info.plist in Resources */,
 				A6822F5B1FFD435E00D1432E /* EVONE_ CES_LAS_VEGAS_JANVIER_2018.pdf in Resources */,
 				A6DEB39C1FE7B3D50060B827 /* evan.json in Resources */,
-				A6822F5D1FFD685500D1432E /* evone_tech.mp4 in Resources */,
 				F4AD7E10214C4F5C00750CB6 /* DemoView.xib in Resources */,
 				A6DEB39A1FE7B3C00060B827 /* evone.json in Resources */,
 				A61F8CEE1FE7D737004C924D /* PRESS_RELEASE-E-vone.pdf in Resources */,
@@ -766,17 +762,17 @@
 			baseConfigurationReference = 9D7DDE40D3E4624CA228863E /* Pods-Parade.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = X3Y3P7BV38;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = FNDY8C6D3A;
 				INFOPLIST_FILE = Parade/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.parade.app4pitche;
+				PRODUCT_BUNDLE_IDENTIFIER = com.parade.app4pitch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = Parade2018;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -788,16 +784,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = X3Y3P7BV38;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = FNDY8C6D3A;
 				INFOPLIST_FILE = Parade/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.parade.app4pitche;
+				PRODUCT_BUNDLE_IDENTIFIER = com.parade.app4pitch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = Parade2018;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
