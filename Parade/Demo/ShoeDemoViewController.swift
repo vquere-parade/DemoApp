@@ -8,7 +8,6 @@
 
 import UIKit
 import CoreBluetooth
-import AudioToolbox
 
 class ShoeDemoViewController: BaseDemoViewController {
     @IBOutlet weak var pairLabel: UILabel!
@@ -56,8 +55,6 @@ class ShoeDemoViewController: BaseDemoViewController {
         }
         
         fallObservation = shoeManager.observe(\.fall, options: .new) { [unowned self] shoeManager, _ in
-            AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
-            
             self.startFallAnimation()
         }
     }

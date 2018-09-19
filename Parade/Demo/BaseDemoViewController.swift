@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class BaseDemoViewController: UIViewController {
     private static let blinkAnimationDuration = 0.7
@@ -18,6 +19,10 @@ class BaseDemoViewController: UIViewController {
     private var animtationStarted = false
     
     private var currentStep = 0
+    
+    private var timer: Timer?
+    
+    private var torchOn = false
     
     private lazy var personAnimation: CABasicAnimation = {
         let anim = CABasicAnimation(keyPath: "contents")
@@ -57,6 +62,12 @@ class BaseDemoViewController: UIViewController {
         startFallDetection()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        timer?.invalidate()
+        
+        toggleTorch(on: false)
+    }
+    
     func startFallDetection() {
         preconditionFailure("This method must be overridden")
     }
@@ -68,9 +79,19 @@ class BaseDemoViewController: UIViewController {
         
         animtationStarted = true
         
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(BaseDemoViewController.update), userInfo: nil, repeats: true)
+        
         animatePerson()
         animateSteps()
         toggleLabelsVisibility(true)
+    }
+    
+    @objc func update(){
+        torchOn = !torchOn
+        
+        toggleTorch(on: torchOn)
+        
+        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
     }
     
     func cancelFallAnimation() {
@@ -84,6 +105,12 @@ class BaseDemoViewController: UIViewController {
         toggleLabelsVisibility(false)
         
         animtationStarted = false
+        
+        toggleTorch(on: false)
+        
+        timer?.invalidate()
+        
+        torchOn = false
     }
     
     private func animatePerson() {
@@ -103,6 +130,21 @@ class BaseDemoViewController: UIViewController {
             self.demoView.alertChainLabel.alpha = alpha
         },
                        completion: nil)
+    }
+    
+    func toggleTorch(on: Bool) {
+        guard let device = AVCaptureDevice.default(for: AVMediaType.video), device.hasTorch else {
+            return
+        }
+        
+        do {
+            try device.lockForConfiguration()
+            
+            device.torchMode = on == true ? .on : .off
+            
+            device.unlockForConfiguration()
+        } catch {
+        }
     }
 }
 
