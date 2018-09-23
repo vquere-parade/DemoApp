@@ -37,6 +37,49 @@
 		F411F49F2149394100BCD01E /* UpdateContentTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = F411F49E2149394100BCD01E /* UpdateContentTask.swift */; };
 		F411F4A121495C1600BCD01E /* URL+cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = F411F4A021495C1600BCD01E /* URL+cache.swift */; };
 		F47820492140042A00AF5A34 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47820482140042A00AF5A34 /* MenuItem.swift */; };
+		F47D6EE82157F1B900F21A18 /* DemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AD7E05214C4F5B00750CB6 /* DemoView.swift */; };
+		F47D6EE92157F1B900F21A18 /* PdfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A681A84E1FE11F320003DF0B /* PdfViewController.swift */; };
+		F47D6EEA2157F1B900F21A18 /* ShoeDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AD7E06214C4F5B00750CB6 /* ShoeDemoViewController.swift */; };
+		F47D6EEB2157F1B900F21A18 /* DeviceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AD7E12214C676700750CB6 /* DeviceCell.swift */; };
+		F47D6EEC2157F1B900F21A18 /* ColumnFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D37DEC21406BA30059991F /* ColumnFlowLayout.swift */; };
+		F47D6EED2157F1B900F21A18 /* ShoeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6699A961FCECAFC00A4DF6A /* ShoeTableViewController.swift */; };
+		F47D6EEE2157F1B900F21A18 /* ShoeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E8BF061FD017E600BC9C83 /* ShoeViewController.swift */; };
+		F47D6EEF2157F1B900F21A18 /* ShoeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6699A941FCEC95700A4DF6A /* ShoeTableViewCell.swift */; };
+		F47D6EF02157F1B900F21A18 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4863DE8214027B400D2BC6F /* HomeCell.swift */; };
+		F47D6EF12157F1B900F21A18 /* UpdateContentTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = F411F49E2149394100BCD01E /* UpdateContentTask.swift */; };
+		F47D6EF22157F1B900F21A18 /* ShoeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AD7E04214C4F5B00750CB6 /* ShoeManager.swift */; };
+		F47D6EF32157F1B900F21A18 /* LineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63C15381FE68011000907E0 /* LineModel.swift */; };
+		F47D6EF42157F1B900F21A18 /* BaseDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AD7E0A214C4F5C00750CB6 /* BaseDemoViewController.swift */; };
+		F47D6EF52157F1B900F21A18 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63C153A1FE68765000907E0 /* CircleView.swift */; };
+		F47D6EF62157F1B900F21A18 /* BodyViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61F8CF51FE7FA1C004C924D /* BodyViewCell.swift */; };
+		F47D6EF72157F1B900F21A18 /* CustomeIntensityVisualEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63C15331FE671F3000907E0 /* CustomeIntensityVisualEffect.swift */; };
+		F47D6EF82157F1B900F21A18 /* TitleViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61F8CF31FE7FA0F004C924D /* TitleViewCell.swift */; };
+		F47D6EF92157F1B900F21A18 /* PitchDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AD7E08214C4F5C00750CB6 /* PitchDemoViewController.swift */; };
+		F47D6EFA2157F1B900F21A18 /* ImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61F8CF11FE7F9F3004C924D /* ImageViewCell.swift */; };
+		F47D6EFB2157F1B900F21A18 /* Shoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6699A981FCECB8800A4DF6A /* Shoe.swift */; };
+		F47D6EFC2157F1B900F21A18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6699A661FCEC80800A4DF6A /* AppDelegate.swift */; };
+		F47D6EFD2157F1B900F21A18 /* TextCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B77D8C1FDC77D000E7F322 /* TextCollectionViewCell.swift */; };
+		F47D6EFE2157F1B900F21A18 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F404F44021480BB800C2A7A4 /* PaddingLabel.swift */; };
+		F47D6EFF2157F1B900F21A18 /* URL+cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = F411F4A021495C1600BCD01E /* URL+cache.swift */; };
+		F47D6F002157F1B900F21A18 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47820482140042A00AF5A34 /* MenuItem.swift */; };
+		F47D6F012157F1B900F21A18 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6699A9C1FCF0D3D00A4DF6A /* HomeViewController.swift */; };
+		F47D6F022157F1B900F21A18 /* PairingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AD7E07214C4F5B00750CB6 /* PairingViewController.swift */; };
+		F47D6F032157F1B900F21A18 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6699A9A1FCF0D1F00A4DF6A /* ImageCollectionViewCell.swift */; };
+		F47D6F052157F1B900F21A18 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6817E241FD31A7700922C20 /* AudioToolbox.framework */; };
+		F47D6F062157F1B900F21A18 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4CE47C6214B9379000DEFD8 /* CoreBluetooth.framework */; };
+		F47D6F072157F1B900F21A18 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4D37DF2214078300059991F /* AVFoundation.framework */; };
+		F47D6F082157F1B900F21A18 /* Pods_Parade.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4D37DF0214078280059991F /* Pods_Parade.framework */; };
+		F47D6F0A2157F1B900F21A18 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6699A6F1FCEC80800A4DF6A /* LaunchScreen.storyboard */; };
+		F47D6F0B2157F1B900F21A18 /* evone_senior_en.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A6A782DA1FFBA16500D5CD53 /* evone_senior_en.mp4 */; };
+		F47D6F0C2157F1B900F21A18 /* izome.json in Resources */ = {isa = PBXBuildFile; fileRef = A6DEB3951FE7ACD30060B827 /* izome.json */; };
+		F47D6F0D2157F1B900F21A18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6699A6D1FCEC80800A4DF6A /* Assets.xcassets */; };
+		F47D6F0E2157F1B900F21A18 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6699A6A1FCEC80800A4DF6A /* Main.storyboard */; };
+		F47D6F0F2157F1B900F21A18 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4C431AD214ACB4E00CCBD37 /* GoogleService-Info.plist */; };
+		F47D6F102157F1B900F21A18 /* EVONE_ CES_LAS_VEGAS_JANVIER_2018.pdf in Resources */ = {isa = PBXBuildFile; fileRef = A6822F5A1FFD435E00D1432E /* EVONE_ CES_LAS_VEGAS_JANVIER_2018.pdf */; };
+		F47D6F112157F1B900F21A18 /* evan.json in Resources */ = {isa = PBXBuildFile; fileRef = A6DEB39B1FE7B3D50060B827 /* evan.json */; };
+		F47D6F122157F1B900F21A18 /* DemoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4AD7E09214C4F5C00750CB6 /* DemoView.xib */; };
+		F47D6F132157F1B900F21A18 /* evone.json in Resources */ = {isa = PBXBuildFile; fileRef = A6DEB3991FE7B3C00060B827 /* evone.json */; };
+		F47D6F142157F1B900F21A18 /* PRESS_RELEASE-E-vone.pdf in Resources */ = {isa = PBXBuildFile; fileRef = A61F8CED1FE7D737004C924D /* PRESS_RELEASE-E-vone.pdf */; };
 		F4863DE9214027B400D2BC6F /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4863DE8214027B400D2BC6F /* HomeCell.swift */; };
 		F4AD7E0B214C4F5C00750CB6 /* ShoeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AD7E04214C4F5B00750CB6 /* ShoeManager.swift */; };
 		F4AD7E0C214C4F5C00750CB6 /* DemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AD7E05214C4F5B00750CB6 /* DemoView.swift */; };
@@ -115,6 +158,8 @@
 		F411F49E2149394100BCD01E /* UpdateContentTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateContentTask.swift; sourceTree = "<group>"; };
 		F411F4A021495C1600BCD01E /* URL+cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+cache.swift"; sourceTree = "<group>"; };
 		F47820482140042A00AF5A34 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
+		F47D6F1B2157F1B900F21A18 /* Evone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Evone.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F47D6F1C2157F1B900F21A18 /* Parade copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Parade copy-Info.plist"; path = "/Users/simon/Downloads/evone-marketing-ios/Parade copy-Info.plist"; sourceTree = "<absolute>"; };
 		F4863DE8214027B400D2BC6F /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		F4AD7E04214C4F5B00750CB6 /* ShoeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShoeManager.swift; path = Demo/ShoeManager.swift; sourceTree = "<group>"; };
 		F4AD7E05214C4F5B00750CB6 /* DemoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DemoView.swift; path = Demo/DemoView.swift; sourceTree = "<group>"; };
@@ -158,6 +203,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F47D6F042157F1B900F21A18 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F47D6F052157F1B900F21A18 /* AudioToolbox.framework in Frameworks */,
+				F47D6F062157F1B900F21A18 /* CoreBluetooth.framework in Frameworks */,
+				F47D6F072157F1B900F21A18 /* AVFoundation.framework in Frameworks */,
+				F47D6F082157F1B900F21A18 /* Pods_Parade.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -189,6 +245,7 @@
 				A6699A641FCEC80800A4DF6A /* Products */,
 				A6817E231FD31A7700922C20 /* Frameworks */,
 				9F2D5D524950FB2E53D18758 /* Pods */,
+				F47D6F1C2157F1B900F21A18 /* Parade copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -198,6 +255,7 @@
 				A6699A631FCEC80800A4DF6A /* Parade.app */,
 				A6699A771FCEC80800A4DF6A /* ParadeTests.xctest */,
 				A6699A821FCEC80800A4DF6A /* ParadeUITests.xctest */,
+				F47D6F1B2157F1B900F21A18 /* Evone.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -397,6 +455,27 @@
 			productReference = A6699A821FCEC80800A4DF6A /* ParadeUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		F47D6EE52157F1B900F21A18 /* Evone */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F47D6F182157F1B900F21A18 /* Build configuration list for PBXNativeTarget "Evone" */;
+			buildPhases = (
+				F47D6EE62157F1B900F21A18 /* [CP] Check Pods Manifest.lock */,
+				F47D6EE72157F1B900F21A18 /* Sources */,
+				F47D6F042157F1B900F21A18 /* Frameworks */,
+				F47D6F092157F1B900F21A18 /* Resources */,
+				F47D6F152157F1B900F21A18 /* [CP] Embed Pods Frameworks */,
+				F47D6F162157F1B900F21A18 /* [CP] Copy Pods Resources */,
+				F47D6F172157F1B900F21A18 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Evone;
+			productName = Parade;
+			productReference = F47D6F1B2157F1B900F21A18 /* Evone.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -409,7 +488,7 @@
 				TargetAttributes = {
 					A6699A621FCEC80800A4DF6A = {
 						CreatedOnToolsVersion = 9.1;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
 								enabled = 1;
@@ -429,6 +508,9 @@
 						ProvisioningStyle = Manual;
 						TestTargetID = A6699A621FCEC80800A4DF6A;
 					};
+					F47D6EE52157F1B900F21A18 = {
+						ProvisioningStyle = Manual;
+					};
 				};
 			};
 			buildConfigurationList = A6699A5E1FCEC80800A4DF6A /* Build configuration list for PBXProject "Parade" */;
@@ -445,6 +527,7 @@
 			projectRoot = "";
 			targets = (
 				A6699A621FCEC80800A4DF6A /* Parade */,
+				F47D6EE52157F1B900F21A18 /* Evone */,
 				A6699A761FCEC80800A4DF6A /* ParadeTests */,
 				A6699A811FCEC80800A4DF6A /* ParadeUITests */,
 			);
@@ -481,6 +564,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F47D6F092157F1B900F21A18 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F47D6F0A2157F1B900F21A18 /* LaunchScreen.storyboard in Resources */,
+				F47D6F0B2157F1B900F21A18 /* evone_senior_en.mp4 in Resources */,
+				F47D6F0C2157F1B900F21A18 /* izome.json in Resources */,
+				F47D6F0D2157F1B900F21A18 /* Assets.xcassets in Resources */,
+				F47D6F0E2157F1B900F21A18 /* Main.storyboard in Resources */,
+				F47D6F0F2157F1B900F21A18 /* GoogleService-Info.plist in Resources */,
+				F47D6F102157F1B900F21A18 /* EVONE_ CES_LAS_VEGAS_JANVIER_2018.pdf in Resources */,
+				F47D6F112157F1B900F21A18 /* evan.json in Resources */,
+				F47D6F122157F1B900F21A18 /* DemoView.xib in Resources */,
+				F47D6F132157F1B900F21A18 /* evone.json in Resources */,
+				F47D6F142157F1B900F21A18 /* PRESS_RELEASE-E-vone.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -557,6 +658,76 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\"";
 		};
+		F47D6EE62157F1B900F21A18 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Parade-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F47D6F152157F1B900F21A18 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Parade/Pods-Parade-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Zip/Zip.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Zip.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Parade/Pods-Parade-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F47D6F162157F1B900F21A18 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Parade/Pods-Parade-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F47D6F172157F1B900F21A18 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\"";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -608,6 +779,41 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6699A871FCEC80800A4DF6A /* ParadeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F47D6EE72157F1B900F21A18 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F47D6EE82157F1B900F21A18 /* DemoView.swift in Sources */,
+				F47D6EE92157F1B900F21A18 /* PdfViewController.swift in Sources */,
+				F47D6EEA2157F1B900F21A18 /* ShoeDemoViewController.swift in Sources */,
+				F47D6EEB2157F1B900F21A18 /* DeviceCell.swift in Sources */,
+				F47D6EEC2157F1B900F21A18 /* ColumnFlowLayout.swift in Sources */,
+				F47D6EED2157F1B900F21A18 /* ShoeTableViewController.swift in Sources */,
+				F47D6EEE2157F1B900F21A18 /* ShoeViewController.swift in Sources */,
+				F47D6EEF2157F1B900F21A18 /* ShoeTableViewCell.swift in Sources */,
+				F47D6EF02157F1B900F21A18 /* HomeCell.swift in Sources */,
+				F47D6EF12157F1B900F21A18 /* UpdateContentTask.swift in Sources */,
+				F47D6EF22157F1B900F21A18 /* ShoeManager.swift in Sources */,
+				F47D6EF32157F1B900F21A18 /* LineModel.swift in Sources */,
+				F47D6EF42157F1B900F21A18 /* BaseDemoViewController.swift in Sources */,
+				F47D6EF52157F1B900F21A18 /* CircleView.swift in Sources */,
+				F47D6EF62157F1B900F21A18 /* BodyViewCell.swift in Sources */,
+				F47D6EF72157F1B900F21A18 /* CustomeIntensityVisualEffect.swift in Sources */,
+				F47D6EF82157F1B900F21A18 /* TitleViewCell.swift in Sources */,
+				F47D6EF92157F1B900F21A18 /* PitchDemoViewController.swift in Sources */,
+				F47D6EFA2157F1B900F21A18 /* ImageViewCell.swift in Sources */,
+				F47D6EFB2157F1B900F21A18 /* Shoe.swift in Sources */,
+				F47D6EFC2157F1B900F21A18 /* AppDelegate.swift in Sources */,
+				F47D6EFD2157F1B900F21A18 /* TextCollectionViewCell.swift in Sources */,
+				F47D6EFE2157F1B900F21A18 /* PaddingLabel.swift in Sources */,
+				F47D6EFF2157F1B900F21A18 /* URL+cache.swift in Sources */,
+				F47D6F002157F1B900F21A18 /* MenuItem.swift in Sources */,
+				F47D6F012157F1B900F21A18 /* HomeViewController.swift in Sources */,
+				F47D6F022157F1B900F21A18 /* PairingViewController.swift in Sources */,
+				F47D6F032157F1B900F21A18 /* ImageCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -762,17 +968,17 @@
 			baseConfigurationReference = 9D7DDE40D3E4624CA228863E /* Pods-Parade.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = X3Y3P7BV38;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = FNDY8C6D3A;
 				INFOPLIST_FILE = Parade/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.parade.app4pitche;
+				PRODUCT_BUNDLE_IDENTIFIER = com.parade.app4pitch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = Parade2018;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -785,15 +991,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = X3Y3P7BV38;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = FNDY8C6D3A;
 				INFOPLIST_FILE = Parade/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.parade.app4pitche;
+				PRODUCT_BUNDLE_IDENTIFIER = com.parade.app4pitch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = Parade2018;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -869,6 +1075,48 @@
 			};
 			name = Release;
 		};
+		F47D6F192157F1B900F21A18 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D7DDE40D3E4624CA228863E /* Pods-Parade.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = FNDY8C6D3A;
+				INFOPLIST_FILE = "Parade copy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.evone.app4pitch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = Parade2018;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F47D6F1A2157F1B900F21A18 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9C3B3E386A26263EFD35D854 /* Pods-Parade.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = FNDY8C6D3A;
+				INFOPLIST_FILE = "Parade copy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.evone.app4pitch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = Parade2018;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -904,6 +1152,15 @@
 			buildConfigurations = (
 				A6699A921FCEC80800A4DF6A /* Debug */,
 				A6699A931FCEC80800A4DF6A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F47D6F182157F1B900F21A18 /* Build configuration list for PBXNativeTarget "Evone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F47D6F192157F1B900F21A18 /* Debug */,
+				F47D6F1A2157F1B900F21A18 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
