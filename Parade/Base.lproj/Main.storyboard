@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="J93-7J-iFq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="J93-7J-iFq">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,13 +13,13 @@
         <!--Products-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="Products" id="BYZ-38-t0r" customClass="ShoeTableViewController" customModule="Parade" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Products" id="BYZ-38-t0r" customClass="ShoeTableViewController" customModule="Evone" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="a2T-bc-Nqa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShoeIdentifier" rowHeight="393" id="ghb-sP-TnH" customClass="ShoeTableViewCell" customModule="Parade" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShoeIdentifier" rowHeight="393" id="ghb-sP-TnH" customClass="ShoeTableViewCell" customModule="Evone" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="393"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ghb-sP-TnH" id="5LD-QF-N0T">
@@ -52,13 +52,13 @@
         <!--Shoe View Controller-->
         <scene sceneID="6ie-W5-1um">
             <objects>
-                <tableViewController id="U5L-U6-NuG" customClass="ShoeViewController" customModule="Parade" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="U5L-U6-NuG" customClass="ShoeViewController" customModule="Evone" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="isP-hM-dUv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="shoeImg" id="WDx-eT-IdU" customClass="ImageViewCell" customModule="Parade" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="shoeImg" id="WDx-eT-IdU" customClass="ImageViewCell" customModule="Evone" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WDx-eT-IdU" id="7nh-9A-zki">
@@ -80,7 +80,7 @@
                                     <outlet property="bgImage" destination="DSl-KY-Xhl" id="IPM-Yq-Ne8"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="shoeTitle" id="28E-5a-GCt" customClass="TitleViewCell" customModule="Parade" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="shoeTitle" id="28E-5a-GCt" customClass="TitleViewCell" customModule="Evone" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="72" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="28E-5a-GCt" id="QVc-ML-4m3">
@@ -105,7 +105,7 @@
                                     <outlet property="titleLabel" destination="dWY-Fj-jkh" id="uDm-eA-OLb"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="shoeBody" id="f9H-DT-rBt" customClass="BodyViewCell" customModule="Parade" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="shoeBody" id="f9H-DT-rBt" customClass="BodyViewCell" customModule="Evone" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="116" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="f9H-DT-rBt" id="wAw-Sb-6um">
@@ -160,7 +160,7 @@
         <!--Home Controller-->
         <scene sceneID="nDy-NE-LfZ">
             <objects>
-                <viewController title="EVone" id="CjS-O0-ugX" userLabel="Home Controller" customClass="HomeViewController" customModule="Parade" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="EVone" id="CjS-O0-ugX" userLabel="Home Controller" customClass="HomeViewController" customModule="Evone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jvX-fh-jLC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -170,7 +170,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewLayout key="collectionViewLayout" id="sdc-Kd-ft1"/>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HomeCell" id="5wS-PE-N6R" customClass="HomeCell" customModule="Parade" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HomeCell" id="5wS-PE-N6R" customClass="HomeCell" customModule="Evone" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -180,8 +180,8 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="I3x-CP-hLM">
                                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="haX-QO-8rt" customClass="PaddingLabel" customModule="Parade" customModuleProvider="target">
-                                                    <rect key="frame" x="3.6666666666666679" y="15.666666666666666" width="43.666666666666657" height="20.333333333333336"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="haX-QO-8rt" customClass="PaddingLabel" customModule="Evone" customModuleProvider="target">
+                                                    <rect key="frame" x="3.3333333333333321" y="14.999999999999998" width="43.666666666666671" height="20.333333333333329"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                     <nil key="textColor"/>
@@ -242,7 +242,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jqK-q6-THO"/>
                     </view>
-                    <navigationItem key="navigationItem" title="E-vone" id="FCh-oG-GZd"/>
+                    <navigationItem key="navigationItem" id="FCh-oG-GZd"/>
                     <connections>
                         <outlet property="collectionView" destination="2Tv-Rn-0wG" id="A5g-vo-TWX"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="CollectionSegue" id="ihD-QJ-4tJ"/>
@@ -258,12 +258,12 @@
         <!--Elevator Pitch-->
         <scene sceneID="bQ6-pC-mDT">
             <objects>
-                <viewController title="Elevator Pitch" id="mCm-3S-nho" customClass="PitchDemoViewController" customModule="Parade" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Elevator Pitch" id="mCm-3S-nho" customClass="PitchDemoViewController" customModule="Evone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mz0-vZ-AnG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B3g-SQ-bLj" customClass="DemoView" customModule="Parade" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B3g-SQ-bLj" customClass="DemoView" customModule="Evone" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
@@ -288,7 +288,7 @@
         <!--Pdf View Controller-->
         <scene sceneID="W7K-1W-KDP">
             <objects>
-                <viewController id="Bil-YB-lfm" customClass="PdfViewController" customModule="Parade" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Bil-YB-lfm" customClass="PdfViewController" customModule="Evone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KTg-ss-HEa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -309,19 +309,19 @@
         <!--Shoe Demo-->
         <scene sceneID="1kL-qp-QSz">
             <objects>
-                <viewController title="Shoe Demo" id="cQV-Ci-vZ9" customClass="ShoeDemoViewController" customModule="Parade" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Shoe Demo" id="cQV-Ci-vZ9" customClass="ShoeDemoViewController" customModule="Evone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nFw-pt-3dn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pair with a shoe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WYV-g8-eUM">
-                                <rect key="frame" x="147" y="390" width="121" height="21"/>
+                                <rect key="frame" x="146.66666666666666" y="389.66666666666669" width="120.99999999999997" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I0g-sj-oUH">
-                                <rect key="frame" x="157" y="427" width="100" height="30"/>
+                                <rect key="frame" x="157" y="426.66666666666669" width="100" height="30"/>
                                 <state key="normal" title="Start scanning"/>
                                 <connections>
                                     <segue destination="2mq-3v-0ob" kind="show" identifier="PairingSegue" id="pKP-pt-dxW"/>
@@ -334,7 +334,7 @@
                                     <constraint firstAttribute="width" constant="40" id="uBP-cQ-yCy"/>
                                 </constraints>
                             </activityIndicatorView>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9iF-51-v0g" customClass="DemoView" customModule="Parade" customModuleProvider="target">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9iF-51-v0g" customClass="DemoView" customModule="Evone" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
@@ -368,13 +368,13 @@
         <!--Bluetooth-->
         <scene sceneID="lF4-jl-ozw">
             <objects>
-                <tableViewController title="Bluetooth" id="2mq-3v-0ob" customClass="PairingViewController" customModule="Parade" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Bluetooth" id="2mq-3v-0ob" customClass="PairingViewController" customModule="Evone" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ckC-2M-kQB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DeviceCell" textLabel="f52-za-sf5" style="IBUITableViewCellStyleDefault" id="TZG-wh-jhZ" customClass="DeviceCell" customModule="Parade" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DeviceCell" textLabel="f52-za-sf5" style="IBUITableViewCellStyleDefault" id="TZG-wh-jhZ" customClass="DeviceCell" customModule="Evone" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TZG-wh-jhZ" id="8AA-ij-Y8d">

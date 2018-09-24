@@ -34,25 +34,25 @@ class HomeViewController: UIViewController {
             title: NSLocalizedString("Presentation", comment: "Presentation menu item"),
             image: UIImage(named: "presentation")!,
             imageHighlight: UIImage(named: "presentation_highlight")!,
-            type: .PDF(file: "EVONE_ CES_LAS_VEGAS_JANVIER_2018")
+            type: .PDF(file: "presentation")
         ),
         MenuItem(
             title: NSLocalizedString("Video", comment: "Video menu item"),
             image: UIImage(named: "video")!,
             imageHighlight: UIImage(named: "video_highlight")!,
-            type: .Video(file: "evone_senior_en", type: "mp4")
+            type: .Video(file: "video", type: "mp4")
         ),
         MenuItem(
             title: NSLocalizedString("Collection Women", comment: "Collection Women menu item"),
             image: UIImage(named: "collection_women")!,
             imageHighlight: UIImage(named: "collection_women_highlight")!,
-            type: .Collection(file: "evone")
+            type: .Collection(file: "women")
         ),
         MenuItem(
             title: NSLocalizedString("Collection Men", comment: "Collection Men menu item"),
             image: UIImage(named: "collection_men")!,
             imageHighlight: UIImage(named: "collection_men_highlight")!,
-            type: .Collection(file: "evan")
+            type: .Collection(file: "men")
         ),
         MenuItem(
             title: NSLocalizedString("Technology Deck", comment: "Technology Deck menu item"),
@@ -64,7 +64,7 @@ class HomeViewController: UIViewController {
             title: NSLocalizedString("Press Release", comment: "Press Release menu item"),
             image: UIImage(named: "press")!,
             imageHighlight: UIImage(named: "press_highlight")!,
-            type: .PDF(file: "PRESS_RELEASE-E-vone")
+            type: .PDF(file: "press")
         ),
         MenuItem(
             title: NSLocalizedString("Website Link", comment: "Website Link menu item"),
@@ -82,6 +82,8 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = (Bundle.main.infoDictionary?[kCFBundleNameKey as String] as! String)
         
         collectionView.collectionViewLayout = ColumnFlowLayout(
             cellsPerRow: 2,

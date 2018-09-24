@@ -30,7 +30,12 @@ class ShoeViewController : UITableViewController {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "shoeImg", for: indexPath) as? ImageViewCell else {
                 fatalError("The dequeued cell is not an instance of ShoeTableViewCell.")
             }
-            let image = UIImage(named: mv.content)
+            
+            guard let data = try? Data(contentsOf: URL.urlFromCacheOrBundle(forResource: mv.content, withExtension: ".jpg")!) else {
+                fatalError("The file does not exist.")
+            }
+            
+            let image = UIImage(data: data)
             
             cell.frame = CGRect(x: cell.bgImage.frame.origin.x,y: cell.bgImage.frame.origin.y, width: cell.frame.width, height: (image?.size.height)!);
             cell.bgImage.frame = CGRect(x: cell.bgImage.frame.origin.x,y: cell.bgImage.frame.origin.y, width: cell.frame.width, height: (image?.size.height)!);

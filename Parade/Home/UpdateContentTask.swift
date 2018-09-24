@@ -11,8 +11,6 @@ import FirebaseStorage
 import Zip
 
 class UpdateContentTask {
-    private static let contentRemoteRef = "content/content.zip"
-    
     weak var delegate: UpdateContentTaskDelegate?
     
     private var downloadTask: StorageDownloadTask?
@@ -37,7 +35,9 @@ class UpdateContentTask {
     }()
     
     func execute() {
-        let pathReference = Storage.storage().reference(withPath: UpdateContentTask.contentRemoteRef)
+        let contentRemoteRef = Bundle.main.infoDictionary?["FIREBASE_CONTENT_LOCATION"] as! String
+        
+        let pathReference = Storage.storage().reference(withPath: contentRemoteRef)
         
         downloadTask = pathReference.write(toFile: contentZipFile) { [unowned self] url, error in
             if let error = error {

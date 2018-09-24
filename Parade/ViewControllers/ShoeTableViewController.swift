@@ -35,7 +35,12 @@ class ShoeTableViewController : UITableViewController {
             fatalError("The dequeued cell is not an instance of ShoeTableViewCell.")
         }
         DispatchQueue.global(qos: .background).async {
-            let image = UIImage(named: self.shoe.models[indexPath.row].image)
+            guard let data = try? Data(contentsOf: URL.urlFromCacheOrBundle(forResource: self.shoe.models[indexPath.row].image, withExtension: ".jpg")!) else {
+                fatalError("The file does not exist.")
+            }
+            
+            let image = UIImage(data: data)
+            
             DispatchQueue.main.async {
                 cell.shoeImageView.image = image
             }
