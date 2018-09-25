@@ -7,9 +7,9 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>780133068153-la3f3ishvlfje8bs417pvd0rihh85fa0.apps.googleusercontent.com</string>
+	<string>780133068153-jq5qnscouttjjrg73179bbucel8katkf.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.780133068153-la3f3ishvlfje8bs417pvd0rihh85fa0</string>
+	<string>com.googleusercontent.apps.780133068153-jq5qnscouttjjrg73179bbucel8katkf</string>
 	<key>API_KEY</key>
 	<string>AIzaSyAK9Bl0wukfh4PjutUNu4urFA8I5aCkNeQ</string>
 	<key>GCM_SENDER_ID</key>
@@ -17,7 +17,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.evone.app4pitch</string>
+	<string>com.evone.app</string>
 	<key>PROJECT_ID</key>
 	<string>parade-dff4d</string>
 	<key>STORAGE_BUCKET</key>
@@ -33,7 +33,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:780133068153:ios:836501269e029703</string>
+	<string>1:780133068153:ios:6407301d947203c2</string>
 	<key>DATABASE_URL</key>
 	<string>https://parade-dff4d.firebaseio.com</string>
 </dict>
