@@ -39,7 +39,7 @@ class BaseDemoViewController: UIViewController {
     private lazy var stepAnimations: [CAAnimation] = {
         var animations = [CAAnimation]()
         
-        for i in 1...5 {
+        for i in 1...4 {
             let anim = CABasicAnimation(keyPath: "contents")
             anim.duration = BaseDemoViewController.blinkAnimationDuration
             anim.repeatCount = BaseDemoViewController.blinkAnimationRepeatCount
