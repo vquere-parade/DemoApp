@@ -46,12 +46,6 @@ let menuItems = [
         type: .Collection(file: "metier")
     ),
     MenuItem(
-        title: NSLocalizedString("Technology Deck", comment: "Technology Deck menu item"),
-        image: UIImage(named: "technology")!,
-        imageHighlight: UIImage(named: "technology_highlight")!,
-        type: .PDF(file: "")
-    ),
-    MenuItem(
         title: NSLocalizedString("Press Release", comment: "Press Release menu item"),
         image: UIImage(named: "press")!,
         imageHighlight: UIImage(named: "press_highlight")!,

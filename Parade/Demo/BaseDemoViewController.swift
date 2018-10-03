@@ -12,7 +12,7 @@ import AVFoundation
 class BaseDemoViewController: UIViewController {
     private static let blinkAnimationDuration = 0.7
     private static let blinkAnimationDelay = 1.5
-    private static let blinkAnimationRepeatCount: Float = 3.5
+    private static let blinkAnimationRepeatCount: Float = 4
     
     @IBOutlet weak var demoView: DemoView!
     
@@ -43,6 +43,8 @@ class BaseDemoViewController: UIViewController {
             let anim = CABasicAnimation(keyPath: "contents")
             anim.duration = BaseDemoViewController.blinkAnimationDuration
             anim.repeatCount = BaseDemoViewController.blinkAnimationRepeatCount
+            anim.fillMode = kCAFillModeBoth
+            anim.isRemovedOnCompletion = false
             anim.autoreverses = true
             anim.fromValue = UIImage(named: "step_\(i)")!.cgImage
             anim.toValue =  UIImage(named: "step_\(i)_highlight")!.cgImage
@@ -118,7 +120,6 @@ class BaseDemoViewController: UIViewController {
     }
     
     private func animateSteps() {
-        demoView.stepsImage.image = UIImage(named: "step_0")
         demoView.stepsImage.layer.add(stepAnimations[0], forKey: "step")
     }
     
@@ -164,10 +165,11 @@ extension BaseDemoViewController : CAAnimationDelegate {
             return
         }
         
-        demoView.stepsImage.image = UIImage(named: "step_\(currentStep)")
-        
         let nextAnim = stepAnimations[currentStep]
-        nextAnim.beginTime = CACurrentMediaTime() + BaseDemoViewController.blinkAnimationDelay
-        demoView.stepsImage.layer.add(nextAnim, forKey: "step")
+        DispatchQueue.main.asyncAfter(deadline: .now() + BaseDemoViewController.blinkAnimationDelay) {
+            self.demoView.stepsImage.layer.removeAllAnimations()
+            nextAnim.beginTime = CACurrentMediaTime()
+            self.demoView.stepsImage.layer.add(nextAnim, forKey: "step")
+        }
     }
 }

@@ -49,7 +49,7 @@ let menuItems = [
         title: NSLocalizedString("Technology Deck", comment: "Technology Deck menu item"),
         image: UIImage(named: "technology")!,
         imageHighlight: UIImage(named: "technology_highlight")!,
-        type: .PDF(file: "")
+        type: .PDF(file: "technology")
     ),
     MenuItem(
         title: NSLocalizedString("Press Release", comment: "Press Release menu item"),

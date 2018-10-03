@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Nuke
 
 class ShoeTableViewController : UITableViewController {
     var jsonFile: String!
@@ -34,17 +35,8 @@ class ShoeTableViewController : UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ShoeIdentifier", for: indexPath) as? ShoeTableViewCell else {
             fatalError("The dequeued cell is not an instance of ShoeTableViewCell.")
         }
-        DispatchQueue.global(qos: .background).async {
-            guard let data = try? Data(contentsOf: URL.urlFromCacheOrBundle(forResource: self.shoe.models[indexPath.row].image, withExtension: ".jpg")!) else {
-                fatalError("The file does not exist.")
-            }
-            
-            let image = UIImage(data: data)
-            
-            DispatchQueue.main.async {
-                cell.shoeImageView.image = image
-            }
-        }
+
+        Nuke.loadImage(with: URL.urlFromCacheOrBundle(forResource: self.shoe.models[indexPath.row].image, withExtension: ".jpg")!, into:  cell.shoeImageView)
         
         return cell
     }

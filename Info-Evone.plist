@@ -21,7 +21,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>16</string>
+	<string>17</string>
 	<key>FIREBASE_CONTENT_LOCATION</key>
 	<string>content/evone/content.zip</string>
 	<key>LSRequiresIPhoneOS</key>

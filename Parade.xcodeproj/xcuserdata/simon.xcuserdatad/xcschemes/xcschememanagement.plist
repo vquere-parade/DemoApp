@@ -7,7 +7,7 @@
 		<key>Evone.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>6</integer>
+			<integer>7</integer>
 		</dict>
 		<key>Parade copy.xcscheme</key>
 		<dict>
@@ -33,6 +33,11 @@
 			<true/>
 		</dict>
 		<key>A6699A811FCEC80800A4DF6A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F47D6EE52157F1B900F21A18</key>
 		<dict>
 			<key>primary</key>
 			<true/>
