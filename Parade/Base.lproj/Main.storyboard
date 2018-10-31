@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="J93-7J-iFq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="J93-7J-iFq">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -179,9 +179,12 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="I3x-CP-hLM">
                                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="I3x-CP-hLM" secondAttribute="height" multiplier="1:1" id="TlS-kF-BIj"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="haX-QO-8rt" customClass="PaddingLabel" customModule="Evone" customModuleProvider="target">
-                                                    <rect key="frame" x="3.3333333333333321" y="14.999999999999998" width="43.666666666666671" height="20.333333333333329"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="haX-QO-8rt" customClass="PaddingLabel" customModule="Evone" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="50.000000000000007" width="50" height="28.333333333333336"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                     <nil key="textColor"/>
@@ -210,15 +213,15 @@
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="I3x-CP-hLM" firstAttribute="top" secondItem="5wS-PE-N6R" secondAttribute="top" id="DMn-ck-p8h"/>
-                                            <constraint firstItem="haX-QO-8rt" firstAttribute="centerX" secondItem="5wS-PE-N6R" secondAttribute="centerX" id="EIF-zK-6Us"/>
+                                            <constraint firstAttribute="trailing" secondItem="haX-QO-8rt" secondAttribute="trailing" id="IKZ-Ec-e8c"/>
+                                            <constraint firstItem="haX-QO-8rt" firstAttribute="leading" secondItem="5wS-PE-N6R" secondAttribute="leading" id="RC3-0u-FOL"/>
                                             <constraint firstAttribute="trailing" secondItem="REY-7X-5Nn" secondAttribute="trailing" id="ROz-0z-fpx"/>
                                             <constraint firstItem="REY-7X-5Nn" firstAttribute="top" secondItem="5wS-PE-N6R" secondAttribute="top" id="ZSt-jy-MVS"/>
                                             <constraint firstAttribute="bottom" secondItem="REY-7X-5Nn" secondAttribute="bottom" id="aNB-8X-Duw"/>
-                                            <constraint firstAttribute="bottom" secondItem="I3x-CP-hLM" secondAttribute="bottom" id="b72-FN-Sk8"/>
                                             <constraint firstAttribute="trailing" secondItem="I3x-CP-hLM" secondAttribute="trailing" id="d4a-Hs-dSl"/>
                                             <constraint firstItem="I3x-CP-hLM" firstAttribute="leading" secondItem="5wS-PE-N6R" secondAttribute="leading" id="eJN-W4-Z1m"/>
                                             <constraint firstItem="REY-7X-5Nn" firstAttribute="leading" secondItem="5wS-PE-N6R" secondAttribute="leading" id="fhz-1r-HKJ"/>
-                                            <constraint firstItem="haX-QO-8rt" firstAttribute="centerY" secondItem="5wS-PE-N6R" secondAttribute="centerY" id="gCw-aX-Pjj"/>
+                                            <constraint firstItem="haX-QO-8rt" firstAttribute="top" secondItem="I3x-CP-hLM" secondAttribute="bottom" id="xAw-DM-UWz"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="activityIndicator" destination="REY-7X-5Nn" id="Rz7-CW-gOh"/>
