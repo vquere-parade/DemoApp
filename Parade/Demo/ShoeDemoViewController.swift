@@ -12,12 +12,16 @@ import CoreLocation
 class ShoeDemoViewController: BaseDemoViewController {
     private let locationManager = CLLocationManager()
     
-    private let beaconRegion = CLBeaconRegion(
-        proximityUUID: UUID(uuidString: "dfe942fe-cfdf-4838-90c5-07dbcaa8f620")!,
-        major: 0,
-        minor: 0,
-        identifier: "Shoe"
-    )
+    private let beaconRegion: CLBeaconRegion = {
+        let region = CLBeaconRegion(
+            proximityUUID: UUID(uuidString: "dfe942fe-cfdf-4838-90c5-07dbcaa8f620")!,
+            identifier: "parade-demo-shoe"
+        )
+        
+        region.notifyEntryStateOnDisplay = true
+        
+        return region
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +53,8 @@ extension ShoeDemoViewController: CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
-        startFallAnimation()
+        if region.identifier == beaconRegion.identifier && !beacons.isEmpty {
+            startFallAnimation()
+        }
     }
 }

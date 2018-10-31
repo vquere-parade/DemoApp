@@ -165,6 +165,7 @@
 		F4C0326C2189C7FF00A300E1 /* 9.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F4C032432189C7FF00A300E1 /* 9.jpg */; };
 		F4C0326D2189C7FF00A300E1 /* 28.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F4C032442189C7FF00A300E1 /* 28.jpg */; };
 		F4C234AC2164EFEB0037D72D /* Pods_Parade.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4C234AB2164EFEB0037D72D /* Pods_Parade.framework */; };
+		F4CCDFE9218A2C06005025C8 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6CE7E06203C473700DC72D7 /* MapKit.framework */; };
 		F4CE47C7214B9379000DEFD8 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4CE47C6214B9379000DEFD8 /* CoreBluetooth.framework */; };
 		F4CE47DB214C041B000DEFD8 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6817E241FD31A7700922C20 /* AudioToolbox.framework */; };
 		F4D37DED21406BA30059991F /* ColumnFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D37DEC21406BA30059991F /* ColumnFlowLayout.swift */; };
@@ -343,6 +344,7 @@
 				F4CE47C7214B9379000DEFD8 /* CoreBluetooth.framework in Frameworks */,
 				F4D37DF3214078300059991F /* AVFoundation.framework in Frameworks */,
 				A6EA649487A02462530FFC20 /* Pods_Parade.framework in Frameworks */,
+				F4CCDFE9218A2C06005025C8 /* MapKit.framework in Frameworks */,
 				28B200F4988B74DE9B59A22C /* Pods_Parade.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
