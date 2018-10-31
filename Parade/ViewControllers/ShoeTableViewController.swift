@@ -22,7 +22,8 @@ class ShoeTableViewController : UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.rowHeight = 200        
+        self.tableView.rowHeight = 200
+        self.tableView.estimatedRowHeight = 200
 
         title = shoe.title
     }

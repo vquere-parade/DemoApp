@@ -1,56 +1,76 @@
 {
     "product_id": "evone",
-    "title": "EVone",
+    "title": "Vigil",
     "image": "DSC_9396",
     "models": [
         {
-            "image": "1",
+            "image": "42",
             "view_sequence": [
 
                 {
                     "mime_type": "image/jpeg",
                     "html_type": "img",
-                    "content": "1"
+                    "content": "42"
                 }
             ]
         },
         {
-            "image": "2",
+            "image": "43",
             "view_sequence": [
                 {
                     "mime_type": "image/jpeg",
                     "html_type": "img",
-                    "content": "2"
+                    "content": "43"
                 }
             ]
         },
         {
-            "image": "3",
+            "image": "44",
             "view_sequence": [
                 {
                     "mime_type": "image/jpeg",
                     "html_type": "img",
-                    "content": "3"
+                    "content": "44"
                 }
             ]
         },
         {
-            "image": "4",
+            "image": "45",
             "view_sequence": [
                 {
                     "mime_type": "image/jpeg",
                     "html_type": "img",
-                    "content": "4"
+                    "content": "45"
                 }
             ]
         },
         {
-            "image": "5",
+            "image": "46",
             "view_sequence": [
                 {
                     "mime_type": "image/jpeg",
                     "html_type": "img",
-                    "content": "5"
+                    "content": "46"
+                }
+            ]
+        },
+        {
+            "image": "47",
+            "view_sequence": [
+                {
+                    "mime_type": "image/jpeg",
+                    "html_type": "img",
+                    "content": "47"
+                }
+            ]
+        },
+        {
+            "image": "48",
+            "view_sequence": [
+                {
+                    "mime_type": "image/jpeg",
+                    "html_type": "img",
+                    "content": "48"
                 }
             ]
         },
