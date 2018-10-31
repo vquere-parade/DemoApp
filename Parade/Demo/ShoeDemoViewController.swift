@@ -7,66 +7,48 @@
 //
 
 import UIKit
-import CoreBluetooth
+import CoreLocation
 
 class ShoeDemoViewController: BaseDemoViewController {
-    @IBOutlet weak var pairLabel: UILabel!
+    private let locationManager = CLLocationManager()
     
-    @IBOutlet weak var pairButton: UIButton!
+    private let beaconRegion = CLBeaconRegion(
+        proximityUUID: UUID(uuidString: "dfe942fe-cfdf-4838-90c5-07dbcaa8f620")!,
+        major: 0,
+        minor: 0,
+        identifier: "Shoe"
+    )
     
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    
-    private var shoeManager: ShoeManager!
-    
-    private var stateObservation: NSKeyValueObservation!
-    private var shoeObservation: NSKeyValueObservation!
-    private var fallObservation: NSKeyValueObservation!
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        locationManager.delegate = self
+        locationManager.requestAlwaysAuthorization()
+    }
     
     override func startFallDetection() {
-        shoeManager = ShoeManager()
-        
-        stateObservation = shoeManager.observe(\.state, options: .new) { [unowned self] shoeManager, _ in
-            if shoeManager.state == .poweredOn {
-                guard UserDefaults.standard.string(forKey: "shoeIdentifier") == nil else {
-                    shoeManager.scanForPeripherals()
-                    
-                    return
-                }
-                
-                self.activityIndicator.isHidden = true
-                    
-                self.pairLabel.isHidden = false
-                self.pairButton.isHidden = false
-            }
-        }
-        
-        shoeObservation = shoeManager.observe(\.shoe, options: .new) { [unowned self] shoeManager, _ in
-            if shoeManager.shoe == nil {
-                self.cancelFallAnimation()
-            }
-            
-            self.demoView.isHidden = shoeManager.shoe == nil
-                
-            self.activityIndicator.isHidden = shoeManager.shoe != nil
-            
-            let shoeIdentifier =  UserDefaults.standard.string(forKey: "shoeIdentifier")
-            self.pairLabel.isHidden = shoeIdentifier != nil
-            self.pairButton.isHidden = shoeIdentifier != nil
-        }
-        
-        fallObservation = shoeManager.observe(\.fall, options: .new) { [unowned self] shoeManager, _ in
-            self.startFallAnimation()
-        }
+        locationManager.startMonitoring(for: beaconRegion)
+        locationManager.startRangingBeacons(in: beaconRegion)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "PairingSegue" {
-            let viewController = segue.destination as! PairingViewController
-            viewController.shoeManager = shoeManager
-        }
+    override func stopFallDetection() {
+        locationManager.stopMonitoring(for: beaconRegion)
+        locationManager.stopRangingBeacons(in: beaconRegion)
+        
+        super.stopFallDetection()
+    }
+}
+
+extension ShoeDemoViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, monitoringDidFailFor region: CLRegion?, withError error: Error) {
+        print("Failed monitoring region: \(error.localizedDescription)")
     }
     
-    deinit {
-        shoeManager.stopScan()
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Location manager failed: \(error.localizedDescription)")
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
+        startFallAnimation()
     }
 }

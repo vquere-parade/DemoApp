@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>L&apos;application utilise la géolocalisation pour détecter les chutes.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>L&apos;application utilise la géolocalisation pour détecter les chutes.</string>
 	<key>BuildMachineOSBuild</key>
 	<string>16A323</string>
 	<key>CFBundleDevelopmentRegion</key>
@@ -27,9 +31,9 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSBluetoothPeripheralUsageDescription</key>
-	<string>L'application utilise le bluetooth pour détecter les chutes.</string>
+	<string>L&apos;application utilise le bluetooth pour détecter les chutes.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Envoyer la localisation de la chute</string>
+	<string>L&apos;application utilise la géolocalisation pour détecter les chutes.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

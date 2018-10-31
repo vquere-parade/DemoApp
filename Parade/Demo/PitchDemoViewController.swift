@@ -11,13 +11,19 @@ import AVFoundation
 import AudioToolbox
 
 class PitchDemoViewController: BaseDemoViewController {
-
     override func startFallDetection() {
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(self.orientationChanged(_:)),
             name: .UIDeviceOrientationDidChange,
-            object: nil)
+            object: nil
+        )
+    }
+    
+    override func stopFallDetection() {
+        NotificationCenter.default.removeObserver(self, name: .UIDeviceOrientationDidChange, object: nil)
+        
+        super.stopFallDetection()
     }
     
     @objc func orientationChanged(_ notification: NSNotification) {

@@ -58,13 +58,17 @@ class BaseDemoViewController: UIViewController {
         return animations
     }()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         startFallDetection()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        stopFallDetection()
+        
         timer?.invalidate()
         
         toggleTorch(on: false)
@@ -72,6 +76,10 @@ class BaseDemoViewController: UIViewController {
     
     func startFallDetection() {
         preconditionFailure("This method must be overridden")
+    }
+    
+    func stopFallDetection() {
+        cancelFallAnimation()
     }
     
     func startFallAnimation() {
