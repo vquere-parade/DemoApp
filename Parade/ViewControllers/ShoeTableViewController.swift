@@ -37,9 +37,17 @@ class ShoeTableViewController : UITableViewController {
             fatalError("The dequeued cell is not an instance of ShoeTableViewCell.")
         }
 
-        Nuke.loadImage(with: URL.urlFromCacheOrBundle(forResource: self.shoe.models[indexPath.row].image, withExtension: ".jpg")!, into:  cell.shoeImageView)
+        var request = ImageRequest(url: URL.urlFromCacheOrBundle(forResource: self.shoe.models[indexPath.row].image, withExtension: ".jpg")!)
+        request.processor = AnyImageProcessor(ImageDecompressor(targetSize: targetSize(for: cell.shoeImageView), contentMode: .aspectFit))
+        Nuke.loadImage(with: request, into:  cell.shoeImageView)
         
         return cell
+    }
+    
+    func targetSize(for view: UIView) -> CGSize { // in pixels
+        let scale = UIScreen.main.scale
+        let size = view.bounds.size
+        return CGSize(width: size.width * scale, height: size.height * scale)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

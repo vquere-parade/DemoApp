@@ -21,7 +21,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.1</string>
 	<key>CFBundleVersion</key>
-	<string>19</string>
+	<string>20</string>
 	<key>FIREBASE_CONTENT_LOCATION</key>
 	<string>content/parade/content.zip</string>
 	<key>LSRequiresIPhoneOS</key>
