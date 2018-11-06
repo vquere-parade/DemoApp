@@ -29,8 +29,8 @@ class BaseDemoViewController: UIViewController {
         anim.duration = BaseDemoViewController.blinkAnimationDuration
         anim.repeatCount = .infinity
         anim.autoreverses = true
-        anim.fromValue = UIImage(named: "person")!.cgImage
-        anim.toValue =  UIImage(named: "person_highlight")!.cgImage
+        anim.fromValue = UIImage(named: /*"person"*/"bgBlue")!.cgImage
+        anim.toValue =  UIImage(named: /*"person_highlight"*/"bgRed")!.cgImage
         anim.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
         
         return anim

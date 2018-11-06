@@ -27,9 +27,11 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSBluetoothPeripheralUsageDescription</key>
-	<string>L'application utilise le bluetooth pour détecter les chutes.</string>
+	<string>L&apos;application utilise le bluetooth pour détecter les chutes.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Envoyer la localisation de la chute</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Envoyer la localisation de la chute (toujours)</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
